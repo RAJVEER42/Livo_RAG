@@ -1,0 +1,2760 @@
+[
+  {
+    "text": "So in today's video we will talk about",
+    "start": 0.04,
+    "duration": 3.24,
+    "timestamp": "0:00",
+    "text_original": "सो आज के इस वीडियो में हम लोग बात करेंगे"
+  },
+  {
+    "text": ", what is machine learning and why you",
+    "start": 1.439,
+    "duration": 3.88,
+    "timestamp": "0:01",
+    "text_original": "कि व्हाट इज मशीन लर्निंग एंड व्हाई यू"
+  },
+  {
+    "text": "should be focusing on machine learning and AI",
+    "start": 3.28,
+    "duration": 4.72,
+    "timestamp": "0:03",
+    "text_original": "शुड बी फोकसिंग ऑन मशीन लर्निंग एंड एआई"
+  },
+  {
+    "text": "in 2024. In today's date, where everyone says",
+    "start": 5.319,
+    "duration": 4.841,
+    "timestamp": "0:05",
+    "text_original": "इन 2024 आज की तारीख में जहां सब लोग कहते"
+  },
+  {
+    "text": "that AI and machine learning will take away the jobs of",
+    "start": 8.0,
+    "duration": 4.28,
+    "timestamp": "0:08",
+    "text_original": "हैं कि एआई एंड मशीन लर्निंग जॉब्स छीन"
+  },
+  {
+    "text": ", all those developers who were making softwares by working hard, my opinion is a little different here, I will say",
+    "start": 10.16,
+    "duration": 4.04,
+    "timestamp": "0:10",
+    "text_original": "लेगी उन सारे डेवलपर्स की जो कि मेहनत"
+  },
+  {
+    "text": "JOBS. Who knows who will take away",
+    "start": 12.28,
+    "duration": 3.599,
+    "timestamp": "0:12",
+    "text_original": "करके सॉफ्टवेयर्स बना रहे थे मेरा थोड़ा"
+  },
+  {
+    "text": ", not AI, it will be snatched by a human being who will know how to learn AI and Machine Learning",
+    "start": 14.2,
+    "duration": 4.04,
+    "timestamp": "0:14",
+    "text_original": "सा मानना यहां पर डिफरेंट है मैं कहूंगा"
+  },
+  {
+    "text": "tools because once a human being knows how to learn AI and Machine Learning tools",
+    "start": 15.879,
+    "duration": 4.441,
+    "timestamp": "0:15",
+    "text_original": "जॉब्स छीनेगा पता है कौन एआई नहीं वो"
+  },
+  {
+    "text": ", it will be very easy for him to do those tasks which a normal software developer puts a lot of effort in doing",
+    "start": 18.24,
+    "duration": 4.119,
+    "timestamp": "0:18",
+    "text_original": "इंसान छीनेगा जो कि एआई एंड मशीन लर्निंग"
+  },
+  {
+    "text": "and in such a situation,",
+    "start": 20.32,
+    "duration": 4.199,
+    "timestamp": "0:20",
+    "text_original": "टूल्स को सीखना जान जाएगा क्योंकि एक बार"
+  },
+  {
+    "text": "your smart work is going to come in handy as to what you guys are doing",
+    "start": 22.359,
+    "duration": 4.961,
+    "timestamp": "0:22",
+    "text_original": "एक इंसान एआई एंड मशीन लर्निंग के टूल्स"
+  },
+  {
+    "text": ". What are you learning -",
+    "start": 24.519,
+    "duration": 4.801,
+    "timestamp": "0:24",
+    "text_original": "को सीखना जान गया ना उसके लिए बहुत आसान"
+  },
+  {
+    "text": ", there was a way to do a task, in 10 minutes you guys made it",
+    "start": 27.32,
+    "duration": 4.4,
+    "timestamp": "0:27",
+    "text_original": "हो जाएगा उन कामों को करना जो कि एक"
+  },
+  {
+    "text": ", if you are doing that classical approach with",
+    "start": 29.32,
+    "duration": 4.399,
+    "timestamp": "0:29",
+    "text_original": "नॉर्मल सॉफ्टवेयर डेवलपर बहुत मेहनत डाल"
+  },
+  {
+    "text": "for an hour, then you will be replaced by that",
+    "start": 31.72,
+    "duration": 4.44,
+    "timestamp": "0:31",
+    "text_original": "के करता है और ऐसे में काम आने वाला है"
+  },
+  {
+    "text": "guy who is doing it in 10 minutes, and today I will talk about this",
+    "start": 33.719,
+    "duration": 5.0,
+    "timestamp": "0:33",
+    "text_original": "आपका स्मार्ट वर्क कि आप लोग कर क्या रहे"
+  },
+  {
+    "text": ", what is machine learning",
+    "start": 36.16,
+    "duration": 4.64,
+    "timestamp": "0:36",
+    "text_original": "हो आप क्या सीख रहे हो एक काम को करने का"
+  },
+  {
+    "text": ", what is AI, how can you guys learn AI",
+    "start": 38.719,
+    "duration": 4.68,
+    "timestamp": "0:38",
+    "text_original": "एक तरीका था 10 मिनट में आप लोगों ने उसको"
+  },
+  {
+    "text": "and machine learning,",
+    "start": 40.8,
+    "duration": 4.68,
+    "timestamp": "0:40",
+    "text_original": "बना दिया एक घंटा आप उस क्लासिकल अप्रोच"
+  },
+  {
+    "text": "and some more.",
+    "start": 43.399,
+    "duration": 4.0,
+    "timestamp": "0:43",
+    "text_original": "से कर रहे हो तो आपको रिप्लेस कर देगा वो"
+  },
+  {
+    "text": "will talk about modern tools that you should use if you",
+    "start": 45.48,
+    "duration": 3.64,
+    "timestamp": "0:45",
+    "text_original": "बंदा जो कि 10 मिनट में कर रहा है और इसी"
+  },
+  {
+    "text": "people want to focus on Machine Learning and Artificial",
+    "start": 47.399,
+    "duration": 4.121,
+    "timestamp": "0:47",
+    "text_original": "की बात मैं आज करूंगा कि मशीन लर्निंग"
+  },
+  {
+    "text": "Intelligence in",
+    "start": 49.12,
+    "duration": 4.2,
+    "timestamp": "0:49",
+    "text_original": "क्या होती है एआई क्या होती है आप लोग एआई"
+  },
+  {
+    "text": "2024 and give a boost to your career.",
+    "start": 51.52,
+    "duration": 3.48,
+    "timestamp": "0:51",
+    "text_original": "एंड मशीन लर्निंग किस तरह से सीख सकते हैं"
+  },
+  {
+    "text": "और कुछ मॉडर्न टूल्स के बारे में बात",
+    "start": 53.32,
+    "duration": 3.84,
+    "timestamp": "0:53",
+    "text_original": "और कुछ मॉडर्न टूल्स के बारे में बात"
+  },
+  {
+    "text": "करेंगे जो कि आपको यूज करने चाहिए अगर आप",
+    "start": 55.0,
+    "duration": 3.64,
+    "timestamp": "0:55",
+    "text_original": "करेंगे जो कि आपको यूज करने चाहिए अगर आप"
+  },
+  {
+    "text": "लोग मशीन लर्निंग एंड आर्टिफिशियल",
+    "start": 57.16,
+    "duration": 3.32,
+    "timestamp": "0:57",
+    "text_original": "लोग मशीन लर्निंग एंड आर्टिफिशियल"
+  },
+  {
+    "text": "इंटेलिजेंस पर फोकस करना होना चाहते हो इन",
+    "start": 58.64,
+    "duration": 4.239,
+    "timestamp": "0:58",
+    "text_original": "इंटेलिजेंस पर फोकस करना होना चाहते हो इन"
+  },
+  {
+    "text": "2024 और अपने करियर को एक बूस्ट देना",
+    "start": 60.48,
+    "duration": 4.16,
+    "timestamp": "1:00",
+    "text_original": "2024 और अपने करियर को एक बूस्ट देना"
+  },
+  {
+    "text": "You want and this",
+    "start": 62.879,
+    "duration": 4.041,
+    "timestamp": "1:02",
+    "text_original": "चाहते हो और थोड़ी सी बुरी लग सकती है ये"
+  },
+  {
+    "text": "thing may seem a little bad but I would say save your career",
+    "start": 64.64,
+    "duration": 4.479,
+    "timestamp": "1:04",
+    "text_original": "बात लेकिन मैं कहूंगा अपने करियर को बचाना"
+  },
+  {
+    "text": "want to save your career What is machine learning",
+    "start": 66.92,
+    "duration": 5.0,
+    "timestamp": "1:06",
+    "text_original": "चाहते हो मशीन लर्निंग क्या है मशीन"
+  },
+  {
+    "text": "Machine learning is the process of",
+    "start": 69.119,
+    "duration": 4.881,
+    "timestamp": "1:09",
+    "text_original": "लर्निंग डाटा पर एक एल्गोरिदम ट्रेन करने"
+  },
+  {
+    "text": "to train an algorithm on data What does this mean",
+    "start": 71.92,
+    "duration": 4.4,
+    "timestamp": "1:11",
+    "text_original": "की प्रोसेस है इस बात का क्या मतलब हुआ"
+  },
+  {
+    "text": "You have a lot of data Let us say 3",
+    "start": 74.0,
+    "duration": 4.799,
+    "timestamp": "1:14",
+    "text_original": "आपके पास बहुत सारा डाटा है लेट अस से 3"
+  },
+  {
+    "text": "billion data points You have and now you",
+    "start": 76.32,
+    "duration": 5.4,
+    "timestamp": "1:16",
+    "text_original": "बिलियन डटा पॉइंट्स आपके पास हैं और अब आप"
+  },
+  {
+    "text": "people want that you guys looking at those 3 billion data",
+    "start": 78.799,
+    "duration": 5.561,
+    "timestamp": "1:18",
+    "text_original": "लोग चाहते हो कि आप लोग उन 3 बिलियन डेटा"
+  },
+  {
+    "text": "points can create new Now let us make predictions about",
+    "start": 81.72,
+    "duration": 4.96,
+    "timestamp": "1:21",
+    "text_original": "पॉइंट्स को देखते हुए नए डेटा पॉइंट्स के"
+  },
+  {
+    "text": "from data points",
+    "start": 84.36,
+    "duration": 4.399,
+    "timestamp": "1:24",
+    "text_original": "बारे में प्रेडिक्शन कर सको नाउ लेट अस से"
+  },
+  {
+    "text": "I have data about how fast the wind was blowing",
+    "start": 86.68,
+    "duration": 4.04,
+    "timestamp": "1:26",
+    "text_original": "मेरे पास डेटा है कि हवा कितनी तेज चल रही"
+  },
+  {
+    "text": "I have data about how much precipitation was",
+    "start": 88.759,
+    "duration": 4.441,
+    "timestamp": "1:28",
+    "text_original": "थी मेरे पास डेटा है कि प्रेसिपिटेशन"
+  },
+  {
+    "text": ", what was the humidity and temperature",
+    "start": 90.72,
+    "duration": 4.28,
+    "timestamp": "1:30",
+    "text_original": "कितना था ह्यूमिडिटी कितनी थी और टेंपरेचर"
+  },
+  {
+    "text": "that day and I have to predict",
+    "start": 93.2,
+    "duration": 5.04,
+    "timestamp": "1:33",
+    "text_original": "कितना था उस दिन और मुझे प्रिडिक्ट करना"
+  },
+  {
+    "text": "whether the weather is going to rain or not. I can do this",
+    "start": 95.0,
+    "duration": 5.24,
+    "timestamp": "1:35",
+    "text_original": "है कि वेदर इट इज गोइंग टू रेन ऑर नॉट मैं"
+  },
+  {
+    "text": "using machine learning",
+    "start": 98.24,
+    "duration": 3.879,
+    "timestamp": "1:38",
+    "text_original": "कर सकता हूं ऐसा यूजिंग मशीन लर्निंग"
+  },
+  {
+    "text": "Algorithms, how will I do",
+    "start": 100.24,
+    "duration": 4.36,
+    "timestamp": "1:40",
+    "text_original": "एल्गोरिथम्स किस तरह से मैं करूंगा"
+  },
+  {
+    "text": "prediction, I will do a machine learning",
+    "start": 102.119,
+    "duration": 4.801,
+    "timestamp": "1:42",
+    "text_original": "प्रेडिक्शन मैं करूंगा एक मशीन लर्निंग"
+  },
+  {
+    "text": "algorithm by showing that old data, then",
+    "start": 104.6,
+    "duration": 3.879,
+    "timestamp": "1:44",
+    "text_original": "एल्गोरिथम को वो पुराना डाटा दिखाकर तो"
+  },
+  {
+    "text": "I will say, brother, when the precipitation was this much,",
+    "start": 106.92,
+    "duration": 4.44,
+    "timestamp": "1:46",
+    "text_original": "मैं कहूंगा यार जब प्रेसिपिटेशन इतना"
+  },
+  {
+    "text": ", humidity, this much, temperature, then it rained,",
+    "start": 108.479,
+    "duration": 5.121,
+    "timestamp": "1:48",
+    "text_original": "ह्यूमिडिटी इतनी टेंपरेचर इतना तब रेन हुआ"
+  },
+  {
+    "text": "was precipitation, humidity, temperature, this much,",
+    "start": 111.36,
+    "duration": 4.16,
+    "timestamp": "1:51",
+    "text_original": "था प्रेसिपिटेशन ह्यूमिडिटी टेंपरेचर इतना"
+  },
+  {
+    "text": ", it did not rain, then when I will give the new value",
+    "start": 113.6,
+    "duration": 3.72,
+    "timestamp": "1:53",
+    "text_original": "तो रेन नहीं हुआ था फिर मैं जब नई वैल्यू"
+  },
+  {
+    "text": ", brother, today's precipitation is",
+    "start": 115.52,
+    "duration": 4.32,
+    "timestamp": "1:55",
+    "text_original": "दूंगा कि भाई आज का प्रेसिपिटेशन"
+  },
+  {
+    "text": ". If this is the humidity and temperature then on the basis of its",
+    "start": 117.32,
+    "duration": 4.439,
+    "timestamp": "1:57",
+    "text_original": "ह्यूमिडिटी और टेंपरेचर यह है तो उसके"
+  },
+  {
+    "text": "it will tell me that according to this",
+    "start": 119.84,
+    "duration": 4.08,
+    "timestamp": "1:59",
+    "text_original": "आधार पर मुझे वो बता देगा कि यार यह जो"
+  },
+  {
+    "text": "value, it is not going to rain today,",
+    "start": 121.759,
+    "duration": 4.0,
+    "timestamp": "2:01",
+    "text_original": "वैल्यू है इसके हिसाब से आज बारिश नहीं"
+  },
+  {
+    "text": "is it going to rain today, will",
+    "start": 123.92,
+    "duration": 4.199,
+    "timestamp": "2:03",
+    "text_original": "होने वाली है आज बारिश होने वाली है क्या"
+  },
+  {
+    "text": "be true or not, will it be a prediction, then",
+    "start": 125.759,
+    "duration": 4.36,
+    "timestamp": "2:05",
+    "text_original": "वह सच होगा नहीं वो एक प्रेडिक्शन होगा तो"
+  },
+  {
+    "text": "does the machine learning and AI.",
+    "start": 128.119,
+    "duration": 4.48,
+    "timestamp": "2:08",
+    "text_original": "जो मशीन लर्निंग एंड एआई करता है वो"
+  },
+  {
+    "text": "It does predictions in a very simple way. I have already talked about",
+    "start": 130.119,
+    "duration": 4.681,
+    "timestamp": "2:10",
+    "text_original": "प्रिडिक्शंस करता है ये बहुत सिंपल सी"
+  },
+  {
+    "text": "prediction but",
+    "start": 132.599,
+    "duration": 4.561,
+    "timestamp": "2:12",
+    "text_original": "प्रेडिक्शन की बात कर दी है मैंने लेकिन"
+  },
+  {
+    "text": "takes this thing to the next level. If you guys take",
+    "start": 134.8,
+    "duration": 4.719,
+    "timestamp": "2:14",
+    "text_original": "इसी चीज को एक नेक्स्ट लेवल पर अगर आप लोग"
+  },
+  {
+    "text": "to the next level through deep learning, if you guys train",
+    "start": 137.16,
+    "duration": 4.96,
+    "timestamp": "2:17",
+    "text_original": "लेकर जाओ डीप लर्निंग के थ्रू आप लोग अगर"
+  },
+  {
+    "text": "complex muscles, then",
+    "start": 139.519,
+    "duration": 5.44,
+    "timestamp": "2:19",
+    "text_original": "कॉम्प्लेक्टेड मस को ट्रेन करो तो वहां पर"
+  },
+  {
+    "text": "is seen there that by training",
+    "start": 142.12,
+    "duration": 5.199,
+    "timestamp": "2:22",
+    "text_original": "देखा यह जाता है कि कॉम्प्लेक्टेड मस पर"
+  },
+  {
+    "text": "on complex muscles, this process becomes so dangerous that even humans get amazed.",
+    "start": 144.959,
+    "duration": 4.201,
+    "timestamp": "2:24",
+    "text_original": "ट्रेन करके ये प्रोसेस इतनी खतरनाक बन"
+  },
+  {
+    "text": "4gb is a very classical example of this.",
+    "start": 147.319,
+    "duration": 4.361,
+    "timestamp": "2:27",
+    "text_original": "जाती है कि ह्यूमंस भी अमेज हो जाते हैं"
+  },
+  {
+    "text": "Now Chart GPT is not a pure machine.",
+    "start": 149.16,
+    "duration": 4.68,
+    "timestamp": "2:29",
+    "text_original": "4gb एक इसका बहुत क्लासिकल एग्जांपल है"
+  },
+  {
+    "text": "Learning Model Chart GPT gives you some layers of",
+    "start": 151.68,
+    "duration": 4.76,
+    "timestamp": "2:31",
+    "text_original": "नाउ चार्ट जीपीटी इज नॉट अ प्योर मशीन"
+  },
+  {
+    "text": "abstractor on top of",
+    "start": 153.84,
+    "duration": 4.759,
+    "timestamp": "2:33",
+    "text_original": "लर्निंग मॉडल चार्ट जीपीटी आप लोगों को"
+  },
+  {
+    "text": "machine learning, that is,",
+    "start": 156.44,
+    "duration": 4.24,
+    "timestamp": "2:36",
+    "text_original": "मशीन लर्निंग के ऊपर कुछ लेयर ऑफ"
+  },
+  {
+    "text": "has some regular rules written in it. Some",
+    "start": 158.599,
+    "duration": 4.201,
+    "timestamp": "2:38",
+    "text_original": "एब्स्ट्रैक्टर के देता है यानी कि उसमें"
+  },
+  {
+    "text": "checks are included. Four GBt is not just",
+    "start": 160.68,
+    "duration": 4.4,
+    "timestamp": "2:40",
+    "text_original": "कुछ रेगुलर रूल्स भी लिखे हुए हैं कुछ"
+  },
+  {
+    "text": "a neural network. I also tell you this. Let me tell you",
+    "start": 162.8,
+    "duration": 4.64,
+    "timestamp": "2:42",
+    "text_original": "चेक्स लगे हुए हैं चार जीबीटी इज नॉट जस्ट"
+  },
+  {
+    "text": ", by doing a little",
+    "start": 165.08,
+    "duration": 4.32,
+    "timestamp": "2:45",
+    "text_original": "अ न्यूरल नेटवर्क ये भी मैं आपको बता दूं"
+  },
+  {
+    "text": "customization on that neural network, a thing is made which can blow the mind of a common man and give",
+    "start": 167.44,
+    "duration": 4.36,
+    "timestamp": "2:47",
+    "text_original": "तो उस न्यूरल नेटवर्क के ऊपर थोड़ा सा"
+  },
+  {
+    "text": ". If you people want to learn machine learning",
+    "start": 169.4,
+    "duration": 5.28,
+    "timestamp": "2:49",
+    "text_original": "कस्टमाइजेशन करके एक ऐसी चीज बना दी जाती"
+  },
+  {
+    "text": "and machine learning models",
+    "start": 171.8,
+    "duration": 4.68,
+    "timestamp": "2:51",
+    "text_original": "है जो कि एक आम इंसान के माइंड को ब्लो कर"
+  },
+  {
+    "text": ", brother, in the industry you people are not asked about the basics of",
+    "start": 174.68,
+    "duration": 5.08,
+    "timestamp": "2:54",
+    "text_original": "दे अगर आप लोग मशीन लर्निंग को सीखना"
+  },
+  {
+    "text": ". You people will have",
+    "start": 176.48,
+    "duration": 5.0,
+    "timestamp": "2:56",
+    "text_original": "चाहते हैं और मशीन लर्निंग मॉडल्स को"
+  },
+  {
+    "text": "real world data and you will be asked brother",
+    "start": 179.76,
+    "duration": 3.479,
+    "timestamp": "2:59",
+    "text_original": "भाई इंडस्ट्री में आप लोगों से बेसिक्स"
+  },
+  {
+    "text": ", work on this data and give us some insights. Take out",
+    "start": 181.48,
+    "duration": 3.44,
+    "timestamp": "3:01",
+    "text_original": "नहीं पूछे जाते हैं आप लोगों के पास होगा"
+  },
+  {
+    "text": "and make two businesses profitable and give",
+    "start": 183.239,
+    "duration": 3.72,
+    "timestamp": "3:03",
+    "text_original": "रियल वर्ल्ड डाटा और आपको बोला जाएगा भाई"
+  },
+  {
+    "text": ". In such a situation, it is not necessary for you guys to remember this function of",
+    "start": 184.92,
+    "duration": 5.0,
+    "timestamp": "3:04",
+    "text_original": "इस डाटा पर हमें काम करके दो कुछ इंसाइट्स"
+  },
+  {
+    "text": "algorithm of machine learning or not",
+    "start": 186.959,
+    "duration": 4.601,
+    "timestamp": "3:06",
+    "text_original": "निकाल के दो बिजनेस का फायदा करा के दो और"
+  },
+  {
+    "text": ", but there it will be necessary that you",
+    "start": 189.92,
+    "duration": 3.12,
+    "timestamp": "3:09",
+    "text_original": "ऐसे में आप लोगों के लिए जरूरी ये नहीं"
+  },
+  {
+    "text": "होगा कि आपको मशीन लर्निंग का ये वाले",
+    "start": 191.56,
+    "duration": 3.759,
+    "timestamp": "3:11",
+    "text_original": "होगा कि आपको मशीन लर्निंग का ये वाले"
+  },
+  {
+    "text": "एल्गोरिथम का ये वाला फंक्शन याद है कि",
+    "start": 193.04,
+    "duration": 4.839,
+    "timestamp": "3:13",
+    "text_original": "एल्गोरिथम का ये वाला फंक्शन याद है कि"
+  },
+  {
+    "text": "नहीं लेकिन वहां पर जरूरी यह होगा कि आप",
+    "start": 195.319,
+    "duration": 4.441,
+    "timestamp": "3:15",
+    "text_original": "नहीं लेकिन वहां पर जरूरी यह होगा कि आप"
+  },
+  {
+    "text": "In how much time are you doing the implementation",
+    "start": 197.879,
+    "duration": 3.601,
+    "timestamp": "3:17",
+    "text_original": "इंप्लीमेंटेशन कितनी देर में कर रहे हैं"
+  },
+  {
+    "text": "and if you guys are able to do the implementation",
+    "start": 199.76,
+    "duration": 4.399,
+    "timestamp": "3:19",
+    "text_original": "और अगर आप लोग इंप्लीमेंटेशन अच्छी तरह से"
+  },
+  {
+    "text": "well then you guys will become very successful",
+    "start": 201.48,
+    "duration": 5.08,
+    "timestamp": "3:21",
+    "text_original": "कर पा रहे हैं ना तो आप लोग उस जॉब में"
+  },
+  {
+    "text": "in that job, your demand will increase",
+    "start": 204.159,
+    "duration": 4.601,
+    "timestamp": "3:24",
+    "text_original": "बहुत सक्सेसफुल हो जाएंगे आपकी डिमांड बढ़"
+  },
+  {
+    "text": ", you will be recognized as such a person",
+    "start": 206.56,
+    "duration": 4.599,
+    "timestamp": "3:26",
+    "text_original": "जाएगी आपको एक ऐसे इंसान के तौर पर पहचाना"
+  },
+  {
+    "text": "that man, this person can do the work of 10 hours",
+    "start": 208.76,
+    "duration": 4.199,
+    "timestamp": "3:28",
+    "text_original": "जाएगा कि यार ये इंसान तो 10 घंटे के काम"
+  },
+  {
+    "text": "in half an hour with the help of",
+    "start": 211.159,
+    "duration": 3.881,
+    "timestamp": "3:31",
+    "text_original": "को आधे घंटे में कर देता है एआई टूल्स की"
+  },
+  {
+    "text": "AI tools and with the help of some such tools",
+    "start": 212.959,
+    "duration": 4.601,
+    "timestamp": "3:32",
+    "text_original": "सहायता से और कुछ ऐसे टूल्स की सहायता से"
+  },
+  {
+    "text": "which AI Take the models",
+    "start": 215.04,
+    "duration": 5.88,
+    "timestamp": "3:35",
+    "text_original": "जिससे एआई मॉडल्स"
+  },
+  {
+    "text": "Deployed, you can do",
+    "start": 217.56,
+    "duration": 3.36,
+    "timestamp": "3:37",
+    "text_original": "डिप्लॉयड ले लो आप"
+  },
+  {
+    "text": "amazon-in, you can test it and there are many such things of",
+    "start": 221.4,
+    "duration": 5.68,
+    "timestamp": "3:41",
+    "text_original": "amazon-in कर सकते हो टेस्ट कर सकते हो और"
+  },
+  {
+    "text": "Deployed which you can use to make your workflow very",
+    "start": 224.599,
+    "duration": 5.121,
+    "timestamp": "3:44",
+    "text_original": "डिप्लॉयड की ऐसी बहुत सारी चीजें हैं जो"
+  },
+  {
+    "text": "fast, I",
+    "start": 227.08,
+    "duration": 5.719,
+    "timestamp": "3:47",
+    "text_original": "कि आप लोग यूज करके अपने वर्कफ्लो को बहुत"
+  },
+  {
+    "text": "there are many such free courses",
+    "start": 229.72,
+    "duration": 3.079,
+    "timestamp": "3:49",
+    "text_original": "फास्ट कर सकते हो मैं"
+  },
+  {
+    "text": "on amazon2 which will teach you about generate",
+    "start": 236.28,
+    "duration": 3.76,
+    "timestamp": "3:56",
+    "text_original": "amazon2 पर बहुत सारे ऐसे फ्री कोर्सेस"
+  },
+  {
+    "text": "amazonaws.com",
+    "start": 238.56,
+    "duration": 4.399,
+    "timestamp": "3:58",
+    "text_original": "हैं जो कि आपको जनरेट के बारे में"
+  },
+  {
+    "text": "if you open this web page which I have also given in the",
+    "start": 240.04,
+    "duration": 2.919,
+    "timestamp": "4:00",
+    "text_original": "सिखाएंगे amazonaws.com"
+  },
+  {
+    "text": "description here. But if you guys watch",
+    "start": 269.68,
+    "duration": 3.4,
+    "timestamp": "4:29",
+    "text_original": "अगर इस वेब पेज को खोलेंगे जो कि मैंने"
+  },
+  {
+    "text": ", here is a video of a machine",
+    "start": 271.4,
+    "duration": 3.799,
+    "timestamp": "4:31",
+    "text_original": "डिस्क्रिप्शन में भी दिया हुआ है यहां पर"
+  },
+  {
+    "text": "learning basics",
+    "start": 273.08,
+    "duration": 4.0,
+    "timestamp": "4:33",
+    "text_original": "आप लोग अगर देखेंगे तो यहां पर एक मशीन"
+  },
+  {
+    "text": "which is a revolution video let me tell you",
+    "start": 275.199,
+    "duration": 3.961,
+    "timestamp": "4:35",
+    "text_original": "लर्निंग बेसिक्स का एक वीडियो दिया हुआ है"
+  },
+  {
+    "text": "you guys watch this video I watched this",
+    "start": 277.08,
+    "duration": 3.959,
+    "timestamp": "4:37",
+    "text_original": "व्हिच इज अ रिवोल्यूशन वीडियो लेट मी टेल"
+  },
+  {
+    "text": "video completely and it was a game",
+    "start": 279.16,
+    "duration": 3.96,
+    "timestamp": "4:39",
+    "text_original": "यू आप लोग इस वीडियो को देखना मैंने इस"
+  },
+  {
+    "text": "changer because they have",
+    "start": 281.039,
+    "duration": 5.281,
+    "timestamp": "4:41",
+    "text_original": "वीडियो को पूरा वच किया एंड इट वाज अ गेम"
+  },
+  {
+    "text": "amazononline.in Okay, you don't just have to know about",
+    "start": 283.12,
+    "duration": 3.2,
+    "timestamp": "4:43",
+    "text_original": "चेंजर क्योंकि इन्होंने"
+  },
+  {
+    "text": "algorithms, you",
+    "start": 298.56,
+    "duration": 4.04,
+    "timestamp": "4:58",
+    "text_original": "amazononline.in आ ठीक है सिर्फ आपको"
+  },
+  {
+    "text": "people should know what This is how to do these",
+    "start": 300.759,
+    "duration": 3.841,
+    "timestamp": "5:00",
+    "text_original": "एल्गोरिथम्स के बारे में नहीं जानना है आप"
+  },
+  {
+    "text": "things and here if you guys have learned how to use the code",
+    "start": 302.6,
+    "duration": 4.36,
+    "timestamp": "5:02",
+    "text_original": "लोगों को जानना चाहिए कि किस तरह से ये"
+  },
+  {
+    "text": "Whisper, you guys can say",
+    "start": 304.6,
+    "duration": 4.64,
+    "timestamp": "5:04",
+    "text_original": "चीजें करना है और यहां पर अगर आप लोग कोड"
+  },
+  {
+    "text": "विस्पर को यूज करना सीख गए आप लोग सेज",
+    "start": 306.96,
+    "duration": 4.44,
+    "timestamp": "5:06",
+    "text_original": "विस्पर को यूज करना सीख गए आप लोग सेज"
+  },
+  {
+    "text": "If you learn to use Maker, then you guys can do whatever things you are doing",
+    "start": 309.24,
+    "duration": 5.32,
+    "timestamp": "5:09",
+    "text_original": "मेकर को यूज करना सीख गए तो आप लोग"
+  },
+  {
+    "text": "with the help of",
+    "start": 311.4,
+    "duration": 6.239,
+    "timestamp": "5:11",
+    "text_original": "एडब्ल्यू की सहायता से जो जो चीजें आप कर"
+  },
+  {
+    "text": "AWS, you will be able to do them faster",
+    "start": 314.56,
+    "duration": 4.88,
+    "timestamp": "5:14",
+    "text_original": "पा रहे हो ऑलरेडी वो आप और फास्ट कर पाओगे"
+  },
+  {
+    "text": ", so if I take you guys to",
+    "start": 317.639,
+    "duration": 3.921,
+    "timestamp": "5:17",
+    "text_original": "तो मैं अगर आप लोगों को स्किल बिल्डर के"
+  },
+  {
+    "text": "pass of skill builder, then you guys can sign up on it and do",
+    "start": 319.44,
+    "duration": 3.64,
+    "timestamp": "5:19",
+    "text_original": "पास लेकर जाऊं तो आप लोग इस पर साइन अप कर"
+  },
+  {
+    "text": "and many courses are free here",
+    "start": 321.56,
+    "duration": 3.759,
+    "timestamp": "5:21",
+    "text_original": "सकते हो और बहुत सारे कोर्सेस यहां पर"
+  },
+  {
+    "text": ", friends, you guys explore them",
+    "start": 323.08,
+    "duration": 5.52,
+    "timestamp": "5:23",
+    "text_original": "फ्री हैं यार आप लोग इनको एक्सप्लोर करो"
+  },
+  {
+    "text": "and start taking them",
+    "start": 325.319,
+    "duration": 3.281,
+    "timestamp": "5:25",
+    "text_original": "और इनको लेना शुरू करो"
+  },
+  {
+    "text": "and in the coming one or two years, all these The demand for things",
+    "start": 329.8,
+    "duration": 3.8,
+    "timestamp": "5:29",
+    "text_original": "एंड आने वाले एक दो साल में इन सब चीजों"
+  },
+  {
+    "text": "is going to increase a lot and",
+    "start": 331.919,
+    "duration": 3.041,
+    "timestamp": "5:31",
+    "text_original": "की डिमांड बहुत ज्यादा बढ़ने वाली है एंड"
+  },
+  {
+    "text": ", as I told you a little while ago that",
+    "start": 333.6,
+    "duration": 4.28,
+    "timestamp": "5:33",
+    "text_original": "जैसे कि मैंने आप लोगों को अभी थोड़ी देर"
+  },
+  {
+    "text": "will not replace you, AI will replace you, it will replace you, the person who will use",
+    "start": 334.96,
+    "duration": 6.04,
+    "timestamp": "5:34",
+    "text_original": "पहले बताया कि आपको रिप्लेस एआई नहीं"
+  },
+  {
+    "text": "to do the con, who will be faster than you",
+    "start": 337.88,
+    "duration": 6.319,
+    "timestamp": "5:37",
+    "text_original": "करेगा आपको रिप्लेस करेगा एआई को इस्तेमाल"
+  },
+  {
+    "text": "because he uses AI",
+    "start": 341.0,
+    "duration": 4.919,
+    "timestamp": "5:41",
+    "text_original": "करके कॉन करर करने वाला इंसान जो कि आपसे"
+  },
+  {
+    "text": ", so friend, that's why I will put all the resources of",
+    "start": 344.199,
+    "duration": 3.521,
+    "timestamp": "5:44",
+    "text_original": "ज्यादा फास्ट होगा क्योंकि वोह एआई का"
+  },
+  {
+    "text": "in the description for you guys and you",
+    "start": 345.919,
+    "duration": 3.601,
+    "timestamp": "5:45",
+    "text_original": "इस्तेमाल करता है तो यार इसलिए मैं यह"
+  },
+  {
+    "text": ". You can learn all the things gradually by doing",
+    "start": 347.72,
+    "duration": 3.52,
+    "timestamp": "5:47",
+    "text_original": "सारी रिसोर्सेस जो है वो डिस्क्रिप्शन में"
+  },
+  {
+    "text": "here",
+    "start": 349.52,
+    "duration": 4.0,
+    "timestamp": "5:49",
+    "text_original": "डाल दूंगा आप लोगों के लिए एंड आप"
+  },
+  {
+    "text": "amazon2 AI as well as how to",
+    "start": 351.24,
+    "duration": 4.679,
+    "timestamp": "5:51",
+    "text_original": "धीरे-धीरे करके सारी चीजें सीख सकते हो"
+  },
+  {
+    "text": "you guys will be given in",
+    "start": 353.52,
+    "duration": 2.399,
+    "timestamp": "5:53",
+    "text_original": "यहां पर"
+  },
+  {
+    "text": "amazon.fr Now we come back to the point that what is machine learning",
+    "start": 356.36,
+    "duration": 5.6,
+    "timestamp": "5:56",
+    "text_original": "amazon2 एआई के उसी के साथ-साथ किस तरह से"
+  },
+  {
+    "text": "is",
+    "start": 359.759,
+    "duration": 2.201,
+    "timestamp": "5:59",
+    "text_original": "आप लोग"
+  },
+  {
+    "text": "so by showing the data we can make predictions",
+    "start": 368.44,
+    "duration": 5.039,
+    "timestamp": "6:08",
+    "text_original": "amazon.fr में दे दूंगा अब हम इस बात पे"
+  },
+  {
+    "text": "with the help of machine learning",
+    "start": 371.479,
+    "duration": 3.961,
+    "timestamp": "6:11",
+    "text_original": "वापस आते हैं कि मशीन लर्निंग क्या होती"
+  },
+  {
+    "text": "I told you just now but there are three types of machine learning",
+    "start": 373.479,
+    "duration": 3.56,
+    "timestamp": "6:13",
+    "text_original": "है तो डाटा को दिखाकर हम प्रेडिक्शन कर"
+  },
+  {
+    "text": "if only",
+    "start": 375.44,
+    "duration": 3.159,
+    "timestamp": "6:15",
+    "text_original": "सकते हैं मशीन लर्निंग की सहायता से ये तो"
+  },
+  {
+    "text": "machine Let's talk about learning Supervised",
+    "start": 377.039,
+    "duration": 3.44,
+    "timestamp": "6:17",
+    "text_original": "मैंने आप लोगों को अभी बताया लेकिन मशीन"
+  },
+  {
+    "text": "Unsupervised and Reinforcement Learning",
+    "start": 378.599,
+    "duration": 3.681,
+    "timestamp": "6:18",
+    "text_original": "लर्निंग होती है तीन प्रकार की अगर सिर्फ"
+  },
+  {
+    "text": "मशीन लर्निंग की बात करूं सुपरवाइज्ड",
+    "start": 380.479,
+    "duration": 4.481,
+    "timestamp": "6:20",
+    "text_original": "मशीन लर्निंग की बात करूं सुपरवाइज्ड"
+  },
+  {
+    "text": "अनसुपरवाइज्ड एंड रिइंफोर्समेंट लर्निंग",
+    "start": 382.28,
+    "duration": 4.72,
+    "timestamp": "6:22",
+    "text_original": "अनसुपरवाइज्ड एंड रिइंफोर्समेंट लर्निंग"
+  },
+  {
+    "text": "What happens in supervised learning is that you",
+    "start": 384.96,
+    "duration": 4.92,
+    "timestamp": "6:24",
+    "text_original": "सुपरवाइज लर्निंग में क्या होता है कि आप"
+  },
+  {
+    "text": "people have some inputs, one output is",
+    "start": 387.0,
+    "duration": 5.0,
+    "timestamp": "6:27",
+    "text_original": "लोगों के पास कुछ इनपुट है एक एक आउटपुट"
+  },
+  {
+    "text": "or there can be multiple outputs and",
+    "start": 389.88,
+    "duration": 4.56,
+    "timestamp": "6:29",
+    "text_original": "है या मल्टीपल आउटपुट्स भी हो सकते हैं और"
+  },
+  {
+    "text": "you have this kind of organized data",
+    "start": 392.0,
+    "duration": 3.56,
+    "timestamp": "6:32",
+    "text_original": "आपके पास इस तरह का ऑर्गेनाइज डाटा है"
+  },
+  {
+    "text": "like I told you guys",
+    "start": 394.44,
+    "duration": 3.0,
+    "timestamp": "6:34",
+    "text_original": "जैसे कि मैंने आप लोगों को बताया था"
+  },
+  {
+    "text": "based on precipitation humidity and temperature we were predicting rain yes and",
+    "start": 395.56,
+    "duration": 3.72,
+    "timestamp": "6:35",
+    "text_original": "प्रेसिपिटेशन ह्यूमिडिटी और टेंपरेचर के"
+  },
+  {
+    "text": "no if I have a lot of data like this then",
+    "start": 397.44,
+    "duration": 3.52,
+    "timestamp": "6:37",
+    "text_original": "आधार पर हम प्रिडिक्ट कर रहे थे रेन यस और"
+  },
+  {
+    "text": "new I have the values of precipitation, humidity and temperature",
+    "start": 399.28,
+    "duration": 3.4,
+    "timestamp": "6:39",
+    "text_original": "नो अगर मेरे पास ऐसा बहुत सारा डटा है फिर"
+  },
+  {
+    "text": ", so on the basis of that, I can find out whether there will be rain",
+    "start": 400.96,
+    "duration": 3.32,
+    "timestamp": "6:40",
+    "text_original": "नए प्रेसिपिटेशन ह्यूमिडिटी और टेंपरेचर"
+  },
+  {
+    "text": "or not, or if a person has some",
+    "start": 402.68,
+    "duration": 3.56,
+    "timestamp": "6:42",
+    "text_original": "की वैल्यूज मेरे पास है तो मैं उसके आधार"
+  },
+  {
+    "text": "parameters, I have health parameters,",
+    "start": 404.28,
+    "duration": 4.199,
+    "timestamp": "6:44",
+    "text_original": "पर ये पता लगा सकता हूं कि क्या रेन होगी"
+  },
+  {
+    "text": ", his blood pressure,",
+    "start": 406.24,
+    "duration": 3.92,
+    "timestamp": "6:46",
+    "text_original": "या नहीं होगी या कोई इंसान के अगर कुछ"
+  },
+  {
+    "text": ", his blood glucose, along with that, his h1",
+    "start": 408.479,
+    "duration": 3.12,
+    "timestamp": "6:48",
+    "text_original": "पैरामीटर्स मेरे पास है हेल्थ पैरामीटर्स"
+  },
+  {
+    "text": "BAC, if I have all these things, then",
+    "start": 410.16,
+    "duration": 3.84,
+    "timestamp": "6:50",
+    "text_original": "लेट अस से उसका ब्लड प्रेशर लेट अस से"
+  },
+  {
+    "text": ", I can find out that he Is",
+    "start": 411.599,
+    "duration": 4.521,
+    "timestamp": "6:51",
+    "text_original": "उसकी ब्लड ग्लूकोज उसी के साथ-साथ उसका h1"
+  },
+  {
+    "text": "diabetic or not? If I run it with a machine learning",
+    "start": 414.0,
+    "duration": 3.759,
+    "timestamp": "6:54",
+    "text_original": "बीएसी ये सारी चीजें अगर मेरे पास हैं तो"
+  },
+  {
+    "text": "test, then I can extract very good information about the patient.",
+    "start": 416.12,
+    "duration": 3.24,
+    "timestamp": "6:56",
+    "text_original": "मैं पता लगा सकता हूं कि वो डायबिटिक है"
+  },
+  {
+    "text": ", I can extract a prediction whether he may have",
+    "start": 417.759,
+    "duration": 3.88,
+    "timestamp": "6:57",
+    "text_original": "कि नहीं अगर मैं इसको एक मशीन लर्निंग"
+  },
+  {
+    "text": "diabetes or not and on the basis of that, I can do tests etc., then its use in medical",
+    "start": 419.36,
+    "duration": 4.48,
+    "timestamp": "6:59",
+    "text_original": "टिज्म से रन करूंगा तो पेशेंट के बारे में"
+  },
+  {
+    "text": "and health care is also increasing. Because generated AI",
+    "start": 421.639,
+    "duration": 3.68,
+    "timestamp": "7:01",
+    "text_original": "एक बहुत अच्छी जानकारी मैं निकाल सकता हूं"
+  },
+  {
+    "text": "is saving a lot of manual work.",
+    "start": 423.84,
+    "duration": 3.12,
+    "timestamp": "7:03",
+    "text_original": "एक प्रेसमन निकाल सकता हूं कि उसको"
+  },
+  {
+    "text": "What happens in supervised learning is that",
+    "start": 425.319,
+    "duration": 3.921,
+    "timestamp": "7:05",
+    "text_original": "डायबिटीज हो सकता है कि नहीं और उसके आधार"
+  },
+  {
+    "text": "is the input you have, output",
+    "start": 426.96,
+    "duration": 3.959,
+    "timestamp": "7:06",
+    "text_original": "पर मैं टेस्ट वगैरह कर सकता हूं तो मेडिकल"
+  },
+  {
+    "text": "is your specification that brother, this is the output",
+    "start": 429.24,
+    "duration": 4.44,
+    "timestamp": "7:09",
+    "text_original": "एंड हेल्थ केयर में भी इसका बहुत ज्यादा"
+  },
+  {
+    "text": ", in unsupervised learning you have",
+    "start": 430.919,
+    "duration": 4.601,
+    "timestamp": "7:10",
+    "text_original": "इस्तेमाल बढ़ रहा है क्योंकि जनरेट एआई"
+  },
+  {
+    "text": "बहुत ज्यादा मैनुअल वर्क बचा रहा है तो",
+    "start": 433.68,
+    "duration": 3.359,
+    "timestamp": "7:13",
+    "text_original": "बहुत ज्यादा मैनुअल वर्क बचा रहा है तो"
+  },
+  {
+    "text": "सुपरवाइज लर्निंग में क्या होता है कि",
+    "start": 435.52,
+    "duration": 3.76,
+    "timestamp": "7:15",
+    "text_original": "सुपरवाइज लर्निंग में क्या होता है कि"
+  },
+  {
+    "text": "आपके पास जो इनपुट है वो होते हैं आउटपुट",
+    "start": 437.039,
+    "duration": 4.16,
+    "timestamp": "7:17",
+    "text_original": "आपके पास जो इनपुट है वो होते हैं आउटपुट"
+  },
+  {
+    "text": "आपका स्पेसिफाइड होता है कि भाई ये आउटपुट",
+    "start": 439.28,
+    "duration": 3.919,
+    "timestamp": "7:19",
+    "text_original": "आपका स्पेसिफाइड होता है कि भाई ये आउटपुट"
+  },
+  {
+    "text": "है अनसुपरवाइज्ड लर्निंग में आपके पास",
+    "start": 441.199,
+    "duration": 4.28,
+    "timestamp": "7:21",
+    "text_original": "है अनसुपरवाइज्ड लर्निंग में आपके पास"
+  },
+  {
+    "text": "There is data and on that data you train a",
+    "start": 443.199,
+    "duration": 4.201,
+    "timestamp": "7:23",
+    "text_original": "डेटा होता है और उस डाटा पे आपको एक"
+  },
+  {
+    "text": "algorithm in such a way that the algorithm tells you how this data can be organized",
+    "start": 445.479,
+    "duration": 3.681,
+    "timestamp": "7:25",
+    "text_original": "एल्गोरिदम को इस प्रकार से ट्रेन करना"
+  },
+  {
+    "text": ". For example, I can do",
+    "start": 447.4,
+    "duration": 4.639,
+    "timestamp": "7:27",
+    "text_original": "होता है कि एल्गोरिथम आप लोगों को बताता"
+  },
+  {
+    "text": "clustering. I have a lot of",
+    "start": 449.16,
+    "duration": 4.0,
+    "timestamp": "7:29",
+    "text_original": "है है कि यह डाटा किस तरह से ऑर्गेनाइज"
+  },
+  {
+    "text": "data points and I want to find out which of these",
+    "start": 452.039,
+    "duration": 2.481,
+    "timestamp": "7:32",
+    "text_original": "किया जा सकता है फॉर एग्जांपल मैं"
+  },
+  {
+    "text": "data points are related to each other and how much.",
+    "start": 453.16,
+    "duration": 2.92,
+    "timestamp": "7:33",
+    "text_original": "क्लस्टरिंग कर सकता हूं मेरे पास बहुत"
+  },
+  {
+    "text": "is more related then I can use",
+    "start": 454.52,
+    "duration": 3.959,
+    "timestamp": "7:34",
+    "text_original": "सारे डाटा पॉइंट्स हैं और मैं यह पता"
+  },
+  {
+    "text": "clustering algorithm or there are many other",
+    "start": 456.08,
+    "duration": 4.08,
+    "timestamp": "7:36",
+    "text_original": "लगाना चाहता हूं कि इनमें से कौन से डेटा"
+  },
+  {
+    "text": "unsupervised algorithms which I can use for clustering using",
+    "start": 458.479,
+    "duration": 3.241,
+    "timestamp": "7:38",
+    "text_original": "पॉइंट्स एक दूसरे से रिलेटेड हैं और कितना"
+  },
+  {
+    "text": "and I can classify a data",
+    "start": 460.16,
+    "duration": 3.159,
+    "timestamp": "7:40",
+    "text_original": "ज्यादा रिलेटेड है तो मैं के मींस"
+  },
+  {
+    "text": "into some labels",
+    "start": 461.72,
+    "duration": 3.08,
+    "timestamp": "7:41",
+    "text_original": "क्लस्टरिंग एल्गोरिथम का इस्तेमाल कर सकता"
+  },
+  {
+    "text": "and I can generate those labels by myself",
+    "start": 463.319,
+    "duration": 3.361,
+    "timestamp": "7:43",
+    "text_original": "हूं या फिर मैं और भी बहुत सारे"
+  },
+  {
+    "text": "I can generate all these",
+    "start": 464.8,
+    "duration": 4.56,
+    "timestamp": "7:44",
+    "text_original": "अनसुपरवाइज्ड एल्गोरिथम्स हैं जिनका यूज"
+  },
+  {
+    "text": "things in AI and in NLP. There is a",
+    "start": 466.68,
+    "duration": 5.4,
+    "timestamp": "7:46",
+    "text_original": "करके क्लस्टरिंग कर सकता हूं और एक डाटा"
+  },
+  {
+    "text": ", once the data comes through the neural network, it is",
+    "start": 469.36,
+    "duration": 4.519,
+    "timestamp": "7:49",
+    "text_original": "को कुछ लेबल्स में क्लासिफाई कर सकता हूं"
+  },
+  {
+    "text": ", so the supervised learning is",
+    "start": 472.08,
+    "duration": 3.799,
+    "timestamp": "7:52",
+    "text_original": "और वो लेबल्स मैं खुद से जनरेट कर सकता"
+  },
+  {
+    "text": ", it uses labeled examples,",
+    "start": 473.879,
+    "duration": 3.641,
+    "timestamp": "7:53",
+    "text_original": "हूं जनरेट एआई में और एनएलपी में ये सब"
+  },
+  {
+    "text": "and the unsupervised learning,",
+    "start": 475.879,
+    "duration": 3.921,
+    "timestamp": "7:55",
+    "text_original": "चीजें बहुत ज्यादा इस्तेमाल होती हैं एक"
+  },
+  {
+    "text": "uses unlabeled examples. An example of",
+    "start": 477.52,
+    "duration": 3.799,
+    "timestamp": "7:57",
+    "text_original": "बार डाटा न्यूरल नेटवर्क से होकर आ जाता"
+  },
+  {
+    "text": "and unsupervised learning is",
+    "start": 479.8,
+    "duration": 2.92,
+    "timestamp": "7:59",
+    "text_original": "है तो तो जो सुपरवाइज लर्निंग होती है"
+  },
+  {
+    "text": ", credit card fraud detection, which",
+    "start": 481.319,
+    "duration": 2.84,
+    "timestamp": "8:01",
+    "text_original": "उसमें लेबल्ड एग्जांपल्स का यूज़ होता है"
+  },
+  {
+    "text": "Like credit card fraud, which",
+    "start": 482.72,
+    "duration": 3.159,
+    "timestamp": "8:02",
+    "text_original": "और जो अनसुपरवाइज्ड लर्निंग होती है उसमें"
+  },
+  {
+    "text": "transaction here can be a fraud loan",
+    "start": 484.159,
+    "duration": 3.88,
+    "timestamp": "8:04",
+    "text_original": "अनलेबल्ड एग्जांपल्स का यूज़ होता है एक"
+  },
+  {
+    "text": "transaction, based on which IP",
+    "start": 485.879,
+    "duration": 4.44,
+    "timestamp": "8:05",
+    "text_original": "और अनसुपरवाइज्ड लर्निंग का एग्जांपल है"
+  },
+  {
+    "text": "is it happening from, where is it happening from, like this, the things of",
+    "start": 488.039,
+    "duration": 4.72,
+    "timestamp": "8:08",
+    "text_original": "क्रेडिट कार्ड का फ्रॉड डिटेक्शन कि कौन"
+  },
+  {
+    "text": "which are in unsupervised learning.",
+    "start": 490.319,
+    "duration": 3.921,
+    "timestamp": "8:10",
+    "text_original": "सा क्रेडिट कार्ड का फ्रॉड यहां पर कौन सा"
+  },
+  {
+    "text": "ट्रांजैक्शन जो है वो एक फ्रॉड लन",
+    "start": 492.759,
+    "duration": 3.761,
+    "timestamp": "8:12",
+    "text_original": "ट्रांजैक्शन जो है वो एक फ्रॉड लन"
+  },
+  {
+    "text": "ट्रांजैक्शन हो सकता है बेस्ड ऑन किस आईपी",
+    "start": 494.24,
+    "duration": 3.88,
+    "timestamp": "8:14",
+    "text_original": "ट्रांजैक्शन हो सकता है बेस्ड ऑन किस आईपी"
+  },
+  {
+    "text": "से वो हो रहा है कहां से हो रहा है इस तरह",
+    "start": 496.52,
+    "duration": 3.359,
+    "timestamp": "8:16",
+    "text_original": "से वो हो रहा है कहां से हो रहा है इस तरह"
+  },
+  {
+    "text": "की चीजें जो है अनसुपरवाइज्ड लर्निंग में",
+    "start": 498.12,
+    "duration": 3.44,
+    "timestamp": "8:18",
+    "text_original": "की चीजें जो है अनसुपरवाइज्ड लर्निंग में"
+  },
+  {
+    "text": "You people will get to see then after this",
+    "start": 499.879,
+    "duration": 3.961,
+    "timestamp": "8:19",
+    "text_original": "आप लोगों को देखने को मिलेंगी फिर इसके"
+  },
+  {
+    "text": "there is another category Reinforcement",
+    "start": 501.56,
+    "duration": 4.24,
+    "timestamp": "8:21",
+    "text_original": "बाद एक और कैटेगरी है रिइंफोर्समेंट"
+  },
+  {
+    "text": "Learning. What",
+    "start": 503.84,
+    "duration": 4.199,
+    "timestamp": "8:23",
+    "text_original": "लर्निंग रिइंफोर्समेंट लर्निंग में क्या"
+  },
+  {
+    "text": "happens in reinforcement learning is that we leave an agent to collect the data. So what does",
+    "start": 505.8,
+    "duration": 4.28,
+    "timestamp": "8:25",
+    "text_original": "होता है कि हम लोग एक एजेंट को छोड़ देते"
+  },
+  {
+    "text": "do? The agent does trial and error and",
+    "start": 508.039,
+    "duration": 3.921,
+    "timestamp": "8:28",
+    "text_original": "हैं डाटा कलेक्ट करने के लिए तो वो क्या"
+  },
+  {
+    "text": "on the basis of that trial and error, he either gets",
+    "start": 510.08,
+    "duration": 4.399,
+    "timestamp": "8:30",
+    "text_original": "करता है एजेंट ट्रायल एंड एरर करता है और"
+  },
+  {
+    "text": "rewards or he gets penalty",
+    "start": 511.96,
+    "duration": 3.999,
+    "timestamp": "8:31",
+    "text_original": "उस ट्रायल एंड एरर के आधार पर उसको या तो"
+  },
+  {
+    "text": "and what does he do? It maximizes its",
+    "start": 514.479,
+    "duration": 2.8,
+    "timestamp": "8:34",
+    "text_original": "रिवार्ड्स मिलते हैं या उसको पेनल्टी"
+  },
+  {
+    "text": "rewards and after that, it does only that work which maximizes its",
+    "start": 515.959,
+    "duration": 3.241,
+    "timestamp": "8:35",
+    "text_original": "मिलती है और वो क्या करता है अपने"
+  },
+  {
+    "text": "reward and it itself knows this",
+    "start": 517.279,
+    "duration": 3.76,
+    "timestamp": "8:37",
+    "text_original": "रिवार्ड्स को मैक्सिमाइज करता है और उसके"
+  },
+  {
+    "text": "thing that which",
+    "start": 519.2,
+    "duration": 3.88,
+    "timestamp": "8:39",
+    "text_original": "बाद व सिर्फ वही काम करता है जिससे उसका"
+  },
+  {
+    "text": "work should I do so that my reward which is",
+    "start": 521.039,
+    "duration": 3.641,
+    "timestamp": "8:41",
+    "text_original": "रिवॉर्ड मैक्सिमाइज हो और वो खुद ही इस"
+  },
+  {
+    "text": "is maximized. Now what is the overall process for",
+    "start": 523.08,
+    "duration": 3.4,
+    "timestamp": "8:43",
+    "text_original": "चीज को जान लेता है कि मुझे ऐसा कौन सा"
+  },
+  {
+    "text": "to run a machine learning",
+    "start": 524.68,
+    "duration": 3.76,
+    "timestamp": "8:44",
+    "text_original": "काम करना चाहिए जिससे कि मेरा रिवॉर्ड जो"
+  },
+  {
+    "text": "algorithm on any one data? What kind of process will",
+    "start": 526.48,
+    "duration": 4.08,
+    "timestamp": "8:46",
+    "text_original": "है वो मैक्सिमाइज हो अब एक मशीन लर्निंग"
+  },
+  {
+    "text": "go through if you people want to train the model",
+    "start": 528.44,
+    "duration": 4.24,
+    "timestamp": "8:48",
+    "text_original": "एल्गोरिथम को किसी एक डटा पे रन करने के"
+  },
+  {
+    "text": "with a machine learning algorithm? The first step is",
+    "start": 530.56,
+    "duration": 3.959,
+    "timestamp": "8:50",
+    "text_original": "लिए ओवरऑल प्रोसेस क्या होती है आप लोग"
+  },
+  {
+    "text": "data collection. In this you people collect the data",
+    "start": 532.68,
+    "duration": 4.52,
+    "timestamp": "8:52",
+    "text_original": "किस तरह की प्रोसेस से गुजरेंगे अगर आप"
+  },
+  {
+    "text": ". Now if your data is present in any database",
+    "start": 534.519,
+    "duration": 4.641,
+    "timestamp": "8:54",
+    "text_original": "लोग एक मशीन लर्निंग एल्गोरिथम से मॉडल को"
+  },
+  {
+    "text": ", then from there you will pull the data",
+    "start": 537.2,
+    "duration": 3.8,
+    "timestamp": "8:57",
+    "text_original": "ट्रेन करना चाहते हैं पहला स्टेप होता है"
+  },
+  {
+    "text": "and bring it in the desired format and",
+    "start": 539.16,
+    "duration": 3.32,
+    "timestamp": "8:59",
+    "text_original": "डेटा कलेक्शन इसमें आप लोग डेटा को कलेक्ट"
+  },
+  {
+    "text": "which is the second step after data collection, that is",
+    "start": 541.0,
+    "duration": 3.12,
+    "timestamp": "9:01",
+    "text_original": "करते हैं अब आपका डेटा अगर किसी डेटाबेस"
+  },
+  {
+    "text": "data pre-processing in which",
+    "start": 542.48,
+    "duration": 3.88,
+    "timestamp": "9:02",
+    "text_original": "में मौजूद है तो वहां से आप डेटा को पुल"
+  },
+  {
+    "text": "You guys will clean up the data and after cleaning it up",
+    "start": 544.12,
+    "duration": 4.12,
+    "timestamp": "9:04",
+    "text_original": "करके डिजायर्ड फॉर्मेट में लेकर आएंगे और"
+  },
+  {
+    "text": "will bring it to",
+    "start": 546.36,
+    "duration": 3.919,
+    "timestamp": "9:06",
+    "text_original": "जो दूसरी स्टेप है डेटा कलेक्शन के बाद वो"
+  },
+  {
+    "text": "in such a format that it can be consumed by a",
+    "start": 548.24,
+    "duration": 4.48,
+    "timestamp": "9:08",
+    "text_original": "होती है डेटा प्री प्रोसेसिंग जिसमें कि"
+  },
+  {
+    "text": "machine learning algorithm.",
+    "start": 550.279,
+    "duration": 4.24,
+    "timestamp": "9:10",
+    "text_original": "आप लोग क्लीन अप करेंगे डेटा को और क्लीन"
+  },
+  {
+    "text": "अप करने के बाद उसको एक ऐसे फॉर्मेट में",
+    "start": 552.72,
+    "duration": 3.92,
+    "timestamp": "9:12",
+    "text_original": "अप करने के बाद उसको एक ऐसे फॉर्मेट में"
+  },
+  {
+    "text": "लाएंगे सच दैट इट कैन बी कंज्यूम बाय अ",
+    "start": 554.519,
+    "duration": 3.88,
+    "timestamp": "9:14",
+    "text_original": "लाएंगे सच दैट इट कैन बी कंज्यूम बाय अ"
+  },
+  {
+    "text": "मशीन लर्निंग एल्गोरिथम इसके बाद होता है",
+    "start": 556.64,
+    "duration": 4.0,
+    "timestamp": "9:16",
+    "text_original": "मशीन लर्निंग एल्गोरिथम इसके बाद होता है"
+  },
+  {
+    "text": "Model selection in which you will select an adequate model",
+    "start": 558.399,
+    "duration": 3.841,
+    "timestamp": "9:18",
+    "text_original": "मॉडल सलेक्शन जिसमें आप एक पर्याप्त मॉडल"
+  },
+  {
+    "text": "or sometimes we use many",
+    "start": 560.64,
+    "duration": 3.04,
+    "timestamp": "9:20",
+    "text_original": "को सेलेक्ट करेंगे या फिर कभी-कभी हम बहुत"
+  },
+  {
+    "text": "models and for this",
+    "start": 562.24,
+    "duration": 4.0,
+    "timestamp": "9:22",
+    "text_original": "सारे मॉडल्स का प्रयोग करते हैं और इसके"
+  },
+  {
+    "text": "packages like Psychic Learn Tensor Flow",
+    "start": 563.68,
+    "duration": 5.24,
+    "timestamp": "9:23",
+    "text_original": "लिए पैकेजेस लाइक साइकिक लर्न टेंसर फ्लो"
+  },
+  {
+    "text": "Kera Phi Torch all these are used",
+    "start": 566.24,
+    "duration": 4.4,
+    "timestamp": "9:26",
+    "text_original": "केरा फई टॉर्च इन सब का प्रयोग किया जाता"
+  },
+  {
+    "text": "then after this we train our model",
+    "start": 568.92,
+    "duration": 3.68,
+    "timestamp": "9:28",
+    "text_original": "है फिर इसके बाद हम लोग अपने मॉडल को"
+  },
+  {
+    "text": ", this process sometimes takes a lot of",
+    "start": 570.64,
+    "duration": 3.84,
+    "timestamp": "9:30",
+    "text_original": "ट्रेन करते हैं यह प्रोसेस कभी-कभी बहुत"
+  },
+  {
+    "text": "time, sometimes it is done in very less",
+    "start": 572.6,
+    "duration": 3.32,
+    "timestamp": "9:32",
+    "text_original": "ज्यादा टाइम लेती है कभी-कभी ये बहुत कम"
+  },
+  {
+    "text": "time depending. Upon",
+    "start": 574.48,
+    "duration": 3.64,
+    "timestamp": "9:34",
+    "text_original": "टाइम में भी हो जाती है डिपेंडिंग अपॉन"
+  },
+  {
+    "text": "which algorithm we are using how many",
+    "start": 575.92,
+    "duration": 4.68,
+    "timestamp": "9:35",
+    "text_original": "व्हिच एल्गोरिथम वी आर यूजिंग हाउ मेनी"
+  },
+  {
+    "text": "data points do we have and what kind of data are",
+    "start": 578.12,
+    "duration": 4.2,
+    "timestamp": "9:38",
+    "text_original": "डेटा पॉइंट्स वी हैव और किस तरह के डेटा"
+  },
+  {
+    "text": "points? Sometimes our data points are such huge vectors that even if",
+    "start": 580.6,
+    "duration": 3.32,
+    "timestamp": "9:40",
+    "text_original": "पॉइंट्स है कभी-कभी हमारे डेटा पॉइंट्स ही"
+  },
+  {
+    "text": "is reduced, it still takes a lot of time. After this, we do testing",
+    "start": 582.32,
+    "duration": 3.24,
+    "timestamp": "9:42",
+    "text_original": "इस तरह के बड़े-बड़े वेक्टर्स होते हैं कि"
+  },
+  {
+    "text": "and evaluation in which we",
+    "start": 583.92,
+    "duration": 3.4,
+    "timestamp": "9:43",
+    "text_original": "अगर कम भी हुए ना उसके बाद भी टाइम बहुत"
+  },
+  {
+    "text": "test our model and find out.",
+    "start": 585.56,
+    "duration": 3.399,
+    "timestamp": "9:45",
+    "text_original": "ज्यादा लग जाता है इसके बाद हम टेस्टिंग"
+  },
+  {
+    "text": "Let's estimate how well our model has been made and what can we do to improve it. We get a",
+    "start": 587.32,
+    "duration": 3.199,
+    "timestamp": "9:47",
+    "text_original": "एंड इवैल्यूएशन करते हैं जिसमें कि हम"
+  },
+  {
+    "text": "accuracy number and the accuracy",
+    "start": 588.959,
+    "duration": 3.401,
+    "timestamp": "9:48",
+    "text_original": "अपने मॉडल को टेस्ट करते हैं और यह पता"
+  },
+  {
+    "text": ". If we can maximize",
+    "start": 590.519,
+    "duration": 4.201,
+    "timestamp": "9:50",
+    "text_original": "लगाते हैं कि जो हमारा मॉडल बना है वो"
+  },
+  {
+    "text": "with any other algorithm, then we will do that.",
+    "start": 592.36,
+    "duration": 4.2,
+    "timestamp": "9:52",
+    "text_original": "कितना बेहतर बना है और उसको बेहतर बनाने"
+  },
+  {
+    "text": ". After this, we make predictions and after making",
+    "start": 594.72,
+    "duration": 3.72,
+    "timestamp": "9:54",
+    "text_original": "के लिए हम क्या कर सकते हैं हमें एक"
+  },
+  {
+    "text": "predictions, we put the model in",
+    "start": 596.56,
+    "duration": 3.399,
+    "timestamp": "9:56",
+    "text_original": "एक्यूरेसी का नंबर मिलता है और एक्यूरेसी"
+  },
+  {
+    "text": "production and After putting it in production",
+    "start": 598.44,
+    "duration": 3.639,
+    "timestamp": "9:58",
+    "text_original": "को अगर हम किसी दूसरे एल्गोरिथम से"
+  },
+  {
+    "text": ", we keep updating that model",
+    "start": 599.959,
+    "duration": 3.761,
+    "timestamp": "9:59",
+    "text_original": "मैक्सिमाइज कर सकते हैं तो हम वो करेंगे"
+  },
+  {
+    "text": "as we get data",
+    "start": 602.079,
+    "duration": 4.0,
+    "timestamp": "10:02",
+    "text_original": "इसके बाद हम प्रिडिक्शंस करते हैं और"
+  },
+  {
+    "text": ", so this process continues with",
+    "start": 603.72,
+    "duration": 4.08,
+    "timestamp": "10:03",
+    "text_original": "प्रिडिक्शंस करने के बाद मॉडल को हम"
+  },
+  {
+    "text": "repeatedly.",
+    "start": 606.079,
+    "duration": 3.2,
+    "timestamp": "10:06",
+    "text_original": "प्रोडक्शन में डाल देते हैं और प्रोडक्शन"
+  },
+  {
+    "text": "में डालने के बाद हम उस मॉडल को अपडेट",
+    "start": 607.8,
+    "duration": 3.44,
+    "timestamp": "10:07",
+    "text_original": "में डालने के बाद हम उस मॉडल को अपडेट"
+  },
+  {
+    "text": "करते रहते हैं जैसे-जैसे हमारे पास डाटा",
+    "start": 609.279,
+    "duration": 4.281,
+    "timestamp": "10:09",
+    "text_original": "करते रहते हैं जैसे-जैसे हमारे पास डाटा"
+  },
+  {
+    "text": "आता जाएगा तो ये प्रोसेस जो है वो आइट इि",
+    "start": 611.24,
+    "duration": 4.44,
+    "timestamp": "10:11",
+    "text_original": "आता जाएगा तो ये प्रोसेस जो है वो आइट इि"
+  },
+  {
+    "text": "वली चलती रहती है रिपीटेडली चलती रहती है",
+    "start": 613.56,
+    "duration": 3.92,
+    "timestamp": "10:13",
+    "text_original": "वली चलती रहती है रिपीटेडली चलती रहती है"
+  },
+  {
+    "text": "Now we have some common metrics to evaluate",
+    "start": 615.68,
+    "duration": 3.8,
+    "timestamp": "10:15",
+    "text_original": "अब हमारे पास कुछ कॉमन मेट्रिक्स होते हैं"
+  },
+  {
+    "text": "machine learning algorithms like one we have metric",
+    "start": 617.48,
+    "duration": 3.84,
+    "timestamp": "10:17",
+    "text_original": "मशीन लर्निंग एल्गोरिथम्स को इवेलुएट करने"
+  },
+  {
+    "text": "is ro AOC curve along with that we have an accuracy",
+    "start": 619.48,
+    "duration": 4.28,
+    "timestamp": "10:19",
+    "text_original": "के लिए जैसे कि एक हमारे पास मेट्रिक होता"
+  },
+  {
+    "text": "one is precision",
+    "start": 621.32,
+    "duration": 4.12,
+    "timestamp": "10:21",
+    "text_original": "है आरओ एओसी कर्व उसी के साथ-साथ हमारे"
+  },
+  {
+    "text": "recall is f1 score",
+    "start": 623.76,
+    "duration": 4.199,
+    "timestamp": "10:23",
+    "text_original": "पास एक एक्यूरेसी होता है एक प्रेसीजन"
+  },
+  {
+    "text": "is confusion matrix mean absolute",
+    "start": 625.44,
+    "duration": 4.88,
+    "timestamp": "10:25",
+    "text_original": "होता है रिकॉल होता है f1 स्कोर होता है"
+  },
+  {
+    "text": "error r squared Once you guys know what all these errors are, then you will be able to evaluate your",
+    "start": 627.959,
+    "duration": 5.161,
+    "timestamp": "10:27",
+    "text_original": "कंफ्यूजन मैट्रिक्स होती है मीन एब्सलूट"
+  },
+  {
+    "text": "model very closely and find out which model is adequate for you",
+    "start": 630.32,
+    "duration": 4.32,
+    "timestamp": "10:30",
+    "text_original": "एरर r स्क्वाड एरर यह सब क्या होते हैं यह"
+  },
+  {
+    "text": "people. When you want to deploy your",
+    "start": 633.12,
+    "duration": 4.08,
+    "timestamp": "10:33",
+    "text_original": "आप लोग एक बार जान जाते हैं तो आप अपने"
+  },
+  {
+    "text": "model in the industry or in production, the basic always remain the same",
+    "start": 634.64,
+    "duration": 4.6,
+    "timestamp": "10:34",
+    "text_original": "मॉडल को बहुत क्लोजल इवेलुएट कर पाएंगे और"
+  },
+  {
+    "text": ", but how do you guys deploy it so that the",
+    "start": 637.2,
+    "duration": 4.439,
+    "timestamp": "10:37",
+    "text_original": "यह पता लगा पाएंगे कि कौन सा मॉडल आप"
+  },
+  {
+    "text": "that is your service does not go down.",
+    "start": 639.24,
+    "duration": 4.56,
+    "timestamp": "10:39",
+    "text_original": "लोगों के लिए पर्याप्त है जब आप इंडस्ट्री"
+  },
+  {
+    "text": "does not get any down time at all and",
+    "start": 641.639,
+    "duration": 4.601,
+    "timestamp": "10:41",
+    "text_original": "में या फिर प्रोडक्शन में अपने मॉडल को"
+  },
+  {
+    "text": "gives you such a managed environment so that you are able to retrain your model",
+    "start": 643.8,
+    "duration": 5.12,
+    "timestamp": "10:43",
+    "text_original": "डालना चाहते हो बेसिक ऑलवेज रिमन द सेम"
+  },
+  {
+    "text": "and put it into production, you are not facing any problem with",
+    "start": 646.24,
+    "duration": 4.52,
+    "timestamp": "10:46",
+    "text_original": "लेकिन किस तरह से आप लोग डिप्लॉयड कि जो"
+  },
+  {
+    "text": "and for this",
+    "start": 648.92,
+    "duration": 3.44,
+    "timestamp": "10:48",
+    "text_original": "आपकी सर्विस है वो डाउन नहीं होती है आपको"
+  },
+  {
+    "text": ", as I told you, go to amazon's, you",
+    "start": 650.76,
+    "duration": 3.639,
+    "timestamp": "10:50",
+    "text_original": "डाउन टाइम बिल्कुल भी नहीं मिलता है और"
+  },
+  {
+    "text": "people, check out all the links, I will put them in the",
+    "start": 652.36,
+    "duration": 4.279,
+    "timestamp": "10:52",
+    "text_original": "आपको एक ऐसा मैनेज एनवायरमेंट मिलता है"
+  },
+  {
+    "text": "description, now you will say,",
+    "start": 654.399,
+    "duration": 4.281,
+    "timestamp": "10:54",
+    "text_original": "जिससे कि आप अपने मॉडल को रिट्रेन कर पा"
+  },
+  {
+    "text": ", this is a basic machine. Learning you told",
+    "start": 656.639,
+    "duration": 3.561,
+    "timestamp": "10:56",
+    "text_original": "रहे हो प्रोडक्शन में डाल पा रहे हो आपको"
+  },
+  {
+    "text": "but what is this AI? What is deep learning",
+    "start": 658.68,
+    "duration": 3.64,
+    "timestamp": "10:58",
+    "text_original": "दिक्कत दिक्कत नहीं हो रही है और इसके लिए"
+  },
+  {
+    "text": "? What is generated AI? Deep",
+    "start": 660.2,
+    "duration": 4.28,
+    "timestamp": "11:00",
+    "text_original": "मैंने जैसे कि आपको बताया था amazon's आप"
+  },
+  {
+    "text": "learning is creating neural networks",
+    "start": 662.32,
+    "duration": 3.84,
+    "timestamp": "11:02",
+    "text_original": "लोग देखना चेक आउट करना सारे लिंक्स मैं"
+  },
+  {
+    "text": "which approximate a function.",
+    "start": 664.48,
+    "duration": 3.479,
+    "timestamp": "11:04",
+    "text_original": "डिस्क्रिप्शन में डाल दूंगा अब आप कहोगे"
+  },
+  {
+    "text": "is the function which is assumed to be based on the data.",
+    "start": 666.16,
+    "duration": 4.4,
+    "timestamp": "11:06",
+    "text_original": "कि यार ये बेसिक मशीन लर्निंग आपने बता दी"
+  },
+  {
+    "text": "लेकिन ये एआई क्या होता है ये डीप लर्निंग",
+    "start": 667.959,
+    "duration": 4.921,
+    "timestamp": "11:07",
+    "text_original": "लेकिन ये एआई क्या होता है ये डीप लर्निंग"
+  },
+  {
+    "text": "क्या होता है जनरेट एआई क्या होता है डीप",
+    "start": 670.56,
+    "duration": 4.64,
+    "timestamp": "11:10",
+    "text_original": "क्या होता है जनरेट एआई क्या होता है डीप"
+  },
+  {
+    "text": "लर्निंग होता है न्यूरल नेटवर्क को बनाना",
+    "start": 672.88,
+    "duration": 4.44,
+    "timestamp": "11:12",
+    "text_original": "लर्निंग होता है न्यूरल नेटवर्क को बनाना"
+  },
+  {
+    "text": "जो कि एक फंक्शन को एप्रोक्सीमेट करते हैं",
+    "start": 675.2,
+    "duration": 4.72,
+    "timestamp": "11:15",
+    "text_original": "जो कि एक फंक्शन को एप्रोक्सीमेट करते हैं"
+  },
+  {
+    "text": "वो फंक्शन एज्यूम किया जाता है कि जो डाटा",
+    "start": 677.32,
+    "duration": 4.519,
+    "timestamp": "11:17",
+    "text_original": "वो फंक्शन एज्यूम किया जाता है कि जो डाटा"
+  },
+  {
+    "text": "",
+    "start": 679.92,
+    "duration": 3.68,
+    "timestamp": "11:19",
+    "text_original": "हमें दिया हुआ है उस पर एकदम फिट बैठेगा"
+  },
+  {
+    "text": "is given to us and will fit perfectly on it and also on the upcoming data points. Prediction network is very",
+    "start": 681.839,
+    "duration": 4.44,
+    "timestamp": "11:21",
+    "text_original": "और आने वाले डाटा पॉइंट्स को भी वो बहुत"
+  },
+  {
+    "text": "well. Basically,",
+    "start": 683.6,
+    "duration": 5.4,
+    "timestamp": "11:23",
+    "text_original": "अच्छी तरह से प्रेडिक्शन नेटवर्क बेसिकली"
+  },
+  {
+    "text": "is a very complex function, that is, such a",
+    "start": 686.279,
+    "duration": 4.401,
+    "timestamp": "11:26",
+    "text_original": "एक बहुत कॉम्प्लेक्शन को यानी कि ऐसा"
+  },
+  {
+    "text": "complex function about which a human being cannot even imagine.",
+    "start": 689.0,
+    "duration": 3.839,
+    "timestamp": "11:29",
+    "text_original": "कॉप्लेक्स फंक्शन जिसके बारे में इंसान"
+  },
+  {
+    "text": "can fit on it very",
+    "start": 690.68,
+    "duration": 3.839,
+    "timestamp": "11:30",
+    "text_original": "कल्पना भी नहीं कर सकता है उस पे बहुत"
+  },
+  {
+    "text": "by approximating all the data points. If I tell you, seven out of three, four,",
+    "start": 692.839,
+    "duration": 4.281,
+    "timestamp": "11:32",
+    "text_original": "सारे डेटा पॉइंट्स को एप्रोक्सीमेट कर"
+  },
+  {
+    "text": ", and I tell you, three out of one, two, and I tell you",
+    "start": 694.519,
+    "duration": 4.76,
+    "timestamp": "11:34",
+    "text_original": "सकता है अगर मैं आपसे कहूं तीन चार का सात"
+  },
+  {
+    "text": ". If I say eight of 4 f then you will understand friend, add",
+    "start": 697.12,
+    "duration": 4.719,
+    "timestamp": "11:37",
+    "text_original": "और मैं कहूं एक दो का तीन और मैं आपसे"
+  },
+  {
+    "text": "is being done so the function is very simple Let's do artificial",
+    "start": 699.279,
+    "duration": 4.521,
+    "timestamp": "11:39",
+    "text_original": "कहूं 4 च का आठ तो आप समझ जाओगे यार ऐड"
+  },
+  {
+    "text": "new networks. Basically",
+    "start": 701.839,
+    "duration": 5.56,
+    "timestamp": "11:41",
+    "text_original": "किया जा रहा है तो फंक्शन एकदम सिंपल है x"
+  },
+  {
+    "text": "approximates a function. Repeatedly we feed",
+    "start": 703.8,
+    "duration": 5.88,
+    "timestamp": "11:43",
+    "text_original": "+ y लेकिन कभी कभी फंक्शन इतना"
+  },
+  {
+    "text": "the data with it and minimize the error. We call this process training",
+    "start": 707.399,
+    "duration": 3.961,
+    "timestamp": "11:47",
+    "text_original": "कॉम्प्लेक्शन को कुछ इस प्रकार से बनाना"
+  },
+  {
+    "text": ". Now we have feed forward neural",
+    "start": 709.68,
+    "duration": 3.839,
+    "timestamp": "11:49",
+    "text_original": "चाहते हो कि वो बहुत ही एक्युरेटली और"
+  },
+  {
+    "text": "networks. We have methods of backward",
+    "start": 711.36,
+    "duration": 3.719,
+    "timestamp": "11:51",
+    "text_original": "रियलिस्टिकली डाटा पर बैठ रहा है तो इसके"
+  },
+  {
+    "text": "propagation. Then there are also different types of neural",
+    "start": 713.519,
+    "duration": 3.641,
+    "timestamp": "11:53",
+    "text_original": "लिए हम लोग डीप लर्निंग का प्रयोग करते"
+  },
+  {
+    "text": "networks.",
+    "start": 715.079,
+    "duration": 3.521,
+    "timestamp": "11:55",
+    "text_original": "हैं जिसमें कि हम लोग आर्टिफिशियल न्यूरल"
+  },
+  {
+    "text": "like CNN Convolution Neural Network",
+    "start": 717.16,
+    "duration": 3.16,
+    "timestamp": "11:57",
+    "text_original": "नेटवर्क्स का प्रयोग करते हैं आर्टिफिशियल"
+  },
+  {
+    "text": "RNN Recurrent Neural Networks",
+    "start": 718.6,
+    "duration": 3.52,
+    "timestamp": "11:58",
+    "text_original": "न्य नेटवर्क्स बेसिकली एक फंक्शन को"
+  },
+  {
+    "text": "like LSTM Neural networks with long short term",
+    "start": 720.32,
+    "duration": 4.04,
+    "timestamp": "12:00",
+    "text_original": "एप्रोक्सीमेट करते हैं बार-बार हम डेटा को"
+  },
+  {
+    "text": "memory are anchored to them",
+    "start": 722.12,
+    "duration": 3.8,
+    "timestamp": "12:02",
+    "text_original": "फीड करते हैं उसके साथ और एरर को मिनिमाइज"
+  },
+  {
+    "text": "करते हैं इस प्रोसेस को हम लोग ट्रेनिंग",
+    "start": 724.36,
+    "duration": 3.279,
+    "timestamp": "12:04",
+    "text_original": "करते हैं इस प्रोसेस को हम लोग ट्रेनिंग"
+  },
+  {
+    "text": "कहते हैं अब हमारे पास फीड फॉरवर्ड न्यूरल",
+    "start": 725.92,
+    "duration": 3.28,
+    "timestamp": "12:05",
+    "text_original": "कहते हैं अब हमारे पास फीड फॉरवर्ड न्यूरल"
+  },
+  {
+    "text": "नेटवर्क्स होते हैं हमारे पास बैकवर्ड",
+    "start": 727.639,
+    "duration": 3.561,
+    "timestamp": "12:07",
+    "text_original": "नेटवर्क्स होते हैं हमारे पास बैकवर्ड"
+  },
+  {
+    "text": "प्रोपेगेशन के मेथड्स होते हैं फिर न्यूरल",
+    "start": 729.2,
+    "duration": 3.639,
+    "timestamp": "12:09",
+    "text_original": "प्रोपेगेशन के मेथड्स होते हैं फिर न्यूरल"
+  },
+  {
+    "text": "नेटवर्क्स के भी अलग-अलग प्रकार होते हैं",
+    "start": 731.2,
+    "duration": 3.8,
+    "timestamp": "12:11",
+    "text_original": "नेटवर्क्स के भी अलग-अलग प्रकार होते हैं"
+  },
+  {
+    "text": "जैसे कि सीएनएन कन्वो शल न्यूरल नेटवर्क",
+    "start": 732.839,
+    "duration": 4.161,
+    "timestamp": "12:12",
+    "text_original": "जैसे कि सीएनएन कन्वो शल न्यूरल नेटवर्क"
+  },
+  {
+    "text": "आर एन एन रिकरेंट न्यूरल नेटवर्क उसी के",
+    "start": 735.0,
+    "duration": 4.0,
+    "timestamp": "12:15",
+    "text_original": "आर एन एन रिकरेंट न्यूरल नेटवर्क उसी के"
+  },
+  {
+    "text": "सा सा एलएसटीएम होते हैं लॉन्ग शॉर्ट टर्म",
+    "start": 737.0,
+    "duration": 3.88,
+    "timestamp": "12:17",
+    "text_original": "सा सा एलएसटीएम होते हैं लॉन्ग शॉर्ट टर्म"
+  },
+  {
+    "text": "मेमोरी वाले न्यूरल नेटवर्क्स इनको लंगर",
+    "start": 739.0,
+    "duration": 3.68,
+    "timestamp": "12:19",
+    "text_original": "मेमोरी वाले न्यूरल नेटवर्क्स इनको लंगर"
+  },
+  {
+    "text": "Sequences and vanishing gradient",
+    "start": 740.88,
+    "duration": 3.639,
+    "timestamp": "12:20",
+    "text_original": "सीक्वेंसेस और वैनिशिंग ग्रेडिएंट"
+  },
+  {
+    "text": "has been created to solve the",
+    "start": 742.68,
+    "duration": 3.12,
+    "timestamp": "12:22",
+    "text_original": "प्रॉब्लम को जो है सॉल्व करने के लिए"
+  },
+  {
+    "text": "problem. I had made a video",
+    "start": 744.519,
+    "duration": 2.68,
+    "timestamp": "12:24",
+    "text_original": "बनाया गया है मैंने बहुत पहले एक वीडियो"
+  },
+  {
+    "text": "long ago in which I had talked about the vanishing gradient",
+    "start": 745.8,
+    "duration": 2.76,
+    "timestamp": "12:25",
+    "text_original": "बनाया थी जिसमें मैंने वैनिशिंग ग्रेडिएंट"
+  },
+  {
+    "text": "problem. What is",
+    "start": 747.199,
+    "duration": 3.521,
+    "timestamp": "12:27",
+    "text_original": "प्रॉब्लम के बारे में बात की थी क्या होती"
+  },
+  {
+    "text": "? So you guys can watch it. Long ago, I had posted those videos on machine learning on",
+    "start": 748.56,
+    "duration": 3.68,
+    "timestamp": "12:28",
+    "text_original": "है तो आप लोग देख सकते हो काफी पहले मैंने"
+  },
+  {
+    "text": ". So if you guys are interested, then you can watch them again and watch them again. I have made a lot of videos on",
+    "start": 750.72,
+    "duration": 3.16,
+    "timestamp": "12:30",
+    "text_original": "वो वीडियोस डाले थे मशीन लर्निंग के तो आप"
+  },
+  {
+    "text": "on the board. It is explained in the classical",
+    "start": 752.24,
+    "duration": 3.2,
+    "timestamp": "12:32",
+    "text_original": "लोग इंटरेस्टेड हो तो उनको दोबारा वच कर"
+  },
+  {
+    "text": "way, then our",
+    "start": 753.88,
+    "duration": 3.199,
+    "timestamp": "12:33",
+    "text_original": "सकते हो मैंने बोर्ड पर बहुत ही क्लासिकल"
+  },
+  {
+    "text": "passes have auto-encoders, there are GANS,",
+    "start": 755.44,
+    "duration": 4.12,
+    "timestamp": "12:35",
+    "text_original": "तरीके से समझाया हुआ है उसमें फिर हमारे"
+  },
+  {
+    "text": "generating adversarial networks, GANS, yes,",
+    "start": 757.079,
+    "duration": 5.641,
+    "timestamp": "12:37",
+    "text_original": "पास ऑटो इनकोडर्स होते हैं गंस होते हैं"
+  },
+  {
+    "text": "generating adversarial networks, which",
+    "start": 759.56,
+    "duration": 5.48,
+    "timestamp": "12:39",
+    "text_original": "जनरेटिंग एडवर्सरियल नेटवर्क्स गैन यस"
+  },
+  {
+    "text": "was basically a step towards generated AI, earlier",
+    "start": 762.72,
+    "duration": 4.72,
+    "timestamp": "12:42",
+    "text_original": "जनरेटिंग एडवर्सरियल नेटवर्क्स जो कि"
+  },
+  {
+    "text": "LSTM was used, but",
+    "start": 765.04,
+    "duration": 4.2,
+    "timestamp": "12:45",
+    "text_original": "बेसिकली जनरेट एआई की तरफ एक कदम था पहले"
+  },
+  {
+    "text": "since transformers came, which is again a",
+    "start": 767.44,
+    "duration": 3.88,
+    "timestamp": "12:47",
+    "text_original": "एलएसटीएम का इस्तेमाल किया जाता था लेकिन"
+  },
+  {
+    "text": "kind of neural network, yes, it is a neural",
+    "start": 769.24,
+    "duration": 4.32,
+    "timestamp": "12:49",
+    "text_original": "जब से ट्रांसफॉर्मर्स आए जो कि अगेन एक"
+  },
+  {
+    "text": "network architecture, it is true. That you guys are able to train the data on",
+    "start": 771.32,
+    "duration": 4.84,
+    "timestamp": "12:51",
+    "text_original": "तरह का न्यूरल नेटवर्क य है एक न्यूरल"
+  },
+  {
+    "text": "NLP very",
+    "start": 773.56,
+    "duration": 4.519,
+    "timestamp": "12:53",
+    "text_original": "नेटवर्क आर्किटेक्चर है सच दैट आप लोग"
+  },
+  {
+    "text": "easily, so you can use it to arrive at something like four",
+    "start": 776.16,
+    "duration": 4.32,
+    "timestamp": "12:56",
+    "text_original": "एनएलपी पे डाटा को ट्रेन कर पाओ बहुत ही"
+  },
+  {
+    "text": "GPT but",
+    "start": 778.079,
+    "duration": 4.801,
+    "timestamp": "12:58",
+    "text_original": "इजली तो आप उसका का प्रयोग करके चार"
+  },
+  {
+    "text": "again it is not that easy, you guys have to understand its",
+    "start": 780.48,
+    "duration": 4.919,
+    "timestamp": "13:00",
+    "text_original": "जीपीटी जैसी चीज पर अराइव कर सकते हो बट"
+  },
+  {
+    "text": "basics, after that you guys",
+    "start": 782.88,
+    "duration": 4.12,
+    "timestamp": "13:02",
+    "text_original": "अगेन इट्स नॉट दैट इजी आप लोगों को इसके"
+  },
+  {
+    "text": "guys have to see what is the architecture of Transformer",
+    "start": 785.399,
+    "duration": 3.161,
+    "timestamp": "13:05",
+    "text_original": "बेसिक्स को समझना पड़ेगा उसके बाद आप"
+  },
+  {
+    "text": ", what is Transformer",
+    "start": 787.0,
+    "duration": 3.48,
+    "timestamp": "13:07",
+    "text_original": "लोगों को ये देखना होगा कि ट्रांसफॉर्मर"
+  },
+  {
+    "text": ", what is tension, why",
+    "start": 788.56,
+    "duration": 3.36,
+    "timestamp": "13:08",
+    "text_original": "का क्या आर्किटेक्चर होता है ट्रांसफॉर्मर"
+  },
+  {
+    "text": "was created that What was the problem in LSTM",
+    "start": 790.48,
+    "duration": 3.12,
+    "timestamp": "13:10",
+    "text_original": "क्या होता है टेंशन क्या होता है क्यों"
+  },
+  {
+    "text": "that we switched on transformers and",
+    "start": 791.92,
+    "duration": 3.599,
+    "timestamp": "13:11",
+    "text_original": "बनाया कि एलएसटीएम में क्या प्रॉब्लम थी"
+  },
+  {
+    "text": "how the architecture of a transformer generates new data from",
+    "start": 793.6,
+    "duration": 3.84,
+    "timestamp": "13:13",
+    "text_original": "कि ट्रांसफॉर्मर्स पर हम लोग स्विच किए और"
+  },
+  {
+    "text": "old data",
+    "start": 795.519,
+    "duration": 4.44,
+    "timestamp": "13:15",
+    "text_original": "एक ट्रांसफॉर्मर का आर्किटेक्चर किस तरह"
+  },
+  {
+    "text": "से नए डाटा को जनरेट करता है पुराने डाटा",
+    "start": 797.44,
+    "duration": 4.759,
+    "timestamp": "13:17",
+    "text_original": "से नए डाटा को जनरेट करता है पुराने डाटा"
+  },
+  {
+    "text": "Seeing how",
+    "start": 799.959,
+    "duration": 4.161,
+    "timestamp": "13:19",
+    "text_original": "को देखकर किस तरह से नंबर्स में इनकोड"
+  },
+  {
+    "text": "is encoded in numbers, all this textual information gives",
+    "start": 802.199,
+    "duration": 4.08,
+    "timestamp": "13:22",
+    "text_original": "किया जाता है इस सारे टेक्चुअल इंफॉर्मेशन"
+  },
+  {
+    "text": "the truth that it is predicting",
+    "start": 804.12,
+    "duration": 3.959,
+    "timestamp": "13:24",
+    "text_original": "को सच दैट कि वो प्रिडिक्ट कर रहा है"
+  },
+  {
+    "text": "Our next token is now not like that you",
+    "start": 806.279,
+    "duration": 3.481,
+    "timestamp": "13:26",
+    "text_original": "हमारा नेक्स्ट टोकन अब ऐसा नहीं है कि आप"
+  },
+  {
+    "text": "people should know every single thing that you are getting",
+    "start": 808.079,
+    "duration": 3.721,
+    "timestamp": "13:28",
+    "text_original": "लोगों को एक-एक चीज आनी चाहिए कि आपको"
+  },
+  {
+    "text": "mathematics, you people are saying loss",
+    "start": 809.76,
+    "duration": 3.6,
+    "timestamp": "13:29",
+    "text_original": "मैथमेटिक्स आ रही है आप लोग कह रहे हो लॉस"
+  },
+  {
+    "text": "function is this so I should remember",
+    "start": 811.8,
+    "duration": 3.64,
+    "timestamp": "13:31",
+    "text_original": "फंक्शन ये होता है तो मुझे याद होना चाहिए"
+  },
+  {
+    "text": "loss function you have a complete architecture which is",
+    "start": 813.36,
+    "duration": 4.32,
+    "timestamp": "13:33",
+    "text_original": "लॉस फंक्शन आपको एक पूरा आर्किटेक्चर जो"
+  },
+  {
+    "text": "in Python.",
+    "start": 815.44,
+    "duration": 4.32,
+    "timestamp": "13:35",
+    "text_original": "है पाइथन में स्क्रैच से आना चाहिए नहीं"
+  },
+  {
+    "text": "should not come from scratch, you guys learn, you guys keep the information,",
+    "start": 817.68,
+    "duration": 4.36,
+    "timestamp": "13:37",
+    "text_original": "आप लोग सीखो आप लोग इंफॉर्मेशन रखो"
+  },
+  {
+    "text": ", keep the information, how your neural",
+    "start": 819.76,
+    "duration": 4.04,
+    "timestamp": "13:39",
+    "text_original": "जानकारी रखो किस तरह से आपका ये न्यूरल"
+  },
+  {
+    "text": "network is trained and after that",
+    "start": 822.04,
+    "duration": 5.28,
+    "timestamp": "13:42",
+    "text_original": "नेटवर्क ट्रेन किया जाता है और उसके बाद"
+  },
+  {
+    "text": ", your work is very simple,",
+    "start": 823.8,
+    "duration": 3.52,
+    "timestamp": "13:43",
+    "text_original": "आप लोगों का काम एकदम सिंपल है"
+  },
+  {
+    "text": "comes to amazononline.in, you use it",
+    "start": 837.759,
+    "duration": 3.76,
+    "timestamp": "13:57",
+    "text_original": "amazononline.in ल आता है आप उसका"
+  },
+  {
+    "text": ", you use those things which are already available",
+    "start": 839.399,
+    "duration": 3.88,
+    "timestamp": "13:59",
+    "text_original": "इस्तेमाल करो आप उन चीजों का इस्तेमाल करो"
+  },
+  {
+    "text": ", instead of",
+    "start": 841.519,
+    "duration": 3.88,
+    "timestamp": "14:01",
+    "text_original": "जो कि ऑलरेडी अवेलेबल है इंस्टेड ऑफ"
+  },
+  {
+    "text": "Reinventing the wheel, if you guys do the work yourself",
+    "start": 843.279,
+    "duration": 4.68,
+    "timestamp": "14:03",
+    "text_original": "रिइन्वेंटिंग द व्हील आप लोग खुद से काम"
+  },
+  {
+    "text": ". Definitely you people who are successful",
+    "start": 845.399,
+    "duration": 4.921,
+    "timestamp": "14:05",
+    "text_original": "करोगे तो डेफिनेटली आप लोग जो है सफल हो ग"
+  },
+  {
+    "text": "in all these things, this was machine learning",
+    "start": 847.959,
+    "duration": 5.361,
+    "timestamp": "14:07",
+    "text_original": "इन सब चीजों में तो ये था मशीन लर्निंग"
+  },
+  {
+    "text": ", some basics of AI and deep learning, you guys",
+    "start": 850.32,
+    "duration": 4.24,
+    "timestamp": "14:10",
+    "text_original": "एआई और डीप लर्निंग के कुछ बेसिक्स आप लोग"
+  },
+  {
+    "text": "want to learn these again, in",
+    "start": 853.32,
+    "duration": 4.16,
+    "timestamp": "14:13",
+    "text_original": "इनको सीखना चाहते हो अगेन मैं"
+  },
+  {
+    "text": "description,",
+    "start": 854.56,
+    "duration": 2.92,
+    "timestamp": "14:14",
+    "text_original": "डिस्क्रिप्शन में"
+  },
+  {
+    "text": "amazononline.in And it was really very",
+    "start": 867.68,
+    "duration": 4.959,
+    "timestamp": "14:27",
+    "text_original": "amazononline.in एंड इट वाज रियली वेरी"
+  },
+  {
+    "text": "helpful for me to be honest and by going to this page",
+    "start": 870.24,
+    "duration": 4.399,
+    "timestamp": "14:30",
+    "text_original": "हेल्पफुल फॉर मी टू बी ऑनेस्ट एंड इस पेज"
+  },
+  {
+    "text": ", you guys must watch these videos,",
+    "start": 872.639,
+    "duration": 3.601,
+    "timestamp": "14:32",
+    "text_original": "पर जाकर आप लोग इन वीडियोस को जरूर देखें"
+  },
+  {
+    "text": ", first of all, some of the machine learning.",
+    "start": 874.639,
+    "duration": 3.681,
+    "timestamp": "14:34",
+    "text_original": "इसमें सबसे पहले तो मशीन लर्निंग के कुछ"
+  },
+  {
+    "text": "basics are discussed and then how",
+    "start": 876.24,
+    "duration": 4.32,
+    "timestamp": "14:36",
+    "text_original": "बेसिक्स की बात की गई है और उसके बाद किस"
+  },
+  {
+    "text": "generated AI can be used",
+    "start": 878.32,
+    "duration": 4.36,
+    "timestamp": "14:38",
+    "text_original": "तरह से जनरेट एआई का प्रयोग किया जा सकता"
+  },
+  {
+    "text": "is",
+    "start": 880.56,
+    "duration": 2.12,
+    "timestamp": "14:40",
+    "text_original": "है"
+  },
+  {
+    "text": "with that said I hope this video was",
+    "start": 898.8,
+    "duration": 3.36,
+    "timestamp": "14:58",
+    "text_original": "विथ दैट सेड आई होप दिस वीडियो वाज"
+  },
+  {
+    "text": "Helpful Thank You So Much Guy For Watching",
+    "start": 900.519,
+    "duration": 5.441,
+    "timestamp": "15:00",
+    "text_original": "हेल्पफुल थैंक यू सो मच गाइ फॉर वाचिंग"
+  },
+  {
+    "text": "This Video And I Will See You Next",
+    "start": 902.16,
+    "duration": 7.089,
+    "timestamp": "15:02",
+    "text_original": "दिस वीडियो एंड आई विल सी यू नेक्स्ट"
+  },
+  {
+    "text": "[Applause]",
+    "start": 905.96,
+    "duration": 3.289,
+    "timestamp": "15:05",
+    "text_original": "[प्रशंसा]"
+  },
+  {
+    "text": "Time",
+    "start": 918.56,
+    "duration": 3.0,
+    "timestamp": "15:18",
+    "text_original": "टाइम"
+  }
+]
