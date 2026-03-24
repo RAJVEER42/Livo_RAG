@@ -1,0 +1,1364 @@
+{
+  "TF-IDF": {
+    "overall": {
+      "Recall@1": 0.7241379310344828,
+      "Recall@3": 0.8620689655172413,
+      "Recall@5": 0.896551724137931,
+      "MRR": 0.7902298850574713,
+      "P@1": 0.7241379310344828
+    },
+    "per_failure_mode": {
+      "semantic_precision": {
+        "Recall@1": 0.4,
+        "Recall@3": 0.6,
+        "Recall@5": 0.7,
+        "MRR": 0.5083333333333333,
+        "P@1": 0.4
+      },
+      "multi_hop": {
+        "Recall@1": 0.8888888888888888,
+        "Recall@3": 1.0,
+        "Recall@5": 1.0,
+        "MRR": 0.9444444444444444,
+        "P@1": 0.8888888888888888
+      },
+      "negation_misconception": {
+        "Recall@1": 0.75,
+        "Recall@3": 1.0,
+        "Recall@5": 1.0,
+        "MRR": 0.8333333333333334,
+        "P@1": 0.75
+      },
+      "taxonomy": {
+        "Recall@1": 1.0,
+        "Recall@3": 1.0,
+        "Recall@5": 1.0,
+        "MRR": 1.0,
+        "P@1": 1.0
+      },
+      "contrast": {
+        "Recall@1": 1.0,
+        "Recall@3": 1.0,
+        "Recall@5": 1.0,
+        "MRR": 1.0,
+        "P@1": 1.0
+      }
+    },
+    "questions": [
+      {
+        "id": "v1_neural_network__neuron_mechanics",
+        "failure_mode": "semantic_precision",
+        "concept": "neuron_mechanics",
+        "question": "What is the key practical reason modern deep networks prefer ReLU over sigmoid activation functions?",
+        "hits": [
+          true,
+          false,
+          false,
+          false,
+          false
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v1_neural_network__attention_mechanism",
+        "failure_mode": "multi_hop",
+        "concept": "attention_mechanism",
+        "question": "What condition in the pixel values causes the weighted sum to be at its largest when trying to detect an edge, and what does that tell us about the role of the negative weights?",
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v1_neural_network__layers_and_architecture",
+        "failure_mode": "semantic_precision",
+        "concept": "layers_and_architecture",
+        "question": "What does the activation of a neuron specifically represent in this network?",
+        "hits": [
+          false,
+          false,
+          true,
+          false,
+          false
+        ],
+        "rr": 0.3333333333333333
+      },
+      {
+        "id": "v2_transformers__neuron_mechanics",
+        "failure_mode": "semantic_precision",
+        "concept": "neuron_mechanics",
+        "question": "Why are the learnable parameters in deep learning models specifically called 'weights'?",
+        "hits": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "rr": 0.0
+      },
+      {
+        "id": "v2_transformers__backprop_gradient",
+        "failure_mode": "negation_misconception",
+        "concept": "backprop_gradient",
+        "question": "Does using temperature zero in GPT-3 generation produce output based on backpropagated derivatives of the training gradient?",
+        "hits": [
+          true,
+          false,
+          false,
+          false,
+          true
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v2_transformers__attention_mechanism",
+        "failure_mode": "multi_hop",
+        "concept": "attention_mechanism",
+        "question": "How does the softmax function specifically handle the problem that deep learning outputs are often negative?",
+        "hits": [
+          true,
+          false,
+          false,
+          true,
+          false
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v2_transformers__ml_dl_taxonomy",
+        "failure_mode": "taxonomy",
+        "concept": "ml_dl_taxonomy",
+        "question": "Is linear regression considered a form of machine learning?",
+        "hits": [
+          true,
+          true,
+          false,
+          false,
+          false
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v2_transformers__positional_encoding",
+        "failure_mode": "multi_hop",
+        "concept": "positional_encoding",
+        "question": "What two things does a word embedding vector in a transformer encode beyond just the identity of the word itself?",
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          false
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v3_deep_learning_hi__neuron_mechanics",
+        "failure_mode": "semantic_precision",
+        "concept": "neuron_mechanics",
+        "question": "What specific role do weights play in a neural network according to this explanation?",
+        "hits": [
+          false,
+          false,
+          false,
+          true,
+          true
+        ],
+        "rr": 0.25
+      },
+      {
+        "id": "v3_deep_learning_hi__attention_mechanism",
+        "failure_mode": "multi_hop",
+        "concept": "attention_mechanism",
+        "question": "What are keys derived from, and what specific operation are they used to perform in this context?",
+        "hits": [
+          true,
+          false,
+          false,
+          false,
+          false
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v3_deep_learning_hi__feature_engineering",
+        "failure_mode": "contrast",
+        "concept": "feature_engineering",
+        "question": "What is the difference between traditional feature engineering and representation learning in machine learning?",
+        "hits": [
+          true,
+          false,
+          true,
+          false,
+          true
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v3_deep_learning_hi__ml_dl_taxonomy",
+        "failure_mode": "taxonomy",
+        "concept": "ml_dl_taxonomy",
+        "question": "What are the two biggest contributors to deep learning's rise in power, and which one ranks higher?",
+        "hits": [
+          true,
+          false,
+          true,
+          false,
+          false
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v3_deep_learning_hi__layers_and_architecture",
+        "failure_mode": "semantic_precision",
+        "concept": "layers_and_architecture",
+        "question": "What is the precise conceptual distinction used to define the input layer versus the output layer?",
+        "hits": [
+          false,
+          true,
+          false,
+          false,
+          false
+        ],
+        "rr": 0.5
+      },
+      {
+        "id": "v4_ml_dl_hi__backprop_gradient",
+        "failure_mode": "negation_misconception",
+        "concept": "backprop_gradient",
+        "question": "Wasn't LSTM designed to handle exploding gradients rather than vanishing gradients?",
+        "hits": [
+          false,
+          false,
+          true,
+          false,
+          false
+        ],
+        "rr": 0.3333333333333333
+      },
+      {
+        "id": "v4_ml_dl_hi__attention_mechanism",
+        "failure_mode": "multi_hop",
+        "concept": "attention_mechanism",
+        "question": "If today's precipitation, humidity, and temperature values are fed into the system, what does the system produce as an output and what underlying process makes that possible?",
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v4_ml_dl_hi__ml_dl_taxonomy",
+        "failure_mode": "taxonomy",
+        "concept": "ml_dl_taxonomy",
+        "question": "What category of process does machine learning fall under, based on its core definition?",
+        "hits": [
+          true,
+          true,
+          true,
+          false,
+          true
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v1_neural_network__neuron_mechanics__b2",
+        "failure_mode": "semantic_precision",
+        "concept": "neuron_mechanics",
+        "question": "What is the functional difference between a weight and a bias in determining a neuron's activation?",
+        "hits": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "rr": 0.0
+      },
+      {
+        "id": "v1_neural_network__attention_mechanism__b2",
+        "failure_mode": "multi_hop",
+        "concept": "attention_mechanism",
+        "question": "If every pixel in an input image were completely black, what activation value would each neuron in the first layer hold, and how many neurons would that affect in total?",
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v1_neural_network__layers_and_architecture__b2",
+        "failure_mode": "semantic_precision",
+        "concept": "layers_and_architecture",
+        "question": "What is the precise total number of weights needed just for the connections between the first and second layer of this network?",
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v2_transformers__neuron_mechanics__b2",
+        "failure_mode": "semantic_precision",
+        "concept": "neuron_mechanics",
+        "question": "What is the precise computational operation that dominates the processing in deep learning models?",
+        "hits": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "rr": 0.0
+      },
+      {
+        "id": "v2_transformers__backprop_gradient__b2",
+        "failure_mode": "negation_misconception",
+        "concept": "backprop_gradient",
+        "question": "Is backpropagation a training algorithm unique to only some deep learning models, or do all deep learning models rely on it?",
+        "hits": [
+          true,
+          false,
+          true,
+          true,
+          false
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v2_transformers__attention_mechanism__b2",
+        "failure_mode": "multi_hop",
+        "concept": "attention_mechanism",
+        "question": "What is the size of the list produced by the matrix transformation of the last context vector, and what happens to that list before a token like 'Snape' can be selected as the next word?",
+        "hits": [
+          false,
+          true,
+          true,
+          false,
+          true
+        ],
+        "rr": 0.5
+      },
+      {
+        "id": "v3_deep_learning_hi__neuron_mechanics__b2",
+        "failure_mode": "semantic_precision",
+        "concept": "neuron_mechanics",
+        "question": "What is the visual representation used to depict the connections between perceptrons in this network diagram?",
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          false
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v3_deep_learning_hi__attention_mechanism__b2",
+        "failure_mode": "multi_hop",
+        "concept": "attention_mechanism",
+        "question": "What two pieces of information are combined to determine which features are more or less important?",
+        "hits": [
+          true,
+          false,
+          true,
+          false,
+          false
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v3_deep_learning_hi__feature_engineering__b2",
+        "failure_mode": "contrast",
+        "concept": "feature_engineering",
+        "question": "What distinguishes automatic feature extraction from manual feature engineering in terms of where the process occurs in a pipeline?",
+        "hits": [
+          true,
+          false,
+          true,
+          true,
+          true
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v3_deep_learning_hi__ml_dl_taxonomy__b2",
+        "failure_mode": "taxonomy",
+        "concept": "ml_dl_taxonomy",
+        "question": "How does deep learning relate to machine learning in terms of their classification?",
+        "hits": [
+          true,
+          true,
+          true,
+          false,
+          true
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v3_deep_learning_hi__layers_and_architecture__b2",
+        "failure_mode": "semantic_precision",
+        "concept": "layers_and_architecture",
+        "question": "What is the structural path that data follows between the input layer and the output in this architecture?",
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          false
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v4_ml_dl_hi__backprop_gradient__b2",
+        "failure_mode": "negation_misconception",
+        "concept": "backprop_gradient",
+        "question": "Does backpropagation work by pushing data forward through the network to minimize the loss?",
+        "hits": [
+          true,
+          false,
+          false,
+          false,
+          false
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v4_ml_dl_hi__attention_mechanism__b2",
+        "failure_mode": "multi_hop",
+        "concept": "attention_mechanism",
+        "question": "If a person's health parameters are provided alongside precipitation, humidity, and temperature values, what do these two scenarios have in common in terms of how a prediction is made?",
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rr": 1.0
+      }
+    ]
+  },
+  "BM25": {
+    "overall": {
+      "Recall@1": 0.7931034482758621,
+      "Recall@3": 0.8620689655172413,
+      "Recall@5": 0.896551724137931,
+      "MRR": 0.8304597701149425,
+      "P@1": 0.7931034482758621
+    },
+    "per_failure_mode": {
+      "semantic_precision": {
+        "Recall@1": 0.5,
+        "Recall@3": 0.7,
+        "Recall@5": 0.8,
+        "MRR": 0.6083333333333333,
+        "P@1": 0.5
+      },
+      "multi_hop": {
+        "Recall@1": 0.8888888888888888,
+        "Recall@3": 0.8888888888888888,
+        "Recall@5": 0.8888888888888888,
+        "MRR": 0.8888888888888888,
+        "P@1": 0.8888888888888888
+      },
+      "negation_misconception": {
+        "Recall@1": 1.0,
+        "Recall@3": 1.0,
+        "Recall@5": 1.0,
+        "MRR": 1.0,
+        "P@1": 1.0
+      },
+      "taxonomy": {
+        "Recall@1": 1.0,
+        "Recall@3": 1.0,
+        "Recall@5": 1.0,
+        "MRR": 1.0,
+        "P@1": 1.0
+      },
+      "contrast": {
+        "Recall@1": 1.0,
+        "Recall@3": 1.0,
+        "Recall@5": 1.0,
+        "MRR": 1.0,
+        "P@1": 1.0
+      }
+    },
+    "questions": [
+      {
+        "id": "v1_neural_network__neuron_mechanics",
+        "failure_mode": "semantic_precision",
+        "concept": "neuron_mechanics",
+        "question": "What is the key practical reason modern deep networks prefer ReLU over sigmoid activation functions?",
+        "hits": [
+          true,
+          false,
+          false,
+          false,
+          false
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v1_neural_network__attention_mechanism",
+        "failure_mode": "multi_hop",
+        "concept": "attention_mechanism",
+        "question": "What condition in the pixel values causes the weighted sum to be at its largest when trying to detect an edge, and what does that tell us about the role of the negative weights?",
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v1_neural_network__layers_and_architecture",
+        "failure_mode": "semantic_precision",
+        "concept": "layers_and_architecture",
+        "question": "What does the activation of a neuron specifically represent in this network?",
+        "hits": [
+          true,
+          true,
+          false,
+          false,
+          true
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v2_transformers__neuron_mechanics",
+        "failure_mode": "semantic_precision",
+        "concept": "neuron_mechanics",
+        "question": "Why are the learnable parameters in deep learning models specifically called 'weights'?",
+        "hits": [
+          false,
+          false,
+          true,
+          false,
+          true
+        ],
+        "rr": 0.3333333333333333
+      },
+      {
+        "id": "v2_transformers__backprop_gradient",
+        "failure_mode": "negation_misconception",
+        "concept": "backprop_gradient",
+        "question": "Does using temperature zero in GPT-3 generation produce output based on backpropagated derivatives of the training gradient?",
+        "hits": [
+          true,
+          false,
+          true,
+          false,
+          true
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v2_transformers__attention_mechanism",
+        "failure_mode": "multi_hop",
+        "concept": "attention_mechanism",
+        "question": "How does the softmax function specifically handle the problem that deep learning outputs are often negative?",
+        "hits": [
+          true,
+          false,
+          false,
+          true,
+          false
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v2_transformers__ml_dl_taxonomy",
+        "failure_mode": "taxonomy",
+        "concept": "ml_dl_taxonomy",
+        "question": "Is linear regression considered a form of machine learning?",
+        "hits": [
+          true,
+          true,
+          false,
+          false,
+          false
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v2_transformers__positional_encoding",
+        "failure_mode": "multi_hop",
+        "concept": "positional_encoding",
+        "question": "What two things does a word embedding vector in a transformer encode beyond just the identity of the word itself?",
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v3_deep_learning_hi__neuron_mechanics",
+        "failure_mode": "semantic_precision",
+        "concept": "neuron_mechanics",
+        "question": "What specific role do weights play in a neural network according to this explanation?",
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          false
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v3_deep_learning_hi__attention_mechanism",
+        "failure_mode": "multi_hop",
+        "concept": "attention_mechanism",
+        "question": "What are keys derived from, and what specific operation are they used to perform in this context?",
+        "hits": [
+          true,
+          false,
+          false,
+          false,
+          false
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v3_deep_learning_hi__feature_engineering",
+        "failure_mode": "contrast",
+        "concept": "feature_engineering",
+        "question": "What is the difference between traditional feature engineering and representation learning in machine learning?",
+        "hits": [
+          true,
+          true,
+          false,
+          false,
+          false
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v3_deep_learning_hi__ml_dl_taxonomy",
+        "failure_mode": "taxonomy",
+        "concept": "ml_dl_taxonomy",
+        "question": "What are the two biggest contributors to deep learning's rise in power, and which one ranks higher?",
+        "hits": [
+          true,
+          false,
+          false,
+          true,
+          false
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v3_deep_learning_hi__layers_and_architecture",
+        "failure_mode": "semantic_precision",
+        "concept": "layers_and_architecture",
+        "question": "What is the precise conceptual distinction used to define the input layer versus the output layer?",
+        "hits": [
+          false,
+          false,
+          false,
+          true,
+          false
+        ],
+        "rr": 0.25
+      },
+      {
+        "id": "v4_ml_dl_hi__backprop_gradient",
+        "failure_mode": "negation_misconception",
+        "concept": "backprop_gradient",
+        "question": "Wasn't LSTM designed to handle exploding gradients rather than vanishing gradients?",
+        "hits": [
+          true,
+          true,
+          false,
+          false,
+          false
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v4_ml_dl_hi__attention_mechanism",
+        "failure_mode": "multi_hop",
+        "concept": "attention_mechanism",
+        "question": "If today's precipitation, humidity, and temperature values are fed into the system, what does the system produce as an output and what underlying process makes that possible?",
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v4_ml_dl_hi__ml_dl_taxonomy",
+        "failure_mode": "taxonomy",
+        "concept": "ml_dl_taxonomy",
+        "question": "What category of process does machine learning fall under, based on its core definition?",
+        "hits": [
+          true,
+          true,
+          true,
+          false,
+          true
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v1_neural_network__neuron_mechanics__b2",
+        "failure_mode": "semantic_precision",
+        "concept": "neuron_mechanics",
+        "question": "What is the functional difference between a weight and a bias in determining a neuron's activation?",
+        "hits": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "rr": 0.0
+      },
+      {
+        "id": "v1_neural_network__attention_mechanism__b2",
+        "failure_mode": "multi_hop",
+        "concept": "attention_mechanism",
+        "question": "If every pixel in an input image were completely black, what activation value would each neuron in the first layer hold, and how many neurons would that affect in total?",
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v1_neural_network__layers_and_architecture__b2",
+        "failure_mode": "semantic_precision",
+        "concept": "layers_and_architecture",
+        "question": "What is the precise total number of weights needed just for the connections between the first and second layer of this network?",
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v2_transformers__neuron_mechanics__b2",
+        "failure_mode": "semantic_precision",
+        "concept": "neuron_mechanics",
+        "question": "What is the precise computational operation that dominates the processing in deep learning models?",
+        "hits": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "rr": 0.0
+      },
+      {
+        "id": "v2_transformers__backprop_gradient__b2",
+        "failure_mode": "negation_misconception",
+        "concept": "backprop_gradient",
+        "question": "Is backpropagation a training algorithm unique to only some deep learning models, or do all deep learning models rely on it?",
+        "hits": [
+          true,
+          true,
+          false,
+          true,
+          true
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v2_transformers__attention_mechanism__b2",
+        "failure_mode": "multi_hop",
+        "concept": "attention_mechanism",
+        "question": "What is the size of the list produced by the matrix transformation of the last context vector, and what happens to that list before a token like 'Snape' can be selected as the next word?",
+        "hits": [
+          true,
+          true,
+          true,
+          false,
+          true
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v3_deep_learning_hi__neuron_mechanics__b2",
+        "failure_mode": "semantic_precision",
+        "concept": "neuron_mechanics",
+        "question": "What is the visual representation used to depict the connections between perceptrons in this network diagram?",
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          false
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v3_deep_learning_hi__attention_mechanism__b2",
+        "failure_mode": "multi_hop",
+        "concept": "attention_mechanism",
+        "question": "What two pieces of information are combined to determine which features are more or less important?",
+        "hits": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "rr": 0.0
+      },
+      {
+        "id": "v3_deep_learning_hi__feature_engineering__b2",
+        "failure_mode": "contrast",
+        "concept": "feature_engineering",
+        "question": "What distinguishes automatic feature extraction from manual feature engineering in terms of where the process occurs in a pipeline?",
+        "hits": [
+          true,
+          false,
+          true,
+          true,
+          true
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v3_deep_learning_hi__ml_dl_taxonomy__b2",
+        "failure_mode": "taxonomy",
+        "concept": "ml_dl_taxonomy",
+        "question": "How does deep learning relate to machine learning in terms of their classification?",
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          false
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v3_deep_learning_hi__layers_and_architecture__b2",
+        "failure_mode": "semantic_precision",
+        "concept": "layers_and_architecture",
+        "question": "What is the structural path that data follows between the input layer and the output in this architecture?",
+        "hits": [
+          false,
+          true,
+          true,
+          false,
+          true
+        ],
+        "rr": 0.5
+      },
+      {
+        "id": "v4_ml_dl_hi__backprop_gradient__b2",
+        "failure_mode": "negation_misconception",
+        "concept": "backprop_gradient",
+        "question": "Does backpropagation work by pushing data forward through the network to minimize the loss?",
+        "hits": [
+          true,
+          false,
+          false,
+          false,
+          false
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v4_ml_dl_hi__attention_mechanism__b2",
+        "failure_mode": "multi_hop",
+        "concept": "attention_mechanism",
+        "question": "If a person's health parameters are provided alongside precipitation, humidity, and temperature values, what do these two scenarios have in common in terms of how a prediction is made?",
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rr": 1.0
+      }
+    ]
+  },
+  "Dense (all-MiniLM-L6-v2)": {
+    "overall": {
+      "Recall@1": 0.7241379310344828,
+      "Recall@3": 0.8620689655172413,
+      "Recall@5": 0.9310344827586207,
+      "MRR": 0.8068965517241379,
+      "P@1": 0.7241379310344828
+    },
+    "per_failure_mode": {
+      "semantic_precision": {
+        "Recall@1": 0.5,
+        "Recall@3": 0.7,
+        "Recall@5": 0.8,
+        "MRR": 0.62,
+        "P@1": 0.5
+      },
+      "multi_hop": {
+        "Recall@1": 0.8888888888888888,
+        "Recall@3": 1.0,
+        "Recall@5": 1.0,
+        "MRR": 0.9444444444444444,
+        "P@1": 0.8888888888888888
+      },
+      "negation_misconception": {
+        "Recall@1": 1.0,
+        "Recall@3": 1.0,
+        "Recall@5": 1.0,
+        "MRR": 1.0,
+        "P@1": 1.0
+      },
+      "taxonomy": {
+        "Recall@1": 0.5,
+        "Recall@3": 0.75,
+        "Recall@5": 1.0,
+        "MRR": 0.675,
+        "P@1": 0.5
+      },
+      "contrast": {
+        "Recall@1": 1.0,
+        "Recall@3": 1.0,
+        "Recall@5": 1.0,
+        "MRR": 1.0,
+        "P@1": 1.0
+      }
+    },
+    "questions": [
+      {
+        "id": "v1_neural_network__neuron_mechanics",
+        "failure_mode": "semantic_precision",
+        "concept": "neuron_mechanics",
+        "question": "What is the key practical reason modern deep networks prefer ReLU over sigmoid activation functions?",
+        "hits": [
+          true,
+          true,
+          true,
+          false,
+          false
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v1_neural_network__attention_mechanism",
+        "failure_mode": "multi_hop",
+        "concept": "attention_mechanism",
+        "question": "What condition in the pixel values causes the weighted sum to be at its largest when trying to detect an edge, and what does that tell us about the role of the negative weights?",
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v1_neural_network__layers_and_architecture",
+        "failure_mode": "semantic_precision",
+        "concept": "layers_and_architecture",
+        "question": "What does the activation of a neuron specifically represent in this network?",
+        "hits": [
+          false,
+          true,
+          false,
+          false,
+          false
+        ],
+        "rr": 0.5
+      },
+      {
+        "id": "v2_transformers__neuron_mechanics",
+        "failure_mode": "semantic_precision",
+        "concept": "neuron_mechanics",
+        "question": "Why are the learnable parameters in deep learning models specifically called 'weights'?",
+        "hits": [
+          true,
+          true,
+          false,
+          false,
+          false
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v2_transformers__backprop_gradient",
+        "failure_mode": "negation_misconception",
+        "concept": "backprop_gradient",
+        "question": "Does using temperature zero in GPT-3 generation produce output based on backpropagated derivatives of the training gradient?",
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          false
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v2_transformers__attention_mechanism",
+        "failure_mode": "multi_hop",
+        "concept": "attention_mechanism",
+        "question": "How does the softmax function specifically handle the problem that deep learning outputs are often negative?",
+        "hits": [
+          true,
+          true,
+          false,
+          false,
+          false
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v2_transformers__ml_dl_taxonomy",
+        "failure_mode": "taxonomy",
+        "concept": "ml_dl_taxonomy",
+        "question": "Is linear regression considered a form of machine learning?",
+        "hits": [
+          false,
+          true,
+          false,
+          true,
+          false
+        ],
+        "rr": 0.5
+      },
+      {
+        "id": "v2_transformers__positional_encoding",
+        "failure_mode": "multi_hop",
+        "concept": "positional_encoding",
+        "question": "What two things does a word embedding vector in a transformer encode beyond just the identity of the word itself?",
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v3_deep_learning_hi__neuron_mechanics",
+        "failure_mode": "semantic_precision",
+        "concept": "neuron_mechanics",
+        "question": "What specific role do weights play in a neural network according to this explanation?",
+        "hits": [
+          false,
+          true,
+          false,
+          true,
+          true
+        ],
+        "rr": 0.5
+      },
+      {
+        "id": "v3_deep_learning_hi__attention_mechanism",
+        "failure_mode": "multi_hop",
+        "concept": "attention_mechanism",
+        "question": "What are keys derived from, and what specific operation are they used to perform in this context?",
+        "hits": [
+          true,
+          false,
+          false,
+          false,
+          false
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v3_deep_learning_hi__feature_engineering",
+        "failure_mode": "contrast",
+        "concept": "feature_engineering",
+        "question": "What is the difference between traditional feature engineering and representation learning in machine learning?",
+        "hits": [
+          true,
+          true,
+          false,
+          false,
+          true
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v3_deep_learning_hi__ml_dl_taxonomy",
+        "failure_mode": "taxonomy",
+        "concept": "ml_dl_taxonomy",
+        "question": "What are the two biggest contributors to deep learning's rise in power, and which one ranks higher?",
+        "hits": [
+          false,
+          false,
+          false,
+          false,
+          true
+        ],
+        "rr": 0.2
+      },
+      {
+        "id": "v3_deep_learning_hi__layers_and_architecture",
+        "failure_mode": "semantic_precision",
+        "concept": "layers_and_architecture",
+        "question": "What is the precise conceptual distinction used to define the input layer versus the output layer?",
+        "hits": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "rr": 0.0
+      },
+      {
+        "id": "v4_ml_dl_hi__backprop_gradient",
+        "failure_mode": "negation_misconception",
+        "concept": "backprop_gradient",
+        "question": "Wasn't LSTM designed to handle exploding gradients rather than vanishing gradients?",
+        "hits": [
+          true,
+          false,
+          true,
+          false,
+          false
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v4_ml_dl_hi__attention_mechanism",
+        "failure_mode": "multi_hop",
+        "concept": "attention_mechanism",
+        "question": "If today's precipitation, humidity, and temperature values are fed into the system, what does the system produce as an output and what underlying process makes that possible?",
+        "hits": [
+          true,
+          true,
+          true,
+          false,
+          true
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v4_ml_dl_hi__ml_dl_taxonomy",
+        "failure_mode": "taxonomy",
+        "concept": "ml_dl_taxonomy",
+        "question": "What category of process does machine learning fall under, based on its core definition?",
+        "hits": [
+          true,
+          false,
+          true,
+          true,
+          true
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v1_neural_network__neuron_mechanics__b2",
+        "failure_mode": "semantic_precision",
+        "concept": "neuron_mechanics",
+        "question": "What is the functional difference between a weight and a bias in determining a neuron's activation?",
+        "hits": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "rr": 0.0
+      },
+      {
+        "id": "v1_neural_network__attention_mechanism__b2",
+        "failure_mode": "multi_hop",
+        "concept": "attention_mechanism",
+        "question": "If every pixel in an input image were completely black, what activation value would each neuron in the first layer hold, and how many neurons would that affect in total?",
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v1_neural_network__layers_and_architecture__b2",
+        "failure_mode": "semantic_precision",
+        "concept": "layers_and_architecture",
+        "question": "What is the precise total number of weights needed just for the connections between the first and second layer of this network?",
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v2_transformers__neuron_mechanics__b2",
+        "failure_mode": "semantic_precision",
+        "concept": "neuron_mechanics",
+        "question": "What is the precise computational operation that dominates the processing in deep learning models?",
+        "hits": [
+          false,
+          false,
+          false,
+          false,
+          true
+        ],
+        "rr": 0.2
+      },
+      {
+        "id": "v2_transformers__backprop_gradient__b2",
+        "failure_mode": "negation_misconception",
+        "concept": "backprop_gradient",
+        "question": "Is backpropagation a training algorithm unique to only some deep learning models, or do all deep learning models rely on it?",
+        "hits": [
+          true,
+          true,
+          true,
+          false,
+          true
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v2_transformers__attention_mechanism__b2",
+        "failure_mode": "multi_hop",
+        "concept": "attention_mechanism",
+        "question": "What is the size of the list produced by the matrix transformation of the last context vector, and what happens to that list before a token like 'Snape' can be selected as the next word?",
+        "hits": [
+          true,
+          true,
+          true,
+          false,
+          true
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v3_deep_learning_hi__neuron_mechanics__b2",
+        "failure_mode": "semantic_precision",
+        "concept": "neuron_mechanics",
+        "question": "What is the visual representation used to depict the connections between perceptrons in this network diagram?",
+        "hits": [
+          true,
+          true,
+          true,
+          false,
+          true
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v3_deep_learning_hi__attention_mechanism__b2",
+        "failure_mode": "multi_hop",
+        "concept": "attention_mechanism",
+        "question": "What two pieces of information are combined to determine which features are more or less important?",
+        "hits": [
+          false,
+          true,
+          false,
+          true,
+          false
+        ],
+        "rr": 0.5
+      },
+      {
+        "id": "v3_deep_learning_hi__feature_engineering__b2",
+        "failure_mode": "contrast",
+        "concept": "feature_engineering",
+        "question": "What distinguishes automatic feature extraction from manual feature engineering in terms of where the process occurs in a pipeline?",
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v3_deep_learning_hi__ml_dl_taxonomy__b2",
+        "failure_mode": "taxonomy",
+        "concept": "ml_dl_taxonomy",
+        "question": "How does deep learning relate to machine learning in terms of their classification?",
+        "hits": [
+          true,
+          false,
+          true,
+          true,
+          false
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v3_deep_learning_hi__layers_and_architecture__b2",
+        "failure_mode": "semantic_precision",
+        "concept": "layers_and_architecture",
+        "question": "What is the structural path that data follows between the input layer and the output in this architecture?",
+        "hits": [
+          true,
+          false,
+          true,
+          true,
+          false
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v4_ml_dl_hi__backprop_gradient__b2",
+        "failure_mode": "negation_misconception",
+        "concept": "backprop_gradient",
+        "question": "Does backpropagation work by pushing data forward through the network to minimize the loss?",
+        "hits": [
+          true,
+          false,
+          false,
+          false,
+          false
+        ],
+        "rr": 1.0
+      },
+      {
+        "id": "v4_ml_dl_hi__attention_mechanism__b2",
+        "failure_mode": "multi_hop",
+        "concept": "attention_mechanism",
+        "question": "If a person's health parameters are provided alongside precipitation, humidity, and temperature values, what do these two scenarios have in common in terms of how a prediction is made?",
+        "hits": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rr": 1.0
+      }
+    ]
+  }
+}
