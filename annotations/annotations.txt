@@ -1,0 +1,816 @@
+TRANSCRIPT ANNOTATIONS
+Keyword-extracted segments with timestamps for QA pair construction
+======================================================================
+
+
+──────────────────────────────────────────────────────────────────────
+VIDEO: 3B1B — But what is a Neural Network?
+──────────────────────────────────────────────────────────────────────
+
+  [neuron_mechanics]  failure_mode=semantic_precision  hits=50
+  matched keywords: weighted sum, sigmoid, relu, bias, squish, weight
+
+    Block 1  [8:55 → 15:10]
+      What dials and knobs should you be able to tweak so that it's expressive
+      enough to potentially capture this pattern, or any other pixel pattern, or
+      the pattern that several edges can make a loop, and other such things? Well,
+      what we'll do is assign a weight to each one of the connections between our
+      neuron and the neurons from the first layer. These weights are just numbers.
+      Then take all of those activations from the first layer and compute their
+      weighted sum according to these weights. I find it helpful to think of these
+      weights as being organized into a little grid of their own, and I'm going to
+      use green pixels to indicate positive weights, and red pixels to indicate
+      negative weights, where the brightness of that pixel is some loose depiction
+      of the weight's value. Now if we made the weights associated with almost all
+      of the pixels zero except for some positive weights in this region that we
+      care about, then taking the weighted sum of all the pixel values really just
+      amounts to adding up the values of the pixel just in the region that we care
+      about. And if you really wanted to pick up on whether there's an edge here,
+      what you might do is have some negative weights associated with the
+      surrounding pixels. Then the sum is largest when those middle pixels are
+      bright but the surrounding pixels are darker. When you compute a weighted
+      sum like this, you might come out with any number, but for this network what
+      we want is for activations to be some value between 0 and 1. So a common
+      thing to do is to pump this weighted sum into some function that squishes
+      the real number line into the range between 0 and 1. And a common function
+      that does this is called the sigmoid function, also known as a logistic
+      curve. Basically very negative inputs end up close to 0, positive inputs end
+      up close to 1, and it just steadily increases around the input 0. So the
+      activation of the neuron here is basically a measure of how positive the
+      relevant weighted sum is. But maybe it's not that you want the neuron to
+      light up when the weighted sum is bigger than 0. Maybe you only want it to
+      be active when the sum is bigger than say 10. That is, you want some bias
+      for it to be inactive. What we'll do then is just add in some other number
+      like negative 10 to this weighted sum before plugging it through the sigmoid
+      squishification function. That additional number is called the bias. So the
+      weights tell you what pixel pattern this neuron in the second layer is
+      picking up on, and the bias tells you how high the weighted sum needs to be
+      before the neuron starts getting meaningfully active. And that is just one
+      neuron. Every other neuron in this layer is going to be connected to all 784
+      pixel neurons from the first layer, and each one of those 784 connections
+      has its own weight associated with it. Also, each one has some bias, some
+      other number that you add on to the weighted sum before squishing it with
+      the sigmoid. And that's a lot to think about! With this hidden layer of 16
+      neurons, that's a total of 784 times 16 weights, along with 16 biases. And
+      all of that is just the connections from the first layer to the second. The
+      connections between the other layers also have a bunch of weights and biases
+      associated with them. All said and done, this network has almost exactly
+      13,000 total weights and biases. 13,000 knobs and dials that can be tweaked
+      and turned to make this network behave in different ways. So when we talk
+      about learning, what that's referring to is getting the computer to find a
+      valid setting for all of these many many numbers so that it'll actually
+      solve the problem at hand. One thought experiment that is at once fun and
+      kind of horrifying is to imagine sitting down and setting all of these
+      weights and biases by hand, purposefully tweaking the numbers so that the
+      second layer picks up on edges, the third layer picks up on patterns, etc. I
+      personally find this satisfying rather than just treating the network as a
+      total black box, because when the network doesn't perform the way you
+      anticipate, if you've built up a little bit of a relationship with what
+      those weights and biases actually mean, you have a starting place for
+      experimenting with how to change the structure to improve. Or when the
+      network does work but not for the reasons you might expect, digging into
+      what the weights and biases are doing is a good way to challenge your
+      assumptions and really expose the full space of possible solutions. By the
+      way, the actual function here is a little cumbersome to write down, don't
+      you think? So let me show you a more notationally compact way that these
+      connections are represented. This is how you'd see it if you choose to read
+      up more about neural networks. Organize all of the activations from one
+      layer into a column as a vector. Then organize all of the weights as a
+      matrix, where each row of that matrix corresponds to the connections between
+      one layer and a particular neuron in the next layer. What that means is that
+      taking the weighted sum of the activations in the first layer according to
+      these weights corresponds to one of the terms in the matrix vector product
+      of everything we have on the left here. By the way, so much of machine
+      learning just comes down to having a good grasp of linear algebra, so for
+      any of you who want a nice visual understanding for matrices and what matrix
+      vector multiplication means, take a look at the series I did on linear
+      algebra, especially chapter 3. Back to our expression, instead of talking
+      about adding the bias to each one of these values independently, we
+      represent it by organizing all those biases into a vector, and adding the
+      entire vector to the previous matrix vector product. Then as a final step,
+      I'll wrap a sigmoid around the outside here, and what that's supposed to
+      represent is that you're going to apply the sigmoid function to each
+      specific component of the resulting vector inside. So once you write down
+      this weight matrix and these vectors as their own symbols, you can
+      communicate the full transition of activations from one layer to the next in
+      an extremely tight and neat little expression, and this makes the relevant
+      code both a lot simpler and a lot faster, since many libraries optimize the
+      heck out of matrix
+
+    Block 2  [15:39 → 16:27]
+      Really the entire network is just a function, one that takes in 784 numbers
+      as an input and spits out 10 numbers as an output. It's an absurdly
+      complicated function, one that involves 13,000 parameters in the forms of
+      these weights and biases that pick up on certain patterns, and which
+      involves iterating many matrix vector products and the sigmoid
+      squishification function, but it's just a function nonetheless. And in a way
+      it's kind of reassuring that it looks complicated. I mean if it were any
+      simpler, what hope would we have that it could take on the challenge of
+      recognizing digits? And how does it take on that challenge? How does this
+      network learn the appropriate weights and biases just by looking at data?
+      Well that's what I'll show in the next video, and I'll also dig a little
+      more into what this particular network we're seeing is really doing. Now is
+      the point I suppose I should say subscribe to stay notified
+
+    Block 3  [17:03 → 18:25]
+      To close things off here I have with me Lisha Li who did her PhD work on the
+      theoretical side of deep learning and who currently works at a venture
+      capital firm called Amplify Partners who kindly provided some of the funding
+      for this video. So Lisha one thing I think we should quickly bring up is
+      this sigmoid function. As I understand it early networks use this to squish
+      the relevant weighted sum into that interval between zero and one, you know
+      kind of motivated by this biological analogy of neurons either being
+      inactive or active. Exactly. But relatively few modern networks actually use
+      sigmoid anymore. Yeah. It's kind of old school right? Yeah or rather ReLU
+      seems to be much easier to train. And ReLU, ReLU stands for rectified linear
+      unit? Yes it's this kind of function where you're just taking a max of zero
+      and a where a is given by what you were explaining in the video and what
+      this was sort of motivated from I think was a partially by a biological
+      analogy with how neurons would either be activated or not. And so if it
+      passes a certain threshold it would be the identity function but if it did
+      not then it would just not be activated so it'd be zero so it's kind of a
+      simplification. Using sigmoids didn't help training or it was very difficult
+      to train at some point and people just tried ReLU and it happened to work
+      very well for these incredibly deep neural networks. All right thank you
+      Lisha.
+
+
+  [attention_mechanism]  failure_mode=multi_hop  hits=7
+  matched keywords: value
+
+    Block 1  [0:14 → 0:32]
+      And I want you to take a moment to appreciate how crazy it is that brains
+      can do this so effortlessly. I mean, this, this and this are also
+      recognizable as 3s, even though the specific values of each pixel is very
+      different from one image to the next. The particular light-sensitive cells
+      in your eye that are firing when you see this 3 are very different from the
+      ones firing when you see this 3.
+
+    Block 2  [3:00 → 3:28]
+      It's really not more than that. For example the network starts with a bunch
+      of neurons corresponding to each of the 28x28 pixels of the input image,
+      which is 784 neurons in total. Each one of these holds a number that
+      represents the grayscale value of the corresponding pixel, ranging from 0
+      for black pixels up to 1 for white pixels. This number inside the neuron is
+      called its activation, and the image you might have in mind here is that
+      each neuron is lit up when its
+
+    Block 3  [9:27 → 10:32]
+      I find it helpful to think of these weights as being organized into a little
+      grid of their own, and I'm going to use green pixels to indicate positive
+      weights, and red pixels to indicate negative weights, where the brightness
+      of that pixel is some loose depiction of the weight's value. Now if we made
+      the weights associated with almost all of the pixels zero except for some
+      positive weights in this region that we care about, then taking the weighted
+      sum of all the pixel values really just amounts to adding up the values of
+      the pixel just in the region that we care about. And if you really wanted to
+      pick up on whether there's an edge here, what you might do is have some
+      negative weights associated with the surrounding pixels. Then the sum is
+      largest when those middle pixels are bright but the surrounding pixels are
+      darker. When you compute a weighted sum like this, you might come out with
+      any number, but for this network what we want is for activations to be some
+      value between 0 and 1. So a common thing to do is to pump this weighted sum
+      into some function that squishes the real number line into the range between
+      0 and 1. And a common function that does this is called the sigmoid
+      function,
+
+    Block 4  [14:21 → 14:46]
+      understanding for matrices and what matrix vector multiplication means, take
+      a look at the series I did on linear algebra, especially chapter 3. Back to
+      our expression, instead of talking about adding the bias to each one of
+      these values independently, we represent it by organizing all those biases
+      into a vector, and adding the entire vector to the previous matrix vector
+      product. Then as a final step, I'll wrap a sigmoid around the outside here,
+      and what that's supposed to represent is that you're going to apply the
+
+
+  [layers_and_architecture]  failure_mode=semantic_precision  hits=11
+  matched keywords: input layer, 16 neuron, 784, output layer, hidden layer
+
+    Block 1  [2:58 → 4:24]
+      specifically a number between 0 and 1. It's really not more than that. For
+      example the network starts with a bunch of neurons corresponding to each of
+      the 28x28 pixels of the input image, which is 784 neurons in total. Each one
+      of these holds a number that represents the grayscale value of the
+      corresponding pixel, ranging from 0 for black pixels up to 1 for white
+      pixels. This number inside the neuron is called its activation, and the
+      image you might have in mind here is that each neuron is lit up when its
+      activation is a high number. So all of these 784 neurons make up the first
+      layer of our network. Now jumping over to the last layer, this has 10
+      neurons, each representing one of the digits. The activation in these
+      neurons, again some number that's between 0 and 1, represents how much the
+      system thinks that a given image corresponds with a given digit. There's
+      also a couple layers in between called the hidden layers, which for the time
+      being should just be a giant question mark for how on earth this process of
+      recognizing digits is going to be handled. In this network I chose two
+      hidden layers, each one with 16 neurons, and admittedly that's kind of an
+      arbitrary choice. To be honest I chose two layers based on how I want to
+      motivate the structure in just a moment, and 16, well that was just a nice
+      number to fit on the screen.
+
+    Block 2  [4:53 → 5:36]
+      some groups of neurons firing cause certain others to fire. Now the network
+      I'm showing here has already been trained to recognize digits, and let me
+      show you what I mean by that. It means if you feed in an image, lighting up
+      all 784 neurons of the input layer according to the brightness of each pixel
+      in the image, that pattern of activations causes some very specific pattern
+      in the next layer which causes some pattern in the one after it, which
+      finally gives some pattern in the output layer. And the brightest neuron of
+      that output layer is the network's choice, so to speak, for what digit this
+      image represents. And before jumping into the math for how one layer
+      influences the next, or how training works, let's just talk about why it's
+      even reasonable
+
+    Block 3  [11:31 → 12:12]
+      sum needs to be before the neuron starts getting meaningfully active. And
+      that is just one neuron. Every other neuron in this layer is going to be
+      connected to all 784 pixel neurons from the first layer, and each one of
+      those 784 connections has its own weight associated with it. Also, each one
+      has some bias, some other number that you add on to the weighted sum before
+      squishing it with the sigmoid. And that's a lot to think about! With this
+      hidden layer of 16 neurons, that's a total of 784 times 16 weights, along
+      with 16 biases. And all of that is just the connections from the first layer
+      to the second. The connections between the other layers also have
+
+    Block 4  [15:31 → 15:55]
+      one that takes in the outputs of all the neurons in the previous layer and
+      spits out a number between 0 and 1. Really the entire network is just a
+      function, one that takes in 784 numbers as an input and spits out 10 numbers
+      as an output. It's an absurdly complicated function, one that involves
+      13,000 parameters in the forms of these weights and biases that pick up on
+      certain patterns, and which involves iterating many matrix vector products
+      and the sigmoid
+
+
+  SUMMARY for v1_neural_network:
+    neuron_mechanics               → 50 hits, 3 blocks
+    attention_mechanism            → 7 hits, 4 blocks
+    layers_and_architecture        → 11 hits, 4 blocks
+
+──────────────────────────────────────────────────────────────────────
+VIDEO: 3B1B — Transformers, the tech behind LLMs
+──────────────────────────────────────────────────────────────────────
+
+  [neuron_mechanics]  failure_mode=semantic_precision  hits=21
+  matched keywords: weighted sum, dot product, weight
+
+    Block 1  [10:04 → 11:17]
+      array of real numbers, until you get to a final layer which you consider the
+      output. For example, the final layer in our text processing model is a list
+      of numbers representing the probability distribution for all possible next
+      tokens. In deep learning, these model parameters are almost always referred
+      to as weights, and this is because a key feature of these models is that the
+      only way these parameters interact with the data being processed is through
+      weighted sums. You also sprinkle some non-linear functions throughout, but
+      they won't depend on parameters. Typically, though, instead of seeing the
+      weighted sums all naked and written out explicitly like this, you'll instead
+      find them packaged together as various components in a matrix vector
+      product. It amounts to saying the same thing, if you think back to how
+      matrix vector multiplication works, each component in the output looks like
+      a weighted sum. It's just often conceptually cleaner for you and me to think
+      about matrices that are filled with tunable parameters that transform
+      vectors that are drawn from the data being processed. For example, those 175
+      billion weights in GPT-3 are organized into just under 28,000 distinct
+      matrices. Those matrices in turn fall into eight different categories, and
+      what you and I are going to do is step through each one of those categories
+      to
+
+    Block 2  [11:53 → 12:22]
+      almost all of the actual computation looks like matrix vector
+      multiplication. There's a little bit of a risk getting lost in the sea of
+      billions of numbers, but you should draw a very sharp distinction in your
+      mind between the weights of the model, which I'll always color in blue or
+      red, and the data being processed, which I'll always color in gray. The
+      weights are the actual brains, they are the things learned during training,
+      and they determine how it behaves. The data being processed simply encodes
+      whatever specific input is fed into the model for a given run, like an
+      example snippet of text.
+
+    Block 3  [14:08 → 14:33]
+      embeddings that a simple model is giving me, I'm going to do an analogous
+      thing by choosing a three-dimensional slice through this very high
+      dimensional space, and projecting the word vectors down onto that and
+      displaying the results. The big idea here is that as a model tweaks and
+      tunes its weights to determine how exactly words get embedded as vectors
+      during training, it tends to settle on a set of embeddings where directions
+      in the space have a kind of semantic meaning.
+
+    Block 4  [16:27 → 17:06]
+      Also in playing this game of finding nearest neighbors, I was very pleased
+      to see how close cat was to both beast and monster. One bit of mathematical
+      intuition that's helpful to have in mind, especially for the next chapter,
+      is how the dot product of two vectors can be thought of as a way to measure
+      how well they align. Computationally, dot products involve multiplying all
+      the corresponding components and then adding the results, which is good,
+      since so much of our computation has to look like weighted sums.
+      Geometrically, the dot product is positive when vectors point in similar
+      directions, it's zero if they're perpendicular, and it's negative whenever
+      they point in opposite directions. For example, let's say you were playing
+      with this model,
+
+    Block 5  [17:14 → 18:25]
+      plurality direction in this space. To test this, I'm going to take this
+      vector and compute its dot product against the embeddings of certain
+      singular nouns, and compare it to the dot products with the corresponding
+      plural nouns. If you play around with this, you'll notice that the plural
+      ones do indeed seem to consistently give higher values than the singular
+      ones, indicating that they align more with this direction. It's also fun how
+      if you take this dot product with the embeddings of the words one, two,
+      three, and so on, they give increasing values, so it's as if we can
+      quantitatively measure how plural the model finds a given word. Again, the
+      specifics for how words get embedded is learned using data. This embedding
+      matrix, whose columns tell us what happens to each word, is the first pile
+      of weights in our model. Using the GPT-3 numbers, the vocabulary size
+      specifically is 50,257, and again, technically this consists not of words
+      per se, but of tokens. The embedding dimension is 12,288, and multiplying
+      those tells us this consists of about 617 million weights. Let's go ahead
+      and add this to a running tally, remembering that by the end we should count
+      up to 175 billion. In the case of transformers, you really want to think of
+      the vectors
+
+    Block 6  [21:40 → 21:59]
+      There's a lot more to be said about training later on, but I just want to
+      call that out right now. This matrix is called the Unembedding matrix and we
+      give it the label WU. Again, like all the weight matrices we see, its
+      entries begin at random, but they are learned during the training process.
+      Keeping score on our total parameter count, this Unembedding matrix has one
+      row for each word in the vocabulary,
+
+    Block 7  [23:37 → 24:37]
+      so if you were sampling from it you'd almost certainly just be picking the
+      maximizing input. But it's softer than just picking the max in the sense
+      that when other values are similarly large, they also get meaningful weight
+      in the distribution, and everything changes continuously as you continuously
+      vary the inputs. In some situations, like when ChatGPT is using this
+      distribution to create a next word, there's room for a little bit of extra
+      fun by adding a little extra spice into this function, with a constant T
+      thrown into the denominator of those exponents. We call it the temperature,
+      since it vaguely resembles the role of temperature in certain thermodynamics
+      equations, and the effect is that when T is larger, you give more weight to
+      the lower values, meaning the distribution is a little bit more uniform, and
+      if T is smaller, then the bigger values will dominate more aggressively,
+      where in the extreme, setting T equal to zero means all of the weight goes
+      to maximum value. For example, I'll have GPT-3 generate a story with the
+      seed text, "once upon a time there was A", but I'll use different
+      temperatures in each case.
+
+    Block 8  [26:03 → 26:27]
+      A lot of the goal with this chapter was to lay the foundations for
+      understanding the attention mechanism, Karate Kid wax-on-wax-off style. You
+      see, if you have a strong intuition for word embeddings, for softmax, for
+      how dot products measure similarity, and also the underlying premise that
+      most of the calculations have to look like matrix multiplication with
+      matrices full of tunable parameters, then understanding the attention
+      mechanism, this cornerstone piece in the whole modern boom in AI, should be
+      relatively smooth.
+
+
+  [backprop_gradient]  failure_mode=negation_misconception  hits=2
+  matched keywords: derivative, backprop
+
+    Block 1  [9:10 → 9:30]
+      Deep learning describes a class of models that in the last couple decades
+      have proven to scale remarkably well. What unifies them is that they all use
+      the same training algorithm, it's called backpropagation, we talked about it
+      in previous chapters, and the context that I want you to have as we go in is
+      that in order for this training algorithm to work well at scale, these
+      models have to follow a certain specific format.
+
+    Block 2  [24:33 → 24:58]
+      For example, I'll have GPT-3 generate a story with the seed text, "once upon
+      a time there was A", but I'll use different temperatures in each case.
+      Temperature zero means that it always goes with the most predictable word,
+      and what you get ends up being a trite derivative of Goldilocks. A higher
+      temperature gives it a chance to choose less likely words, but it comes with
+      a risk. In this case, the story starts out more originally,
+
+
+  [attention_mechanism]  failure_mode=multi_hop  hits=18
+  matched keywords: key, value
+
+    Block 1  [0:09 → 0:31]
+      Pretrained refers to how the model went through a process of learning from a
+      massive amount of data, and the prefix insinuates that there's more room to
+      fine-tune it on specific tasks with additional training. But the last word,
+      that's the real key piece. A transformer is a specific kind of neural
+      network, a machine learning model, and it's the core invention underlying
+      the current boom in AI. What I want to do with this video and the following
+      chapters is go through a
+
+    Block 2  [3:53 → 4:12]
+      close to each other in that space. This sequence of vectors then passes
+      through an operation that's known as an attention block, and this allows the
+      vectors to talk to each other and pass information back and forth to update
+      their values. For example, the meaning of the word model in the phrase "a
+      machine learning model" is different from its meaning in the phrase "a
+      fashion model". The attention block is what's responsible for figuring out
+      which
+
+    Block 3  [8:05 → 8:27]
+      instead you set up a very flexible structure with tunable parameters, like a
+      bunch of knobs and dials, and then, somehow, you use many examples of what
+      the output should look like for a given input to tweak and tune the values
+      of those parameters to mimic this behavior. For example, maybe the simplest
+      form of machine learning is linear regression, where your inputs and outputs
+      are each single numbers, something like the square footage of a house and
+      its price,
+
+    Block 4  [10:09 → 10:32]
+      For example, the final layer in our text processing model is a list of
+      numbers representing the probability distribution for all possible next
+      tokens. In deep learning, these model parameters are almost always referred
+      to as weights, and this is because a key feature of these models is that the
+      only way these parameters interact with the data being processed is through
+      weighted sums. You also sprinkle some non-linear functions throughout, but
+      they won't depend on parameters.
+
+    Block 5  [13:03 → 13:30]
+      known as the embedding matrix, has a single column for each one of these
+      words. These columns are what determines what vector each word turns into in
+      that first step. We label it W_E, and like all the matrices we see, its
+      values begin random, but they're going to be learned based on data. Turning
+      words into vectors was common practice in machine learning long before
+      transformers, but it's a little weird if you've never seen it before, and it
+      sets the foundation for everything that follows,
+
+    Block 6  [17:20 → 17:54]
+      product against the embeddings of certain singular nouns, and compare it to
+      the dot products with the corresponding plural nouns. If you play around
+      with this, you'll notice that the plural ones do indeed seem to consistently
+      give higher values than the singular ones, indicating that they align more
+      with this direction. It's also fun how if you take this dot product with the
+      embeddings of the words one, two, three, and so on, they give increasing
+      values, so it's as if we can quantitatively measure how plural the model
+      finds a given word. Again, the specifics for how words get embedded is
+      learned using data. This embedding matrix, whose columns tell us what
+      happens to each word,
+
+    Block 7  [20:51 → 21:15]
+      of Harry Potter would presumably assign a high number to the word Snape.
+      This involves two different steps. The first one is to use another matrix
+      that maps the very last vector in that context to a list of 50,000 values,
+      one for each token in the vocabulary. Then there's a function that
+      normalizes this into a probability distribution, it's called softmax and
+      we'll talk more about it in just a second, but before that it might seem a
+      little bit weird to only use this last embedding
+
+    Block 8  [22:26 → 23:55]
+      since it makes another appearance for us once we dive into the attention
+      blocks. The idea is that if you want a sequence of numbers to act as a
+      probability distribution, say a distribution over all possible next words,
+      then each value has to be between 0 and 1, and you also need all of them to
+      add up to 1. However, if you're playing the deep learning game where
+      everything you do looks like matrix-vector multiplication, the outputs you
+      get by default don't abide by this at all. The values are often negative, or
+      much bigger than 1, and they almost certainly don't add up to 1. Softmax is
+      the standard way to turn an arbitrary list of numbers into a valid
+      distribution in such a way that the largest values end up closest to 1, and
+      the smaller values end up very close to 0. That's all you really need to
+      know. But if you're curious, the way it works is to first raise e to the
+      power of each of the numbers, which means you now have a list of positive
+      values, and then you can take the sum of all those positive values and
+      divide each term by that sum, which normalizes it into a list that adds up
+      to 1. You'll notice that if one of the numbers in the input is meaningfully
+      bigger than the rest, then in the output the corresponding term dominates
+      the distribution, so if you were sampling from it you'd almost certainly
+      just be picking the maximizing input. But it's softer than just picking the
+      max in the sense that when other values are similarly large, they also get
+      meaningful weight in the distribution, and everything changes continuously
+      as you continuously vary the inputs. In some situations, like when ChatGPT
+      is using this distribution to create a next word,
+
+    Block 9  [24:04 → 24:43]
+      function, with a constant T thrown into the denominator of those exponents.
+      We call it the temperature, since it vaguely resembles the role of
+      temperature in certain thermodynamics equations, and the effect is that when
+      T is larger, you give more weight to the lower values, meaning the
+      distribution is a little bit more uniform, and if T is smaller, then the
+      bigger values will dominate more aggressively, where in the extreme, setting
+      T equal to zero means all of the weight goes to maximum value. For example,
+      I'll have GPT-3 generate a story with the seed text, "once upon a time there
+      was A", but I'll use different temperatures in each case. Temperature zero
+      means that it always goes with the most predictable word,
+
+
+  [ml_dl_taxonomy]  failure_mode=taxonomy  hits=2
+  matched keywords: machine learning is
+
+    Block 1  [7:44 → 8:30]
+      or our example of predicting the next word given a passage of text, or any
+      other task that seems to require some element of intuition and pattern
+      recognition. We almost take this for granted these days, but the idea with
+      machine learning is that rather than trying to explicitly define a procedure
+      for how to do that task in code, which is what people would have done in the
+      earliest days of AI, instead you set up a very flexible structure with
+      tunable parameters, like a bunch of knobs and dials, and then, somehow, you
+      use many examples of what the output should look like for a given input to
+      tweak and tune the values of those parameters to mimic this behavior. For
+      example, maybe the simplest form of machine learning is linear regression,
+      where your inputs and outputs are each single numbers, something like the
+      square footage of a house and its price, and what you want is to find a line
+      of best fit through this data, you know,
+
+
+  [positional_encoding]  failure_mode=multi_hop  hits=1
+  matched keywords: position of
+
+    Block 1  [18:20 → 18:43]
+      remembering that by the end we should count up to 175 billion. In the case
+      of transformers, you really want to think of the vectors in this embedding
+      space as not merely representing individual words. For one thing, they also
+      encode information about the position of that word, which we'll talk about
+      later, but more importantly, you should think of them as having the capacity
+      to soak in context. A vector that started its life as the embedding of the
+      word king, for example,
+
+
+  SUMMARY for v2_transformers:
+    neuron_mechanics               → 21 hits, 8 blocks
+    backprop_gradient              → 2 hits, 2 blocks
+    attention_mechanism            → 18 hits, 9 blocks
+    ml_dl_taxonomy                 → 2 hits, 1 blocks
+    positional_encoding            → 1 hits, 1 blocks
+
+──────────────────────────────────────────────────────────────────────
+VIDEO: CampusX — What is Deep Learning? (Hindi)
+──────────────────────────────────────────────────────────────────────
+
+  [neuron_mechanics]  failure_mode=semantic_precision  hits=5
+  matched keywords: weight
+
+    Block 1  [6:04 → 6:24]
+      perceptron , all the circles you can see are perceptrons and these are
+      connected to each other, are foreign tours and these are arrows, these are
+      called weight , they are called weights , okay, and I call them layers,
+      these are all the layers , which in one line will save them from all the
+      problems,
+
+    Block 2  [59:30 → 59:53]
+      is all the notes from all the circles, this is basically is a fundamental
+      unit of your N and is the second, this is which these are called weights.
+      these weights tell which notes are connected to notes. Okay, now that these
+      two can be created in different ways. means a different neural कि इन दोनों
+      को अलग-अलग तरीके से आप
+
+    Block 3  [1:00:32 → 1:00:46]
+      TYPE OF NOTE IN THE CHEST LIKE PERCEPTRON IS THERE IS SOME MORE TURN THERE
+      ARE SOME MORE TURN IN ARYA OK SIMILARLY WEIGHTS CAN ALSO BE CONNECTED IN
+      DIFFERENT WAYS SO DEPENDING ON THE PROBLEM YOU CAN CREATE DIFFERENT Neural
+      Network Architecture with
+
+
+  [attention_mechanism]  failure_mode=multi_hop  hits=2
+  matched keywords: key, value
+
+    Block 1  [15:06 → 15:25]
+      representations made after deduction and classification from Noida this
+      replacement alsiser engineering channel vastu sammat into brothels inside
+      free key and used to perform a specific pass torsion you easy year explain
+      So, if you have done even a little work on setting up a machine, then you
+      would know that there is a thing called
+
+    Block 2  [31:43 → 31:59]
+      If the train is stopped then there are two basins' w and Bablu w and details
+      are being told about this feature of and its w. Now on the basis of this w1
+      and value of w, I can tell which feature is more important and which feature
+      is less important. Okay, so if tomorrow some child asks , tell me. Why
+
+
+  [feature_engineering]  failure_mode=contrast  hits=9
+  matched keywords: representation learning, manual feature, feature extract
+
+    Block 1  [14:19 → 15:06]
+      comes under Machine Learning and Artificial Neural Networks are sent over
+      but here there is a center and an award written and is written, today
+      representation learning is fine so according to this definition deep
+      learning does do representation learning or does depend on it 9th question
+      this Kiwi What is presentation learning? Okay, suit Rashmi, if you want to
+      enter the degree in , then you should understand representation learning to
+      . I will show you in fact . 200 This is the Wikipedia page of representation
+      learning. Okay, so here it is written for you in machine learning feature
+      learning and Representation learning both are same thing setup it technique
+      date alarms and system to automatically discover representations made after
+      deduction and
+
+    Block 2  [15:56 → 16:15]
+      whether it has a dog, or a cat. If you go to solve this problem through
+      machine learning, then you will have to create manual features. How can
+      teachers be like size is a feature that if the size is big then it is a dog
+      if it is a size then it is a cat ok color
+
+    Block 3  [16:48 → 17:04]
+      features, right on your intelligence, so this is called goes to the middle
+      of the presentation where automatic feature extraction takes place in your .
+      If the problem is fine with your data then this is one more thing to
+      understand and further we will discuss on that there is no need of
+
+    Block 4  [19:03 → 19:20]
+      last, so this is the definition that is explaining to you two things, again
+      I will cover first deep learning users representation learning which means
+      that was extracting features. The burden of doing is not on you, the machine
+      will do it automatically. The algorithm is doing it automatically. From the
+      second topper definition, you learned how
+
+    Block 5  [25:35 → 25:54]
+      ok benefit point feature selection is Discussed Positively About the Point
+      is We Discussed That Shabby Thing Called Representation Learning A That we
+      just did the first 10 where we learned that deep learning algorithms
+
+
+  [ml_dl_taxonomy]  failure_mode=taxonomy  hits=22
+  matched keywords: deep learning is, umbrella, artificial intelligence, machine learning is
+
+    Block 1  [2:20 → 2:39]
+      , so our first definition of will be on your screen. It is on where it is
+      written Deep Learning Apps Now Field of Artificial Intelligence and Machine
+      Learning is inspired by the Structure of Human Brain Ok Full Slip Learning
+      Algorithms Attempt to Drops Similar Confusion and Human
+
+    Block 2  [2:48 → 3:19]
+      Network Okay so 2 parts definition let's break down let's focus on the slice
+      if it is first time SIM It is understood that is that deep learning is back
+      here and Machine Learning is okay that Dry diagram will help you, put in
+      this program that , it is also written that the biggest umbrella is time,
+      under which everything comes, that is Artificial Intelligence, right, is
+      Artificial Intelligence, what is this , basically we humans have also
+      discovered it, where , we want to make intelligent machines like us, , we
+      people have been working behind this for years,
+
+    Block 3  [3:50 → 4:08]
+      and the output is , then your machine learning algorithm. work is to figure
+      out the relationship between input and output. So machine learning is a soft
+      side of the dough now. तो मशीन लर्निंग ए सॉफ्ट डौ की साइड अब What is dip
+      learning for us? This obscene dance is machine learning where you do all the
+      things
+
+    Block 4  [11:39 → 12:05]
+      , defeating him four times in 5 games. Okay, and , there are also many types
+      of schedules where , you will see that the state-of-the-art art form of deep
+      learning is coming. There are more tumors send exports he is leaving them
+      behind ok short dresses switch to battery saver mode Deep learning is
+      getting so much tension in today's date has been in the software committee
+      computer science minutes if it is ok then you will see a lot of examples
+
+    Block 5  [13:03 → 13:17]
+      . Okay, so much more than this, then is a reputation builder app for
+      learning. Okay, . So I hope you have got a little introduction to . You have
+      understood what deep learning is. Now is free. Let's move a little further.
+      In this video , I am , I am
+
+    Block 6  [13:24 → 13:40]
+      , which is very common with definition, does not want to ask, lightly
+      technical definition and definition is on the screen, is written here that
+      deep learning is a part of a broad family for machine learning method, which
+      is a data artificial . Neural Networks with Representations
+
+    Block 7  [16:15 → 16:35]
+      if it is a size then it is a cat ok color candy feature and whatever
+      physical attributes all these features can be made but you have to
+      understand this thing, we have to understand that machine learning is
+      features, you have to create and give your machine learning algorithm but
+      what happens in deep learning This entire process is
+
+    Block 8  [20:03 → 20:19]
+      next discuss what is the point between deep learning and machine learning,
+      so now is the difference, at this point we only know that is that deep
+      learning is all about the field of machine writing. For machine learning
+      algorithms, there is . Even the sages do their work in by using tactical
+      techniques. The
+
+    Block 9  [33:43 → 33:58]
+      , if we have been working at such a time, here we have to tell this along
+      with the result, why we reached him on the website that deep learning is not
+      a good choice, okay, you know four-five things IS , after reading and
+      understanding these four-five things , now you will reach a computer that
+      the machine cannot replace
+
+    Block 10  [34:11 → 34:41]
+      कि डिफरेंट मगर इतना अच्छा है पावरफुल हैं So, Tuesday of learning in every
+      project, the result is that is that in some things, machine learning is also
+      better than planning and you must have heard an old saying that where needle
+      is needed, is not a sword, then the same thing is , machine learning is the
+      needle and deep learning is the sword, now your purse is to sew clothes or
+      is to kill people. Depending on the people will know that you need
+
+    Block 11  [37:21 → 37:44]
+      डेटा सेट है था उसे जरा भी डेटा सेट है तो आप इसके ऊपर You can belt a model by
+      training but not with deep learning Deep learning is needed is worth lakhs
+      of rupees only then it will work Now the good thing is that around 120 12
+      revolutions came in our society
+
+    Block 12  [43:29 → 44:04]
+      and after coming from this data, what happened is that research on has
+      become very easy, , because it was not within the power of everyone to make
+      it from the data, then if you ask him that in today's rate, deep learning is
+      so powerful . Why is it the biggest reason? Biggest Contributor from Data to
+      Bigg Boss Without Data Ruby Doesn't Know Deep Learning बड़ा कॉन्ट्रीब्यूटर
+      डाटा से Bigg Boss विदाउट डाटा दे रूबी डोंट नो डीप लर्निंग So according to
+      me, the biggest second chapter in to push deep learning is Hardware Hardware
+      means computing stack Okay, so to explain this entire region , first of all
+      I will explain it to you
+
+    Block 13  [50:29 → 50:44]
+      device on which you can do calculations . Similarly, in today's date, many
+      applications of have started coming in smart phones where machine learning
+      is used. This is what planning is used for, then there is an entry for
+      energy. These are further called Neural Processing Unit. Neural
+
+    Block 14  [52:46 → 53:03]
+      is the ticket to the office Overall the research that is will be fast Ok so
+      hard ware is the second chapter According to me, the third factor in which
+      deep learning is given the most importance in is the framework and library,
+      its development is fine Look, training deep learning models
+
+
+  [layers_and_architecture]  failure_mode=semantic_precision  hits=3
+  matched keywords: output layer, input layer
+
+    Block 1  [6:38 → 6:56]
+      , I have given the description in front of you like a child, now in the
+      layer , the place from where you get support, you call input layer and the
+      place from where you get freedom, you call it output layer, now you can add
+      any number in between. There are two here but you can add any number यहां पर
+      दो है बट आप कितने भी ऐड कर सकते Yes, these are called freedom layers, okay
+
+    Block 2  [19:20 → 19:35]
+      topper definition, you learned how works. The way works is that you tell in
+      the input layer and then come through the Hayden lace. When you start
+      editing , then put at the beginning, select this trend and . The latter is
+      the difference that extracts the root of your
+
+
+  SUMMARY for v3_deep_learning_hi:
+    neuron_mechanics               → 5 hits, 3 blocks
+    attention_mechanism            → 2 hits, 2 blocks
+    feature_engineering            → 9 hits, 5 blocks
+    ml_dl_taxonomy                 → 22 hits, 14 blocks
+    layers_and_architecture        → 3 hits, 2 blocks
+
+──────────────────────────────────────────────────────────────────────
+VIDEO: CodeWithHarry — All About ML & Deep Learning (Hindi)
+──────────────────────────────────────────────────────────────────────
+
+  [backprop_gradient]  failure_mode=negation_misconception  hits=4
+  matched keywords: loss function, minimize, gradient
+
+    Block 1  [11:39 → 11:53]
+      is being done so the function is very simple Let's do artificial new
+      networks. Basically approximates a function. Repeatedly we feed the data
+      with it and minimize the error. We call this process training . Now we have
+      feed forward neural networks. We have methods of backward propagation. Then
+      there are also different types of neural
+
+    Block 2  [12:15 → 12:30]
+      आर एन एन रिकरेंट न्यूरल नेटवर्क उसी के सा सा एलएसटीएम होते हैं लॉन्ग शॉर्ट
+      टर्म मेमोरी वाले न्यूरल नेटवर्क्स इनको लंगर Sequences and vanishing gradient
+      has been created to solve the problem. I had made a video long ago in which
+      I had talked about the vanishing gradient problem. What is ? So you guys can
+      watch it. Long ago, I had posted those videos on machine learning on . So if
+      you guys are interested, then you can watch them again and watch them again.
+      I have made a lot of videos on
+
+    Block 3  [13:28 → 13:39]
+      people should know every single thing that you are getting mathematics, you
+      people are saying loss function is this so I should remember loss function
+      you have a complete architecture which is in Python. should not come from
+      scratch, you guys learn, you guys keep the information, , keep the
+      information, how your neural
+
+
+  [attention_mechanism]  failure_mode=multi_hop  hits=3
+  matched keywords: value
+
+    Block 1  [1:46 → 2:08]
+      I will say, brother, when the precipitation was this much, , humidity, this
+      much, temperature, then it rained, was precipitation, humidity, temperature,
+      this much, , it did not rain, then when I will give the new value , brother,
+      today's precipitation is . If this is the humidity and temperature then on
+      the basis of its it will tell me that according to this value, it is not
+      going to rain today, is it going to rain today, will be true or not, will it
+      be a prediction, then does the machine learning and AI.
+
+    Block 2  [6:34 → 6:44]
+      like I told you guys based on precipitation humidity and temperature we were
+      predicting rain yes and no if I have a lot of data like this then new I have
+      the values of precipitation, humidity and temperature , so on the basis of
+      that, I can find out whether there will be rain or not, or if a person has
+      some parameters, I have health parameters,
+
+
+  [ml_dl_taxonomy]  failure_mode=taxonomy  hits=1
+  matched keywords: machine learning is
+
+    Block 1  [1:02 → 1:16]
+      You want and this thing may seem a little bad but I would say save your
+      career want to save your career What is machine learning Machine learning is
+      the process of to train an algorithm on data What does this mean You have a
+      lot of data Let us say 3 billion data points You have and now you
+
+
+  SUMMARY for v4_ml_dl_hi:
+    backprop_gradient              → 4 hits, 3 blocks
+    attention_mechanism            → 3 hits, 2 blocks
+    ml_dl_taxonomy                 → 1 hits, 1 blocks
+
+======================================================================
+END — Use this file to pick segments for Step 3 annotation
