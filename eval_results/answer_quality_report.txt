@@ -1,0 +1,263 @@
+ANSWER QUALITY EVALUATION REPORT (LLM-as-Judge)
+======================================================================
+Scores: correctness 1-5 | faithfulness 1-3 | coverage 1-3
+QA pairs evaluated: 29
+
+
+OVERALL METRICS
+──────────────────────────────────────────────────
+  Retriever   Correct(avg)  Faithful(avg)  Coverage(avg)  Score=5(%)
+  ------------------------------------------------------------------
+  TF-IDF              3.14           3.00           2.03         28%
+  BM25                3.10           2.97           2.07         31%
+  Dense               3.24           2.97           2.07         31%
+
+
+PER FAILURE MODE — CORRECTNESS AVG
+──────────────────────────────────────────────────
+  Failure Mode                TF-IDF     BM25    Dense     n
+  ----------------------------------------------------------
+  contrast                      3.50     3.50     3.50     2
+  multi_hop                     4.11     3.89     3.56     9
+  negation_misconception        3.50     3.50     3.50     4
+  semantic_precision            2.00     2.20     2.80    10
+  taxonomy                      3.25     3.00     3.25     4
+
+
+PER-QUESTION BREAKDOWN
+──────────────────────────────────────────────────────────────────────
+
+  [semantic_precision       ]  What is the key practical reason modern deep networks prefer ReLU
+    TF-IDF    C=4/5 [████░]  F=3/3  Cov=2/3  | The answer correctly captures the core reason (easier to tra
+             → Modern deep networks prefer ReLU over sigmoid because ReLU is much easier to train. Sigmoid was used
+    BM25      C=4/5 [████░]  F=3/3  Cov=2/3  | Identical context yields the same answer as TF-IDF, capturin
+             → Modern deep networks prefer ReLU over sigmoid because ReLU is much easier to train. Sigmoid was used
+    Dense     C=4/5 [████░]  F=3/3  Cov=2/3  | Identical context yields the same answer, correctly identify
+             → Modern deep networks prefer ReLU over sigmoid because ReLU is much easier to train. Sigmoid was used
+
+  [multi_hop                ]  What condition in the pixel values causes the weighted sum to be 
+    TF-IDF    C=5/5 [█████]  F=3/3  Cov=3/3  | The context directly supports both the condition (bright mid
+             → The weighted sum is at its largest when the middle pixels are bright but the surrounding pixels are 
+    BM25      C=5/5 [█████]  F=3/3  Cov=3/3  | The context is identical to TF-IDF and fully supports the go
+             → The weighted sum is at its largest when the middle pixels are bright but the surrounding pixels are 
+    Dense     C=5/5 [█████]  F=3/3  Cov=3/3  | The context is identical across all three retrievers and ful
+             → The weighted sum is at its largest when the middle pixels are bright but the surrounding pixels are 
+
+  [semantic_precision       ]  What does the activation of a neuron specifically represent in th
+    TF-IDF    C=3/5 [███░░]  F=3/3  Cov=2/3  | Correctly captures that activations are values between 0 and
+             → The activation of a neuron represents a measure of how positive the relevant weighted sum is, expres
+    BM25      C=3/5 [███░░]  F=3/3  Cov=2/3  | Correctly conveys that activations are numbers between 0 and
+             → A neuron holds a number between 0 and 1 — that is the essence of what an activation represents. The 
+    Dense     C=2/5 [██░░░]  F=3/3  Cov=1/3  | Only tangentially addresses what an activation represents (a
+             → Each neuron can be thought of as a function that takes in outputs from all neurons in the previous l
+
+  [semantic_precision       ]  Why are the learnable parameters in deep learning models specific
+    TF-IDF    C=1/5 [█░░░░]  F=3/3  Cov=1/3  | The context only covers the scale of parameters in deep lear
+             → The retrieved context does not contain enough information to answer this. It discusses that deep lea
+    BM25      C=1/5 [█░░░░]  F=3/3  Cov=1/3  | The context is identical to TF-IDF and similarly lacks any e
+             → The retrieved context does not contain enough information to answer this. It describes parameters in
+    Dense     C=5/5 [█████]  F=3/3  Cov=3/3  | The dense context directly and fully explains why parameters
+             → In deep learning, model parameters are called 'weights' because the only way these parameters intera
+
+  [negation_misconception   ]  Does using temperature zero in GPT-3 generation produce output ba
+    TF-IDF    C=5/5 [█████]  F=3/3  Cov=3/3  | The context directly supports the answer that 'derivative' r
+             → No. Temperature zero in GPT-3 generation simply means the model always selects the most predictable 
+    BM25      C=5/5 [█████]  F=3/3  Cov=3/3  | The context is identical to TF-IDF and fully supports the go
+             → No. Temperature zero in GPT-3 generation means the model always selects the most predictable next wo
+    Dense     C=5/5 [█████]  F=3/3  Cov=3/3  | The context is identical across all three retrievers and ful
+             → No. Temperature zero simply means the model always chooses the most statistically predictable next w
+
+  [multi_hop                ]  How does the softmax function specifically handle the problem tha
+    TF-IDF    C=4/5 [████░]  F=3/3  Cov=3/3  | The context contains most of the key mechanism (raising e to
+             → Deep learning outputs are often negative or greater than 1 and don't add up to 1, making them invali
+    BM25      C=4/5 [████░]  F=3/3  Cov=3/3  | Identical context to TF-IDF yields the same result — the cor
+             → Deep learning outputs are often negative or much bigger than 1 and don't add up to 1, violating the 
+    Dense     C=2/5 [██░░░]  F=3/3  Cov=1/3  | The Dense context only describes the problem but does not in
+             → Deep learning outputs are often negative or much bigger than 1 and don't add up to 1, which makes th
+
+  [taxonomy                 ]  Is linear regression considered a form of machine learning?
+    TF-IDF    C=5/5 [█████]  F=3/3  Cov=3/3  | The context directly and fully supports the gold answer, cov
+             → Yes, linear regression is considered perhaps the simplest form of machine learning, where inputs and
+    BM25      C=5/5 [█████]  F=3/3  Cov=3/3  | The BM25 context is identical to TF-IDF, fully grounding the
+             → Yes, linear regression is considered perhaps the simplest form of machine learning, where inputs and
+    Dense     C=1/5 [█░░░░]  F=3/3  Cov=1/3  | The dense retriever returned an irrelevant chunk that does n
+             → The retrieved context does not contain enough information to answer this. The context discusses mach
+
+  [multi_hop                ]  What two things does a word embedding vector in a transformer enc
+    TF-IDF    C=5/5 [█████]  F=3/3  Cov=3/3  | The context directly states both key points — positional enc
+             → A word embedding vector in a transformer encodes information about the position of that word in the 
+    BM25      C=5/5 [█████]  F=3/3  Cov=3/3  | The BM25 context is identical to TF-IDF and directly support
+             → A word embedding vector in a transformer encodes information about the position of that word in the 
+    Dense     C=5/5 [█████]  F=3/3  Cov=3/3  | The Dense context explicitly states both key points — positi
+             → A word embedding vector in a transformer encodes information about the position of that word, and mo
+
+  [semantic_precision       ]  What specific role do weights play in a neural network according 
+    TF-IDF    C=1/5 [█░░░░]  F=3/3  Cov=1/3  | The TF-IDF context is a vague, mixed-language snippet that c
+             → The retrieved context does not contain enough information to answer this. The passage only briefly m
+    BM25      C=3/5 [███░░]  F=3/3  Cov=2/3  | The BM25 context correctly grounds weights as being tied to 
+             → Weights are numbers assigned to each connection between neurons in a neural network. They are used t
+    Dense     C=3/5 [███░░]  F=3/3  Cov=2/3  | The Dense context grounds weights in the context of inter-la
+             → Weights correspond to the connections between one layer and a particular neuron in the next layer. T
+
+  [multi_hop                ]  What are keys derived from, and what specific operation are they 
+    TF-IDF    C=4/5 [████░]  F=3/3  Cov=3/3  | The context directly mentions representations made after ded
+             → Keys are derived from representations made after deduction and classification. They are used to perf
+    BM25      C=4/5 [████░]  F=3/3  Cov=3/3  | Identical context to TF-IDF yields the same quality answer, 
+             → Keys are derived from representations made after deduction and classification. They are then used to
+    Dense     C=1/5 [█░░░░]  F=3/3  Cov=1/3  | The Dense context is entirely about hardware (FPGAs, panel p
+             → The retrieved context does not contain enough information to answer this.
+
+  [contrast                 ]  What is the difference between traditional feature engineering an
+    TF-IDF    C=3/5 [███░░]  F=3/3  Cov=2/3  | The context supports the key point that feature learning and
+             → In machine learning, feature learning and representation learning are the same thing. The context in
+    BM25      C=3/5 [███░░]  F=3/3  Cov=2/3  | Identical context to TF-IDF yields the same answer and limit
+             → In machine learning, feature learning and representation learning are the same thing. The context in
+    Dense     C=4/5 [████░]  F=2/3  Cov=3/3  | The dense context provides slightly more detail about automa
+             → In machine learning, feature learning and representation learning are the same thing. It is a techni
+
+  [taxonomy                 ]  What are the two biggest contributors to deep learning's rise in 
+    TF-IDF    C=3/5 [███░░]  F=3/3  Cov=2/3  | The context supports Data as the top contributor but does no
+             → According to the context, Data is the biggest contributor to deep learning's rise in power. The cont
+    BM25      C=5/5 [█████]  F=3/3  Cov=3/3  | The BM25 context explicitly mentions both Data as the bigges
+             → According to the context, Data is the single biggest contributor to deep learning's rise, as without
+    Dense     C=3/5 [███░░]  F=3/3  Cov=2/3  | While both data and hardware are mentioned in the dense cont
+             → The context notes that deep learning has a strong dependency on data, and its performance scales cle
+
+  [semantic_precision       ]  What is the precise conceptual distinction used to define the inp
+    TF-IDF    C=1/5 [█░░░░]  F=3/3  Cov=1/3  | The context only describes functional behavior of the layers
+             → The retrieved context does not contain enough information to answer this. The context describes how 
+    BM25      C=1/5 [█░░░░]  F=3/3  Cov=1/3  | Identical to TF-IDF context, it only covers functional descr
+             → The retrieved context does not contain enough information to answer this. It describes the input lay
+    Dense     C=1/5 [█░░░░]  F=3/3  Cov=1/3  | The dense context discusses deep learning layer structure in
+             → The retrieved context does not contain enough information to answer this. It describes layers as pro
+
+  [negation_misconception   ]  Wasn't LSTM designed to handle exploding gradients rather than va
+    TF-IDF    C=1/5 [█░░░░]  F=3/3  Cov=1/3  | The context is entirely about GPU hardware and has no inform
+             → The retrieved context does not contain enough information to answer this. The context only discusses
+    BM25      C=1/5 [█░░░░]  F=3/3  Cov=1/3  | The context discusses general learning algorithm performance
+             → The retrieved context does not contain enough information to answer this. The context vaguely refere
+    Dense     C=5/5 [█████]  F=3/3  Cov=3/3  | The context directly states LSTM was created to solve the va
+             → No, LSTM (Long Short-Term Memory) networks were created to solve the vanishing gradient problem, not
+
+  [multi_hop                ]  If today's precipitation, humidity, and temperature values are fe
+    TF-IDF    C=4/5 [████░]  F=3/3  Cov=2/3  | The answer correctly captures the true/false prediction outp
+             → When today's precipitation, humidity, and temperature values are fed into the system, it produces a 
+    BM25      C=4/5 [████░]  F=3/3  Cov=2/3  | Same context as TF-IDF yields the same answer — the output (
+             → When today's precipitation, humidity, and temperature values are fed into the system, it produces a 
+    Dense     C=4/5 [████░]  F=3/3  Cov=2/3  | Identical context to the other retrievers produces the same 
+             → When today's precipitation, humidity, and temperature values are fed into the system, it produces a 
+
+  [taxonomy                 ]  What category of process does machine learning fall under, based 
+    TF-IDF    C=3/5 [███░░]  F=3/3  Cov=2/3  | The context implies a data-driven training process but never
+             → Based on the context, machine learning involves a process of running an algorithm on data and traini
+    BM25      C=1/5 [█░░░░]  F=3/3  Cov=1/3  | The BM25 context only discusses reinforcement learning mecha
+             → The retrieved context does not contain enough information to answer this. The context focuses on des
+    Dense     C=5/5 [█████]  F=3/3  Cov=3/3  | The Dense context explicitly defines machine learning as usi
+             → Machine learning describes any model where data is used to somehow determine how a model behaves. Th
+
+  [semantic_precision       ]  What is the functional difference between a weight and a bias in 
+    TF-IDF    C=1/5 [█░░░░]  F=3/3  Cov=1/3  | The TF-IDF context is entirely off-topic, covering only a su
+             → The retrieved context does not contain enough information to answer this. The context discusses deep
+    BM25      C=1/5 [█░░░░]  F=3/3  Cov=1/3  | The BM25 context is about NLP vector semantics and has no re
+             → The retrieved context does not contain enough information to answer this. The context discusses word
+    Dense     C=3/5 [███░░]  F=3/3  Cov=2/3  | The Dense context correctly grounds the roles of weights (as
+             → Weights are associated with the connections between layers, and taking the weighted sum of activatio
+
+  [multi_hop                ]  If every pixel in an input image were completely black, what acti
+    TF-IDF    C=5/5 [█████]  F=3/3  Cov=3/3  | The context explicitly states that black pixels map to 0 and
+             → If every pixel in the input image were completely black, each neuron in the first layer would hold a
+    BM25      C=5/5 [█████]  F=3/3  Cov=3/3  | The context is identical to TF-IDF and explicitly supports b
+             → If every pixel in the input image were completely black, each neuron in the first layer would hold a
+    Dense     C=5/5 [█████]  F=3/3  Cov=3/3  | The context is identical across all retrievers and fully sup
+             → If every pixel in the input image were completely black, each neuron in the first layer would hold a
+
+  [semantic_precision       ]  What is the precise total number of weights needed just for the c
+    TF-IDF    C=2/5 [██░░░]  F=3/3  Cov=1/3  | The context mentions 16 biases and the total of ~13,000 but 
+             → The connections from the first layer to the second layer require a set of weights along with 16 bias
+    BM25      C=5/5 [█████]  F=3/3  Cov=3/3  | The context explicitly states '784 times 16 weights, along w
+             → Each of the 16 neurons in the hidden layer is connected to all 784 pixel neurons from the first laye
+    Dense     C=1/5 [█░░░░]  F=3/3  Cov=1/3  | The dense context only covers matrix notation concepts and c
+             → The retrieved context does not contain enough information to answer this. It discusses the matrix no
+
+  [semantic_precision       ]  What is the precise computational operation that dominates the pr
+    TF-IDF    C=1/5 [█░░░░]  F=3/3  Cov=1/3  | The context contains no information about the dominant compu
+             → The retrieved context does not contain enough information to answer this. The context only describes
+    BM25      C=2/5 [██░░░]  F=2/3  Cov=2/3  | The context vaguely references matrix operations and multipl
+             → Based on the context, deep learning involves matrix operations on data, including multiplication of 
+    Dense     C=1/5 [█░░░░]  F=3/3  Cov=1/3  | The context is entirely about speed and training time compar
+             → The retrieved context does not contain enough information to answer this. The context only discusses
+
+  [negation_misconception   ]  Is backpropagation a training algorithm unique to only some deep 
+    TF-IDF    C=5/5 [█████]  F=3/3  Cov=3/3  | The context directly and explicitly states that all deep lea
+             → All deep learning models use the same training algorithm called backpropagation, so it is not unique
+    BM25      C=5/5 [█████]  F=3/3  Cov=3/3  | The context is identical to TF-IDF and directly supports the
+             → All deep learning models use the same training algorithm called backpropagation, so it is not unique
+    Dense     C=1/5 [█░░░░]  F=3/3  Cov=1/3  | The Dense retriever returned an irrelevant chunk about gener
+             → The retrieved context does not contain enough information to answer this.
+
+  [multi_hop                ]  What is the size of the list produced by the matrix transformatio
+    TF-IDF    C=1/5 [█░░░░]  F=3/3  Cov=1/3  | The TF-IDF context is about context window size and has no i
+             → The retrieved context does not contain enough information to answer this. It only discusses context 
+    BM25      C=5/5 [█████]  F=3/3  Cov=3/3  | The BM25 context contains exactly the information needed to 
+             → A matrix maps the very last vector in the context to a list of 50,000 values, one for each token in 
+    Dense     C=5/5 [█████]  F=3/3  Cov=3/3  | The Dense context is identical to the BM25 context and conta
+             → A matrix maps the very last vector in the context to a list of 50,000 values, one for each token in 
+
+  [semantic_precision       ]  What is the visual representation used to depict the connections 
+    TF-IDF    C=1/5 [█░░░░]  F=3/3  Cov=1/3  | The context only discusses weights and biases numerically bu
+             → The retrieved context does not contain enough information to answer this. It mentions that connectio
+    BM25      C=1/5 [█░░░░]  F=3/3  Cov=1/3  | Same context as TF-IDF — mentions weights and biases but say
+             → The retrieved context does not contain enough information to answer this. It discusses weights and b
+    Dense     C=5/5 [█████]  F=3/3  Cov=3/3  | The Dense context explicitly states that the connections bet
+             → In the network diagram, the connections between perceptrons are depicted as arrows. These arrows are
+
+  [multi_hop                ]  What two pieces of information are combined to determine which fe
+    TF-IDF    C=5/5 [█████]  F=3/3  Cov=3/3  | The TF-IDF context directly contains the answer, explicitly 
+             → According to the context, the value of w1 and the value of w are combined together to determine whic
+    BM25      C=1/5 [█░░░░]  F=3/3  Cov=1/3  | The BM25 context is entirely irrelevant to the question, dis
+             → The retrieved context does not contain enough information to answer this. The context only discusses
+    Dense     C=1/5 [█░░░░]  F=3/3  Cov=1/3  | The Dense context relates to the same general domain (placem
+             → The retrieved context does not contain enough information to answer this. While it discusses various
+
+  [contrast                 ]  What distinguishes automatic feature extraction from manual featu
+    TF-IDF    C=4/5 [████░]  F=3/3  Cov=3/3  | The context directly supports the 'middle of the presentatio
+             → Automatic feature extraction takes place in the middle of the presentation, meaning it occurs within
+    BM25      C=4/5 [████░]  F=3/3  Cov=3/3  | Identical context to TF-IDF yields the same quality answer c
+             → Automatic feature extraction takes place in the middle of the presentation, meaning it happens inter
+    Dense     C=3/5 [███░░]  F=3/3  Cov=2/3  | The context supports the manual vs. automatic distinction we
+             → In machine learning, features must be manually created and supplied to the algorithm, whereas in dee
+
+  [taxonomy                 ]  How does deep learning relate to machine learning in terms of the
+    TF-IDF    C=2/5 [██░░░]  F=3/3  Cov=1/3  | The context touches on differences between deep learning and
+             → According to the context, machine learning and deep learning perform similar work but in different w
+    BM25      C=1/5 [█░░░░]  F=3/3  Cov=1/3  | The BM25 context is entirely about neural network matrix ope
+             → The retrieved context does not contain enough information to answer this. The context focuses on the
+    Dense     C=4/5 [████░]  F=3/3  Cov=3/3  | The Dense context explicitly frames deep learning as a field
+             → Deep learning is a field within Artificial Intelligence and Machine Learning, as stated in the retri
+
+  [semantic_precision       ]  What is the structural path that data follows between the input l
+    TF-IDF    C=5/5 [█████]  F=3/3  Cov=3/3  | The context explicitly traces the sequential data path from 
+             → Data enters through the input layer by activating 784 neurons according to pixel brightness, which c
+    BM25      C=1/5 [█░░░░]  F=3/3  Cov=1/3  | The BM25 context only vaguely references input/output and ne
+             → The retrieved context does not contain enough information to answer this. It mentions that deep lear
+    Dense     C=3/5 [███░░]  F=3/3  Cov=2/3  | The context references the layered structure and output laye
+             → The context mentions that the output layer produces the network's final choice (the brightest neuron
+
+  [negation_misconception   ]  Does backpropagation work by pushing data forward through the net
+    TF-IDF    C=3/5 [███░░]  F=3/3  Cov=2/3  | The context implies the distinction between forward feeding 
+             → No. The context distinguishes between feed forward neural networks and methods of backward propagati
+    BM25      C=3/5 [███░░]  F=3/3  Cov=2/3  | Identical context to TF-IDF yields the same partial answer —
+             → No. The context distinguishes between feed forward neural networks and methods of backward propagati
+    Dense     C=3/5 [███░░]  F=3/3  Cov=2/3  | Same context again leads to the same partial answer, capturi
+             → No. The context distinguishes between feed forward neural networks and methods of backward propagati
+
+  [multi_hop                ]  If a person's health parameters are provided alongside precipitat
+    TF-IDF    C=4/5 [████░]  F=3/3  Cov=2/3  | The context establishes both scenarios and hints at the data
+             → Both scenarios involve having a set of input parameter values — precipitation, humidity, and tempera
+    BM25      C=2/5 [██░░░]  F=3/3  Cov=1/3  | The BM25 context is limited to the weather use case and comp
+             → The retrieved context does not contain enough information to answer this. It only describes the weat
+    Dense     C=4/5 [████░]  F=3/3  Cov=2/3  | Dense retrieved the same chunk as TF-IDF, capturing both sce
+             → Both scenarios involve having a set of input parameter values — precipitation, humidity, and tempera
+
+======================================================================
+END

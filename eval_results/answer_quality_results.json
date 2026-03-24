@@ -1,0 +1,1046 @@
+[
+  {
+    "id": "v1_neural_network__neuron_mechanics",
+    "question": "What is the key practical reason modern deep networks prefer ReLU over sigmoid activation functions?",
+    "ideal_answer": "ReLU is much easier to train compared to sigmoid. Sigmoid functions made training difficult, and when researchers tried ReLU instead, it worked very well for incredibly deep neural networks.",
+    "failure_mode": "semantic_precision",
+    "concept": "neuron_mechanics",
+    "video_key": "v1_neural_network",
+    "scores": {
+      "TF-IDF": {
+        "generated_answer": "Modern deep networks prefer ReLU over sigmoid because ReLU is much easier to train. Sigmoid was used in early networks to squish weighted sums into the interval between zero and one, motivated by a biological analogy, but relatively few modern networks use sigmoid anymore.",
+        "correctness": 4,
+        "faithfulness": 3,
+        "coverage": 2,
+        "reasoning": "The answer correctly captures the core reason (easier to train) but lacks the gold answer's detail about incredibly deep neural networks specifically benefiting."
+      },
+      "BM25": {
+        "generated_answer": "Modern deep networks prefer ReLU over sigmoid because ReLU is much easier to train. Sigmoid was used in early networks to squish weighted sums into the interval between zero and one, motivated by a biological analogy, but relatively few modern networks use sigmoid anymore.",
+        "correctness": 4,
+        "faithfulness": 3,
+        "coverage": 2,
+        "reasoning": "Identical context yields the same answer as TF-IDF, capturing the key training-ease reason but missing the specific mention of incredibly deep neural networks."
+      },
+      "Dense": {
+        "generated_answer": "Modern deep networks prefer ReLU over sigmoid because ReLU is much easier to train. Sigmoid was used in early networks to squish weighted sums into the interval between zero and one, motivated by a biological analogy, but relatively few modern networks use sigmoid anymore.",
+        "correctness": 4,
+        "faithfulness": 3,
+        "coverage": 2,
+        "reasoning": "Identical context yields the same answer, correctly identifying ease of training as the key reason but omitting the gold detail about deep neural networks specifically."
+      }
+    },
+    "contexts": {
+      "TF-IDF": "v1_neural_network__c266",
+      "BM25": "v1_neural_network__c266",
+      "Dense": "v1_neural_network__c266"
+    }
+  },
+  {
+    "id": "v1_neural_network__attention_mechanism",
+    "question": "What condition in the pixel values causes the weighted sum to be at its largest when trying to detect an edge, and what does that tell us about the role of the negative weights?",
+    "ideal_answer": "The weighted sum is largest when the middle pixels are bright but the surrounding pixels are darker. The negative weights are assigned to the surrounding pixels precisely to create this contrast — so the sum peaks when there is a meaningful brightness difference between the center region and its surroundings, which is the signature of an edge.",
+    "failure_mode": "multi_hop",
+    "concept": "attention_mechanism",
+    "video_key": "v1_neural_network",
+    "scores": {
+      "TF-IDF": {
+        "generated_answer": "The weighted sum is at its largest when the middle pixels are bright but the surrounding pixels are darker. Negative weights are assigned to the surrounding pixels so that their darkness (low values multiplied by negative weights) contributes positively to the contrast, meaning the sum peaks when there is a meaningful brightness difference between the center and surrounding pixels — the signature of an edge.",
+        "correctness": 5,
+        "faithfulness": 3,
+        "coverage": 3,
+        "reasoning": "The context directly supports both the condition (bright middle, dark surroundings) and the role of negative weights in edge detection."
+      },
+      "BM25": {
+        "generated_answer": "The weighted sum is at its largest when the middle pixels are bright but the surrounding pixels are darker. Negative weights are assigned to the surrounding pixels to create this contrast-sensitive behavior, meaning the sum peaks when there is a meaningful brightness difference between the center region and its surroundings, which signals the presence of an edge.",
+        "correctness": 5,
+        "faithfulness": 3,
+        "coverage": 3,
+        "reasoning": "The context is identical to TF-IDF and fully supports the gold answer's key points about pixel brightness conditions and the role of negative weights."
+      },
+      "Dense": {
+        "generated_answer": "The weighted sum is at its largest when the middle pixels are bright but the surrounding pixels are darker. The negative weights assigned to the surrounding pixels serve to detect this brightness contrast — when surrounding pixels are dark, their low values combined with negative weights help maximize the sum, indicating the presence of an edge.",
+        "correctness": 5,
+        "faithfulness": 3,
+        "coverage": 3,
+        "reasoning": "The context is identical across all three retrievers and fully grounds both key aspects of the gold answer."
+      }
+    },
+    "contexts": {
+      "TF-IDF": "v1_neural_network__c154",
+      "BM25": "v1_neural_network__c154",
+      "Dense": "v1_neural_network__c154"
+    }
+  },
+  {
+    "id": "v1_neural_network__layers_and_architecture",
+    "question": "What does the activation of a neuron specifically represent in this network?",
+    "ideal_answer": "The activation is the number held inside a neuron, representing a value between 0 and 1. In the input layer, it specifically represents the grayscale value of the corresponding pixel, ranging from 0 for black to 1 for white.",
+    "failure_mode": "semantic_precision",
+    "concept": "layers_and_architecture",
+    "video_key": "v1_neural_network",
+    "scores": {
+      "TF-IDF": {
+        "generated_answer": "The activation of a neuron represents a measure of how positive the relevant weighted sum is, expressed as a value between 0 and 1. This is achieved by passing the weighted sum through a sigmoid function, where very negative inputs map close to 0 and positive inputs map close to 1.",
+        "correctness": 3,
+        "faithfulness": 3,
+        "coverage": 2,
+        "reasoning": "Correctly captures that activations are values between 0 and 1 but entirely misses the gold answer's key point about the input layer activation specifically representing grayscale pixel values (0=black, 1=white)."
+      },
+      "BM25": {
+        "generated_answer": "A neuron holds a number between 0 and 1 — that is the essence of what an activation represents. The network starts with 784 neurons, each corresponding to one of the 28x28 pixels of the input image.",
+        "correctness": 3,
+        "faithfulness": 3,
+        "coverage": 2,
+        "reasoning": "Correctly conveys that activations are numbers between 0 and 1 and links them to input pixels, but lacks the crucial detail that the value specifically encodes grayscale intensity (0=black, 1=white)."
+      },
+      "Dense": {
+        "generated_answer": "Each neuron can be thought of as a function that takes in outputs from all neurons in the previous layer and produces a number between 0 and 1. The overall network is itself a function of 784 inputs and 10 outputs, shaped by roughly 13,000 weights and biases processed through sigmoid functions.",
+        "correctness": 2,
+        "faithfulness": 3,
+        "coverage": 1,
+        "reasoning": "Only tangentially addresses what an activation represents (a number between 0 and 1) and misses both the definition of activation as the value held in a neuron and the specific grayscale pixel interpretation for the input layer."
+      }
+    },
+    "contexts": {
+      "TF-IDF": "v1_neural_network__c161",
+      "BM25": "v1_neural_network__c42",
+      "Dense": "v1_neural_network__c238"
+    }
+  },
+  {
+    "id": "v2_transformers__neuron_mechanics",
+    "question": "Why are the learnable parameters in deep learning models specifically called 'weights'?",
+    "ideal_answer": "They are called weights because the only way these parameters interact with the data being processed is through weighted sums. Non-linear functions are also present in the model, but those do not depend on parameters.",
+    "failure_mode": "semantic_precision",
+    "concept": "neuron_mechanics",
+    "video_key": "v2_transformers",
+    "scores": {
+      "TF-IDF": {
+        "generated_answer": "The retrieved context does not contain enough information to answer this. It discusses that deep learning models have large numbers of parameters (e.g., GPT-3 has 175 billion) and that such models scale well, but does not explain why those parameters are specifically called 'weights'.",
+        "correctness": 1,
+        "faithfulness": 3,
+        "coverage": 1,
+        "reasoning": "The context only covers the scale of parameters in deep learning models and says nothing about why they are called 'weights'."
+      },
+      "BM25": {
+        "generated_answer": "The retrieved context does not contain enough information to answer this. It describes parameters in the context of linear regression and notes that deep learning models like GPT-3 have billions of parameters, but does not address the origin or meaning of the term 'weights'.",
+        "correctness": 1,
+        "faithfulness": 3,
+        "coverage": 1,
+        "reasoning": "The context is identical to TF-IDF and similarly lacks any explanation of why parameters are called 'weights'."
+      },
+      "Dense": {
+        "generated_answer": "In deep learning, model parameters are called 'weights' because the only way these parameters interact with the data being processed is through weighted sums. Non-linear functions are also present throughout the model, but these do not depend on the learnable parameters.",
+        "correctness": 5,
+        "faithfulness": 3,
+        "coverage": 3,
+        "reasoning": "The dense context directly and fully explains why parameters are called weights, matching the gold answer precisely, and the generated answer is entirely grounded in that context."
+      }
+    },
+    "contexts": {
+      "TF-IDF": "v2_transformers__c147",
+      "BM25": "v2_transformers__c147",
+      "Dense": "v2_transformers__c168"
+    }
+  },
+  {
+    "id": "v2_transformers__backprop_gradient",
+    "question": "Does using temperature zero in GPT-3 generation produce output based on backpropagated derivatives of the training gradient?",
+    "ideal_answer": "No. In this context, 'derivative' refers to the story being an unoriginal, clichéd imitation — specifically described as 'a trite derivative of Goldilocks.' Temperature zero simply means the model always selects the most statistically predictable next word, with no reference to backpropagation or gradients.",
+    "failure_mode": "negation_misconception",
+    "concept": "backprop_gradient",
+    "video_key": "v2_transformers",
+    "scores": {
+      "TF-IDF": {
+        "generated_answer": "No. Temperature zero in GPT-3 generation simply means the model always selects the most predictable next word, resulting in output described as 'a trite derivative of Goldilocks' — meaning an unoriginal, clichéd imitation. This has nothing to do with backpropagated derivatives or training gradients.",
+        "correctness": 5,
+        "faithfulness": 3,
+        "coverage": 3,
+        "reasoning": "The context directly supports the answer that 'derivative' refers to unoriginal imitation and temperature zero means selecting the most predictable word, fully aligning with the gold answer."
+      },
+      "BM25": {
+        "generated_answer": "No. Temperature zero in GPT-3 generation means the model always selects the most predictable next word, producing output described as 'a trite derivative of Goldilocks' — an unoriginal, clichéd imitation. This is unrelated to backpropagation or training gradients.",
+        "correctness": 5,
+        "faithfulness": 3,
+        "coverage": 3,
+        "reasoning": "The context is identical to TF-IDF and fully supports the gold answer, correctly clarifying 'derivative' as a literary/qualitative term rather than a mathematical one."
+      },
+      "Dense": {
+        "generated_answer": "No. Temperature zero simply means the model always chooses the most statistically predictable next word, and the resulting output is described as 'a trite derivative of Goldilocks,' meaning an unoriginal imitation. This has no connection to backpropagated derivatives or training gradients.",
+        "correctness": 5,
+        "faithfulness": 3,
+        "coverage": 3,
+        "reasoning": "The context is identical across all three retrievers and fully grounds the answer, covering all key points of the gold ideal answer."
+      }
+    },
+    "contexts": {
+      "TF-IDF": "v2_transformers__c406",
+      "BM25": "v2_transformers__c406",
+      "Dense": "v2_transformers__c406"
+    }
+  },
+  {
+    "id": "v2_transformers__attention_mechanism",
+    "question": "How does the softmax function specifically handle the problem that deep learning outputs are often negative?",
+    "ideal_answer": "Softmax first raises e to the power of each input value, which guarantees a list of entirely positive numbers regardless of whether the originals were negative. It then divides each of those positive values by their total sum, normalizing the result into a valid probability distribution that adds up to 1.",
+    "failure_mode": "multi_hop",
+    "concept": "attention_mechanism",
+    "video_key": "v2_transformers",
+    "scores": {
+      "TF-IDF": {
+        "generated_answer": "Deep learning outputs are often negative or greater than 1 and don't add up to 1, making them invalid as probability distributions. Softmax addresses this by first raising e to the power of each value (the context is cut off before completing the full explanation), which converts negatives to positives, and ultimately produces a valid distribution where the largest values end up closest to 1 and smaller values close to 0.",
+        "correctness": 4,
+        "faithfulness": 3,
+        "coverage": 3,
+        "reasoning": "The context contains most of the key mechanism (raising e to the power) and the problem description, though the explanation is truncated; the answer accurately reflects what is available without hallucination."
+      },
+      "BM25": {
+        "generated_answer": "Deep learning outputs are often negative or much bigger than 1 and don't add up to 1, violating the requirements of a probability distribution. Softmax converts an arbitrary list of numbers into a valid distribution by first raising e to the power of each value (context truncated), ensuring the largest values end up closest to 1 and smaller values close to 0.",
+        "correctness": 4,
+        "faithfulness": 3,
+        "coverage": 3,
+        "reasoning": "Identical context to TF-IDF yields the same result — the core mechanism is partially present and accurately reflected, with no hallucination despite the truncation."
+      },
+      "Dense": {
+        "generated_answer": "Deep learning outputs are often negative or much bigger than 1 and don't add up to 1, which makes them invalid as probability distributions. The retrieved context does not contain enough information to explain how softmax specifically resolves the problem of negative values, as it cuts off before describing the mechanism.",
+        "correctness": 2,
+        "faithfulness": 3,
+        "coverage": 1,
+        "reasoning": "The Dense context only describes the problem but does not include the key solution mechanism (raising e to the power), so the answer cannot cover the gold answer's core points."
+      }
+    },
+    "contexts": {
+      "TF-IDF": "v2_transformers__c378",
+      "BM25": "v2_transformers__c378",
+      "Dense": "v2_transformers__c371"
+    }
+  },
+  {
+    "id": "v2_transformers__ml_dl_taxonomy",
+    "question": "Is linear regression considered a form of machine learning?",
+    "ideal_answer": "Yes, linear regression is described as perhaps the simplest form of machine learning, where single-number inputs and outputs (like a house's square footage and its price) are used to find a line of best fit through data.",
+    "failure_mode": "taxonomy",
+    "concept": "ml_dl_taxonomy",
+    "video_key": "v2_transformers",
+    "scores": {
+      "TF-IDF": {
+        "generated_answer": "Yes, linear regression is considered perhaps the simplest form of machine learning, where inputs and outputs are each single numbers, such as the square footage of a house and its price. The goal is to find a line of best fit through the data, described by two continuous parameters (slope and y-intercept), to predict future values.",
+        "correctness": 5,
+        "faithfulness": 3,
+        "coverage": 3,
+        "reasoning": "The context directly and fully supports the gold answer, covering linear regression as the simplest form of ML with the exact house price/square footage example and line of best fit concept."
+      },
+      "BM25": {
+        "generated_answer": "Yes, linear regression is considered perhaps the simplest form of machine learning, where inputs and outputs are each single numbers, such as the square footage of a house and its price. The goal is to find a line of best fit through the data, described by two continuous parameters (slope and y-intercept), to predict future values.",
+        "correctness": 5,
+        "faithfulness": 3,
+        "coverage": 3,
+        "reasoning": "The BM25 context is identical to TF-IDF, fully grounding the answer and covering all key points of the gold answer perfectly."
+      },
+      "Dense": {
+        "generated_answer": "The retrieved context does not contain enough information to answer this. The context discusses machine learning in general terms and mentions statistical techniques and relationships between input and output, but does not specifically address linear regression.",
+        "correctness": 1,
+        "faithfulness": 3,
+        "coverage": 1,
+        "reasoning": "The dense retriever returned an irrelevant chunk that does not mention linear regression at all, making it impossible to generate a correct or complete answer."
+      }
+    },
+    "contexts": {
+      "TF-IDF": "v2_transformers__c140",
+      "BM25": "v2_transformers__c140",
+      "Dense": "v3_deep_learning_hi__c91"
+    }
+  },
+  {
+    "id": "v2_transformers__positional_encoding",
+    "question": "What two things does a word embedding vector in a transformer encode beyond just the identity of the word itself?",
+    "ideal_answer": "In a transformer, a word embedding vector encodes both the position of that word in the sequence and contextual information from surrounding words — meaning the vector has the capacity to 'soak in context' as it passes through the model.",
+    "failure_mode": "multi_hop",
+    "concept": "positional_encoding",
+    "video_key": "v2_transformers",
+    "scores": {
+      "TF-IDF": {
+        "generated_answer": "A word embedding vector in a transformer encodes information about the position of that word in the sequence, and more importantly, it has the capacity to soak in context. As the vector passes through the network's blocks, it can be progressively shaped to encode rich contextual information beyond just the word's identity.",
+        "correctness": 5,
+        "faithfulness": 3,
+        "coverage": 3,
+        "reasoning": "The context directly states both key points — positional encoding and the capacity to soak in context — matching the gold answer fully."
+      },
+      "BM25": {
+        "generated_answer": "A word embedding vector in a transformer encodes information about the position of that word in the sequence, and more importantly, it has the capacity to soak in context. This means the vector can be progressively shaped by the network to represent nuanced, context-dependent meaning beyond the word's base identity.",
+        "correctness": 5,
+        "faithfulness": 3,
+        "coverage": 3,
+        "reasoning": "The BM25 context is identical to TF-IDF and directly supports both key points in the gold answer — positional information and contextual capacity."
+      },
+      "Dense": {
+        "generated_answer": "A word embedding vector in a transformer encodes information about the position of that word, and more importantly, it has the capacity to soak in context. These vectors should not be thought of as merely representing individual words, as they carry both positional and contextual information.",
+        "correctness": 5,
+        "faithfulness": 3,
+        "coverage": 3,
+        "reasoning": "The Dense context explicitly states both key points — positional encoding and the capacity to soak in context — though it cuts off slightly earlier than the other retrievers' chunks."
+      }
+    },
+    "contexts": {
+      "TF-IDF": "v2_transformers__c308",
+      "BM25": "v2_transformers__c308",
+      "Dense": "v2_transformers__c301"
+    }
+  },
+  {
+    "id": "v3_deep_learning_hi__neuron_mechanics",
+    "question": "What specific role do weights play in a neural network according to this explanation?",
+    "ideal_answer": "Weights indicate which nodes are connected to which other nodes in a neural network. They are the fundamental connective elements that define the relationships between nodes.",
+    "failure_mode": "semantic_precision",
+    "concept": "neuron_mechanics",
+    "video_key": "v3_deep_learning_hi",
+    "scores": {
+      "TF-IDF": {
+        "generated_answer": "The retrieved context does not contain enough information to answer this. The passage only briefly mentions the term 'artificial neural network' without explaining the role of weights.",
+        "correctness": 1,
+        "faithfulness": 3,
+        "coverage": 1,
+        "reasoning": "The TF-IDF context is a vague, mixed-language snippet that contains no substantive information about weights in neural networks."
+      },
+      "BM25": {
+        "generated_answer": "Weights are numbers assigned to each connection between neurons in a neural network. They are used to compute the weighted sum of activations from one layer, effectively determining how much each connected neuron's activation contributes to the next neuron.",
+        "correctness": 3,
+        "faithfulness": 3,
+        "coverage": 2,
+        "reasoning": "The BM25 context correctly grounds weights as being tied to connections between neurons, which partially aligns with the gold answer, but frames them primarily as computational parameters rather than as indicators of which nodes are connected to which."
+      },
+      "Dense": {
+        "generated_answer": "Weights correspond to the connections between one layer and a particular neuron in the next layer. Taking the weighted sum of activations according to these weights corresponds to a matrix-vector product, which is a core operation in machine learning.",
+        "correctness": 3,
+        "faithfulness": 3,
+        "coverage": 2,
+        "reasoning": "The Dense context grounds weights in the context of inter-layer connections and matrix operations, partially matching the gold answer about connectivity, but emphasizes linear algebra operations rather than explicitly defining weights as indicators of which nodes are connected."
+      }
+    },
+    "contexts": {
+      "TF-IDF": "v3_deep_learning_hi__c119",
+      "BM25": "v1_neural_network__c140",
+      "Dense": "v1_neural_network__c217"
+    }
+  },
+  {
+    "id": "v3_deep_learning_hi__attention_mechanism",
+    "question": "What are keys derived from, and what specific operation are they used to perform in this context?",
+    "ideal_answer": "Keys are derived from representations made after deduction and classification. These keys are then used to perform a specific attention pass (torsion/transformation) in the mechanism described.",
+    "failure_mode": "multi_hop",
+    "concept": "attention_mechanism",
+    "video_key": "v3_deep_learning_hi",
+    "scores": {
+      "TF-IDF": {
+        "generated_answer": "Keys are derived from representations made after deduction and classification. They are used to perform a specific pass described as 'torsion' in this context.",
+        "correctness": 4,
+        "faithfulness": 3,
+        "coverage": 3,
+        "reasoning": "The context directly mentions representations made after deduction and classification as the source, and references a specific pass torsion, aligning well with the gold answer despite noisy transcription."
+      },
+      "BM25": {
+        "generated_answer": "Keys are derived from representations made after deduction and classification. They are then used to perform a specific pass referred to as 'torsion' in the described mechanism.",
+        "correctness": 4,
+        "faithfulness": 3,
+        "coverage": 3,
+        "reasoning": "Identical context to TF-IDF yields the same quality answer, covering both the derivation source and the torsion pass operation matching the gold answer."
+      },
+      "Dense": {
+        "generated_answer": "The retrieved context does not contain enough information to answer this.",
+        "correctness": 1,
+        "faithfulness": 3,
+        "coverage": 1,
+        "reasoning": "The Dense context is entirely about hardware (FPGAs, panel processing) and contains no information relevant to keys, representations, or attention/torsion passes."
+      }
+    },
+    "contexts": {
+      "TF-IDF": "v3_deep_learning_hi__c315",
+      "BM25": "v3_deep_learning_hi__c315",
+      "Dense": "v3_deep_learning_hi__c980"
+    }
+  },
+  {
+    "id": "v3_deep_learning_hi__feature_engineering",
+    "question": "What is the difference between traditional feature engineering and representation learning in machine learning?",
+    "ideal_answer": "In machine learning, feature learning and representation learning are the same thing. Unlike traditional manual feature engineering, representation learning refers to techniques that allow a system to automatically discover the representations needed for classification or detection, rather than having them hand-crafted by humans.",
+    "failure_mode": "contrast",
+    "concept": "feature_engineering",
+    "video_key": "v3_deep_learning_hi",
+    "scores": {
+      "TF-IDF": {
+        "generated_answer": "In machine learning, feature learning and representation learning are the same thing. The context indicates it is a technique that allows a system to automatically discover representations, though the text is too fragmented to fully explain the contrast with traditional manual feature engineering.",
+        "correctness": 3,
+        "faithfulness": 3,
+        "coverage": 2,
+        "reasoning": "The context supports the key point that feature learning and representation learning are equivalent and involve automatic discovery, but the garbled text prevents full coverage of the contrast with hand-crafted features."
+      },
+      "BM25": {
+        "generated_answer": "In machine learning, feature learning and representation learning are the same thing. The context indicates it is a technique that allows a system to automatically discover representations, though the text is too fragmented to fully explain the contrast with traditional manual feature engineering.",
+        "correctness": 3,
+        "faithfulness": 3,
+        "coverage": 2,
+        "reasoning": "Identical context to TF-IDF yields the same answer and limitations — the equivalence of feature and representation learning is supported, but the manual vs. automatic contrast is only partially recoverable from the noisy text."
+      },
+      "Dense": {
+        "generated_answer": "In machine learning, feature learning and representation learning are the same thing. It is a technique that allows a system to automatically discover representations needed for tasks such as deduction and classification, as opposed to traditional manual feature engineering where representations are hand-crafted.",
+        "correctness": 4,
+        "faithfulness": 2,
+        "coverage": 3,
+        "reasoning": "The dense context provides slightly more detail about automatic discovery of representations for classification and a hint at the contrast with manual engineering, enabling better coverage, though some phrasing is inferred from heavily garbled source text reducing full faithfulness."
+      }
+    },
+    "contexts": {
+      "TF-IDF": "v3_deep_learning_hi__c308",
+      "BM25": "v3_deep_learning_hi__c308",
+      "Dense": "v3_deep_learning_hi__c315"
+    }
+  },
+  {
+    "id": "v3_deep_learning_hi__ml_dl_taxonomy",
+    "question": "What are the two biggest contributors to deep learning's rise in power, and which one ranks higher?",
+    "ideal_answer": "According to the speaker, Data is the single biggest contributor to deep learning's rise, and Hardware (the computing stack) is the second biggest contributor. Without data, deep learning simply does not work.",
+    "failure_mode": "taxonomy",
+    "concept": "ml_dl_taxonomy",
+    "video_key": "v3_deep_learning_hi",
+    "scores": {
+      "TF-IDF": {
+        "generated_answer": "According to the context, Data is the biggest contributor to deep learning's rise in power. The context states that without data, deep learning simply does not work ('Without Data Ruby Doesn't Know Deep Learning'). However, the second biggest contributor is not clearly mentioned in this context.",
+        "correctness": 3,
+        "faithfulness": 3,
+        "coverage": 2,
+        "reasoning": "The context supports Data as the top contributor but does not mention Hardware as the second contributor, so only half the gold answer is covered."
+      },
+      "BM25": {
+        "generated_answer": "According to the context, Data is the single biggest contributor to deep learning's rise, as without data deep learning does not work. The second biggest contributor is Hardware, meaning the computing stack. This directly identifies both top contributors and their ranking.",
+        "correctness": 5,
+        "faithfulness": 3,
+        "coverage": 3,
+        "reasoning": "The BM25 context explicitly mentions both Data as the biggest contributor and Hardware (computing stack) as the second biggest, fully aligning with the gold answer."
+      },
+      "Dense": {
+        "generated_answer": "The context notes that deep learning has a strong dependency on data, and its performance scales clearly as data increases. It also mentions that hardware (specifically GPUs for complex matrix multiplication) is an important factor. However, the context does not explicitly rank these as the top two contributors in the way the gold answer does.",
+        "correctness": 3,
+        "faithfulness": 3,
+        "coverage": 2,
+        "reasoning": "While both data and hardware are mentioned in the dense context, they are not explicitly ranked as the top two contributors, so the answer is only partially aligned with the gold."
+      }
+    },
+    "contexts": {
+      "TF-IDF": "v3_deep_learning_hi__c889",
+      "BM25": "v3_deep_learning_hi__c896",
+      "Dense": "v3_deep_learning_hi__c686"
+    }
+  },
+  {
+    "id": "v3_deep_learning_hi__layers_and_architecture",
+    "question": "What is the precise conceptual distinction used to define the input layer versus the output layer?",
+    "ideal_answer": "The input layer is defined as the place from where you get 'support', while the output layer is defined as the place from where you get 'freedom'. Any number of additional layers can be added in between these two.",
+    "failure_mode": "semantic_precision",
+    "concept": "layers_and_architecture",
+    "video_key": "v3_deep_learning_hi",
+    "scores": {
+      "TF-IDF": {
+        "generated_answer": "The retrieved context does not contain enough information to answer this. The context describes how the input layer receives pixel brightness values and the output layer produces a digit prediction, but does not provide the conceptual distinction of 'support' vs 'freedom' to define these layers.",
+        "correctness": 1,
+        "faithfulness": 3,
+        "coverage": 1,
+        "reasoning": "The context only describes functional behavior of the layers in a digit-recognition example, not the conceptual 'support'/'freedom' distinction asked about."
+      },
+      "BM25": {
+        "generated_answer": "The retrieved context does not contain enough information to answer this. It describes the input layer as receiving image pixel brightness values and the output layer as producing the network's digit choice, but does not define them in terms of 'support' and 'freedom'.",
+        "correctness": 1,
+        "faithfulness": 3,
+        "coverage": 1,
+        "reasoning": "Identical to TF-IDF context, it only covers functional description of layers without the conceptual 'support' vs 'freedom' distinction from the gold answer."
+      },
+      "Dense": {
+        "generated_answer": "The retrieved context does not contain enough information to answer this. It describes layers as progressive transformations of data arrays until reaching a final output layer (e.g., a probability distribution over tokens), but does not define input vs output layers using the concepts of 'support' and 'freedom'.",
+        "correctness": 1,
+        "faithfulness": 3,
+        "coverage": 1,
+        "reasoning": "The dense context discusses deep learning layer structure in general terms but does not capture the specific 'support'/'freedom' conceptual distinction required by the gold answer."
+      }
+    },
+    "contexts": {
+      "TF-IDF": "v1_neural_network__c77",
+      "BM25": "v1_neural_network__c77",
+      "Dense": "v2_transformers__c168"
+    }
+  },
+  {
+    "id": "v4_ml_dl_hi__backprop_gradient",
+    "question": "Wasn't LSTM designed to handle exploding gradients rather than vanishing gradients?",
+    "ideal_answer": "No, LSTM (Long Short-Term Memory) networks were specifically created to solve the vanishing gradient problem, not the exploding gradient problem. They were designed to handle long sequences where vanishing gradients make training standard RNNs difficult.",
+    "failure_mode": "negation_misconception",
+    "concept": "backprop_gradient",
+    "video_key": "v4_ml_dl_hi",
+    "scores": {
+      "TF-IDF": {
+        "generated_answer": "The retrieved context does not contain enough information to answer this. The context only discusses GPU hardware requirements for deep learning models.",
+        "correctness": 1,
+        "faithfulness": 3,
+        "coverage": 1,
+        "reasoning": "The context is entirely about GPU hardware and has no information about LSTM, vanishing gradients, or exploding gradients."
+      },
+      "BM25": {
+        "generated_answer": "The retrieved context does not contain enough information to answer this. The context vaguely references learning algorithms avoiding unspecified 'problems' but does not mention LSTM, vanishing gradients, or exploding gradients.",
+        "correctness": 1,
+        "faithfulness": 3,
+        "coverage": 1,
+        "reasoning": "The context discusses general learning algorithm performance but contains no relevant information about LSTM or gradient problems."
+      },
+      "Dense": {
+        "generated_answer": "No, LSTM (Long Short-Term Memory) networks were created to solve the vanishing gradient problem, not exploding gradients. The context explicitly states that these memory-based neural networks were designed to address sequences and the vanishing gradient problem.",
+        "correctness": 5,
+        "faithfulness": 3,
+        "coverage": 3,
+        "reasoning": "The context directly states LSTM was created to solve the vanishing gradient problem, aligning fully with the gold answer, though it does not explicitly address the long-sequence training difficulty aspect."
+      }
+    },
+    "contexts": {
+      "TF-IDF": "v3_deep_learning_hi__c483",
+      "BM25": "v3_deep_learning_hi__c266",
+      "Dense": "v4_ml_dl_hi__c329"
+    }
+  },
+  {
+    "id": "v4_ml_dl_hi__attention_mechanism",
+    "question": "If today's precipitation, humidity, and temperature values are fed into the system, what does the system produce as an output and what underlying process makes that possible?",
+    "ideal_answer": "The system produces a prediction about whether it will rain today (a true/false outcome). This is made possible by machine learning and AI, which learn from historical labeled examples of precipitation, humidity, and temperature paired with whether it rained or not.",
+    "failure_mode": "multi_hop",
+    "concept": "attention_mechanism",
+    "video_key": "v4_ml_dl_hi",
+    "scores": {
+      "TF-IDF": {
+        "generated_answer": "When today's precipitation, humidity, and temperature values are fed into the system, it produces a prediction about whether it will rain today — a true or false outcome. This is made possible by the system having been trained on historical labeled examples where precipitation, humidity, and temperature were paired with whether it actually rained or not.",
+        "correctness": 4,
+        "faithfulness": 3,
+        "coverage": 2,
+        "reasoning": "The answer correctly captures the true/false prediction output and the historical labeled data basis, but the context doesn't explicitly name machine learning or AI as the underlying process, so that key gold point is missing."
+      },
+      "BM25": {
+        "generated_answer": "When today's precipitation, humidity, and temperature values are fed into the system, it produces a prediction about whether it will rain today — a true or false outcome. This is made possible by the system having been trained on historical labeled examples where precipitation, humidity, and temperature were paired with whether it actually rained or not.",
+        "correctness": 4,
+        "faithfulness": 3,
+        "coverage": 2,
+        "reasoning": "Same context as TF-IDF yields the same answer — the output (true/false rain prediction) is well-covered, but the explicit mention of machine learning/AI as the enabling mechanism is absent from the retrieved chunk."
+      },
+      "Dense": {
+        "generated_answer": "When today's precipitation, humidity, and temperature values are fed into the system, it produces a prediction about whether it will rain today — a true or false outcome. This is made possible by the system having been trained on historical labeled examples where precipitation, humidity, and temperature were paired with whether it actually rained or not.",
+        "correctness": 4,
+        "faithfulness": 3,
+        "coverage": 2,
+        "reasoning": "Identical context to the other retrievers produces the same accurate answer about the true/false prediction and historical data pattern, but lacks explicit coverage of machine learning/AI as the underlying mechanism stated in the gold answer."
+      }
+    },
+    "contexts": {
+      "TF-IDF": "v4_ml_dl_hi__c49",
+      "BM25": "v4_ml_dl_hi__c49",
+      "Dense": "v4_ml_dl_hi__c49"
+    }
+  },
+  {
+    "id": "v4_ml_dl_hi__ml_dl_taxonomy",
+    "question": "What category of process does machine learning fall under, based on its core definition?",
+    "ideal_answer": "Machine learning is defined as the process of training an algorithm on data. It is fundamentally a data-driven training process, not a rule-based or manually programmed one.",
+    "failure_mode": "taxonomy",
+    "concept": "ml_dl_taxonomy",
+    "video_key": "v4_ml_dl_hi",
+    "scores": {
+      "TF-IDF": {
+        "generated_answer": "Based on the context, machine learning involves a process of running an algorithm on data and training a model. The context hints at a training-on-data process but does not explicitly categorize machine learning beyond describing steps to train a model with a machine learning algorithm.",
+        "correctness": 3,
+        "faithfulness": 3,
+        "coverage": 2,
+        "reasoning": "The context implies a data-driven training process but never explicitly defines machine learning's category, so only a partial answer can be derived."
+      },
+      "BM25": {
+        "generated_answer": "The retrieved context does not contain enough information to answer this. The context focuses on describing reinforcement learning as a subcategory (involving trial, error, rewards, and penalties) but does not provide a core definition or categorical description of machine learning as a whole.",
+        "correctness": 1,
+        "faithfulness": 3,
+        "coverage": 1,
+        "reasoning": "The BM25 context only discusses reinforcement learning mechanics and does not address the core definition or category of machine learning."
+      },
+      "Dense": {
+        "generated_answer": "Machine learning describes any model where data is used to somehow determine how a model behaves. This makes it fundamentally a data-driven process, where instead of manually programming rules, the model's behavior is shaped by the data it is trained or evaluated on.",
+        "correctness": 5,
+        "faithfulness": 3,
+        "coverage": 3,
+        "reasoning": "The Dense context explicitly defines machine learning as using data to determine model behavior, which directly aligns with the gold answer's characterization of it as a data-driven training process."
+      }
+    },
+    "contexts": {
+      "TF-IDF": "v4_ml_dl_hi__c217",
+      "BM25": "v4_ml_dl_hi__c210",
+      "Dense": "v2_transformers__c126"
+    }
+  },
+  {
+    "id": "v1_neural_network__neuron_mechanics__b2",
+    "question": "What is the functional difference between a weight and a bias in determining a neuron's activation?",
+    "ideal_answer": "Weights are assigned to each connection and determine what pixel pattern the neuron is picking up on — they define how much each input contributes to the weighted sum. The bias is a separate number added to that weighted sum before it is passed through the sigmoid function, and it controls how high the weighted sum needs to be before the neuron starts getting meaningfully active.",
+    "failure_mode": "semantic_precision",
+    "concept": "neuron_mechanics",
+    "video_key": "v1_neural_network",
+    "scores": {
+      "TF-IDF": {
+        "generated_answer": "The retrieved context does not contain enough information to answer this. The context discusses deep learning at a high level and mentions differences between machine learning and deep learning, but provides no information about weights, biases, or neuron activation mechanics.",
+        "correctness": 1,
+        "faithfulness": 3,
+        "coverage": 1,
+        "reasoning": "The TF-IDF context is entirely off-topic, covering only a surface-level description of deep learning with no mention of weights, biases, or activation functions."
+      },
+      "BM25": {
+        "generated_answer": "The retrieved context does not contain enough information to answer this. The context discusses word embeddings and semantic vector spaces in transformer models, which is unrelated to the functional roles of weights and biases in determining neuron activation.",
+        "correctness": 1,
+        "faithfulness": 3,
+        "coverage": 1,
+        "reasoning": "The BM25 context is about NLP vector semantics and has no relevance to the functional distinction between weights and biases in neural network neurons."
+      },
+      "Dense": {
+        "generated_answer": "Weights are associated with the connections between layers, and taking the weighted sum of activations in the first layer according to these weights corresponds to a matrix-vector product — determining how much each input contributes. Biases are separate values added to each of these weighted sums independently, and are organized collectively into a vector. The context does not specify what the bias controls thematically (e.g., activation threshold), but confirms it is an additive term distinct from the weighted sum.",
+        "correctness": 3,
+        "faithfulness": 3,
+        "coverage": 2,
+        "reasoning": "The Dense context correctly grounds the roles of weights (as factors in a weighted sum/matrix product) and biases (as independently added values), but omits the key detail about the sigmoid function and the bias controlling how high the weighted sum must be before meaningful activation."
+      }
+    },
+    "contexts": {
+      "TF-IDF": "v3_deep_learning_hi__c21",
+      "BM25": "v2_transformers__c245",
+      "Dense": "v1_neural_network__c217"
+    }
+  },
+  {
+    "id": "v1_neural_network__attention_mechanism__b2",
+    "question": "If every pixel in an input image were completely black, what activation value would each neuron in the first layer hold, and how many neurons would that affect in total?",
+    "ideal_answer": "Each neuron would hold an activation value of 0, since black pixels map to 0 on the grayscale scale. This would affect all 784 neurons in the first layer, which corresponds to the 28×28 pixels of the input image.",
+    "failure_mode": "multi_hop",
+    "concept": "attention_mechanism",
+    "video_key": "v1_neural_network",
+    "scores": {
+      "TF-IDF": {
+        "generated_answer": "If every pixel in the input image were completely black, each neuron in the first layer would hold an activation value of 0, since black pixels map to 0 on the grayscale scale. This would affect all 784 neurons in the first layer, corresponding to the 28×28 pixels of the input image.",
+        "correctness": 5,
+        "faithfulness": 3,
+        "coverage": 3,
+        "reasoning": "The context explicitly states that black pixels map to 0 and that there are 784 neurons in the first layer, fully supporting the gold answer."
+      },
+      "BM25": {
+        "generated_answer": "If every pixel in the input image were completely black, each neuron in the first layer would hold an activation value of 0, since black pixels map to 0 on the grayscale scale. This would affect all 784 neurons in the first layer, corresponding to the 28×28 pixels of the input image.",
+        "correctness": 5,
+        "faithfulness": 3,
+        "coverage": 3,
+        "reasoning": "The context is identical to TF-IDF and explicitly supports both key facts: activation of 0 for black pixels and 784 total neurons in the first layer."
+      },
+      "Dense": {
+        "generated_answer": "If every pixel in the input image were completely black, each neuron in the first layer would hold an activation value of 0, since black pixels map to 0 on the grayscale scale. This would affect all 784 neurons in the first layer, corresponding to the 28×28 pixels of the input image.",
+        "correctness": 5,
+        "faithfulness": 3,
+        "coverage": 3,
+        "reasoning": "The context is identical across all retrievers and fully supports the gold answer with explicit mention of 0 for black pixels and 784 neurons in the first layer."
+      }
+    },
+    "contexts": {
+      "TF-IDF": "v1_neural_network__c49",
+      "BM25": "v1_neural_network__c49",
+      "Dense": "v1_neural_network__c49"
+    }
+  },
+  {
+    "id": "v1_neural_network__layers_and_architecture__b2",
+    "question": "What is the precise total number of weights needed just for the connections between the first and second layer of this network?",
+    "ideal_answer": "The connections from the first layer to the second layer require exactly 784 times 16 weights, which is 12,544 weights in total, plus an additional 16 biases for the hidden layer neurons.",
+    "failure_mode": "semantic_precision",
+    "concept": "layers_and_architecture",
+    "video_key": "v1_neural_network",
+    "scores": {
+      "TF-IDF": {
+        "generated_answer": "The connections from the first layer to the second layer require a set of weights along with 16 biases, and all told the entire network has almost exactly 13,000 total weights and biases. However, the exact number of weights specifically between the first and second layers (12,544) is not explicitly stated in this context.",
+        "correctness": 2,
+        "faithfulness": 3,
+        "coverage": 1,
+        "reasoning": "The context mentions 16 biases and the total of ~13,000 but omits the explicit 784×16=12,544 figure for the first-to-second layer connections."
+      },
+      "BM25": {
+        "generated_answer": "Each of the 16 neurons in the hidden layer is connected to all 784 pixel neurons from the first layer, with each connection having its own weight. This results in 784 times 16 weights, equaling 12,544 weights, along with 16 biases for the connections from the first layer to the second layer.",
+        "correctness": 5,
+        "faithfulness": 3,
+        "coverage": 3,
+        "reasoning": "The context explicitly states '784 times 16 weights, along with 16 biases' for the first-to-second layer connections, fully matching the gold answer."
+      },
+      "Dense": {
+        "generated_answer": "The retrieved context does not contain enough information to answer this. It discusses the matrix notation for representing neural network connections but provides no specific numbers about the weights or biases between the first and second layers.",
+        "correctness": 1,
+        "faithfulness": 3,
+        "coverage": 1,
+        "reasoning": "The dense context only covers matrix notation concepts and contains no numerical information relevant to the specific weight count between the first and second layers."
+      }
+    },
+    "contexts": {
+      "TF-IDF": "v1_neural_network__c189",
+      "BM25": "v1_neural_network__c182",
+      "Dense": "v1_neural_network__c210"
+    }
+  },
+  {
+    "id": "v2_transformers__neuron_mechanics__b2",
+    "question": "What is the precise computational operation that dominates the processing in deep learning models?",
+    "ideal_answer": "Almost all of the actual computation in deep learning models takes the form of matrix vector multiplication. This operation is how weights interact with the data being processed throughout the model.",
+    "failure_mode": "semantic_precision",
+    "concept": "neuron_mechanics",
+    "video_key": "v2_transformers",
+    "scores": {
+      "TF-IDF": {
+        "generated_answer": "The retrieved context does not contain enough information to answer this. The context only describes deep learning at a high level as creating neural networks that approximate a function, without mentioning any specific computational operation.",
+        "correctness": 1,
+        "faithfulness": 3,
+        "coverage": 1,
+        "reasoning": "The context contains no information about the dominant computational operation in deep learning, making it impossible to answer the question correctly."
+      },
+      "BM25": {
+        "generated_answer": "Based on the context, deep learning involves matrix operations on data, including multiplication of matrices, which requires significant data processing power to handle large numbers of computations.",
+        "correctness": 2,
+        "faithfulness": 2,
+        "coverage": 2,
+        "reasoning": "The context vaguely references matrix operations and multiplication, partially aligning with the gold answer about matrix-vector multiplication, but the transcription is garbled and does not clearly confirm the precise operation."
+      },
+      "Dense": {
+        "generated_answer": "The retrieved context does not contain enough information to answer this. The context only discusses training and prediction time comparisons between machine learning and deep learning algorithms, without identifying the dominant computational operation.",
+        "correctness": 1,
+        "faithfulness": 3,
+        "coverage": 1,
+        "reasoning": "The context is entirely about speed and training time comparisons and contains no mention of matrix-vector multiplication or any specific computational operation dominating deep learning."
+      }
+    },
+    "contexts": {
+      "TF-IDF": "v4_ml_dl_hi__c287",
+      "BM25": "v3_deep_learning_hi__c938",
+      "Dense": "v3_deep_learning_hi__c525"
+    }
+  },
+  {
+    "id": "v2_transformers__backprop_gradient__b2",
+    "question": "Is backpropagation a training algorithm unique to only some deep learning models, or do all deep learning models rely on it?",
+    "ideal_answer": "All deep learning models use the same training algorithm, backpropagation. It is not unique to a subset of models — what unifies the entire class of deep learning models is their shared use of backpropagation.",
+    "failure_mode": "negation_misconception",
+    "concept": "backprop_gradient",
+    "video_key": "v2_transformers",
+    "scores": {
+      "TF-IDF": {
+        "generated_answer": "All deep learning models use the same training algorithm called backpropagation, so it is not unique to only some models. What unifies the entire class of deep learning models is their shared reliance on backpropagation, and for this algorithm to work well at scale, these models must follow a certain specific format.",
+        "correctness": 5,
+        "faithfulness": 3,
+        "coverage": 3,
+        "reasoning": "The context directly and explicitly states that all deep learning models share backpropagation as their training algorithm, perfectly matching the gold answer."
+      },
+      "BM25": {
+        "generated_answer": "All deep learning models use the same training algorithm called backpropagation, so it is not unique to only some models. What unifies the entire class of deep learning models is their shared reliance on backpropagation, and for this algorithm to work well at scale, these models must follow a certain specific format.",
+        "correctness": 5,
+        "faithfulness": 3,
+        "coverage": 3,
+        "reasoning": "The context is identical to TF-IDF and directly supports the gold answer, confirming that all deep learning models rely on backpropagation."
+      },
+      "Dense": {
+        "generated_answer": "The retrieved context does not contain enough information to answer this.",
+        "correctness": 1,
+        "faithfulness": 3,
+        "coverage": 1,
+        "reasoning": "The Dense retriever returned an irrelevant chunk about general machine learning and neural networks with no mention of backpropagation or its relationship to deep learning models."
+      }
+    },
+    "contexts": {
+      "TF-IDF": "v2_transformers__c154",
+      "BM25": "v2_transformers__c154",
+      "Dense": "v3_deep_learning_hi__c427"
+    }
+  },
+  {
+    "id": "v2_transformers__attention_mechanism__b2",
+    "question": "What is the size of the list produced by the matrix transformation of the last context vector, and what happens to that list before a token like 'Snape' can be selected as the next word?",
+    "ideal_answer": "The matrix maps the last context vector to a list of 50,000 values, one for each token in the vocabulary. That list is then passed through a softmax function, which normalizes it into a probability distribution so a next token can be selected.",
+    "failure_mode": "multi_hop",
+    "concept": "attention_mechanism",
+    "video_key": "v2_transformers",
+    "scores": {
+      "TF-IDF": {
+        "generated_answer": "The retrieved context does not contain enough information to answer this. It only discusses context size and the fixed number of vectors a network can process, but does not describe the matrix transformation of the last context vector or the softmax normalization step.",
+        "correctness": 1,
+        "faithfulness": 3,
+        "coverage": 1,
+        "reasoning": "The TF-IDF context is about context window size and has no information about the vocabulary list size or probability distribution normalization."
+      },
+      "BM25": {
+        "generated_answer": "A matrix maps the very last vector in the context to a list of 50,000 values, one for each token in the vocabulary. That list is then passed through a normalization function that converts it into a probability distribution, from which a token like 'Snape' can be selected as the next word.",
+        "correctness": 5,
+        "faithfulness": 3,
+        "coverage": 3,
+        "reasoning": "The BM25 context contains exactly the information needed to fully and faithfully answer both parts of the question."
+      },
+      "Dense": {
+        "generated_answer": "A matrix maps the very last vector in the context to a list of 50,000 values, one for each token in the vocabulary. That list is then passed through a normalization function that converts it into a probability distribution, from which a token like 'Snape' can be selected as the next word.",
+        "correctness": 5,
+        "faithfulness": 3,
+        "coverage": 3,
+        "reasoning": "The Dense context is identical to the BM25 context and contains all the necessary information to fully and faithfully answer the question."
+      }
+    },
+    "contexts": {
+      "TF-IDF": "v2_transformers__c329",
+      "BM25": "v2_transformers__c343",
+      "Dense": "v2_transformers__c343"
+    }
+  },
+  {
+    "id": "v3_deep_learning_hi__neuron_mechanics__b2",
+    "question": "What is the visual representation used to depict the connections between perceptrons in this network diagram?",
+    "ideal_answer": "The connections between perceptrons are represented as arrows, and these arrows are called weights.",
+    "failure_mode": "semantic_precision",
+    "concept": "neuron_mechanics",
+    "video_key": "v3_deep_learning_hi",
+    "scores": {
+      "TF-IDF": {
+        "generated_answer": "The retrieved context does not contain enough information to answer this. It mentions that connections between layers have weights and biases associated with them, but does not describe any visual representation (such as arrows) used to depict those connections in a network diagram.",
+        "correctness": 1,
+        "faithfulness": 3,
+        "coverage": 1,
+        "reasoning": "The context only discusses weights and biases numerically but provides no information about the visual/diagrammatic representation of connections between perceptrons."
+      },
+      "BM25": {
+        "generated_answer": "The retrieved context does not contain enough information to answer this. It discusses weights and biases associated with connections between layers but does not describe any visual element used to represent those connections in a diagram.",
+        "correctness": 1,
+        "faithfulness": 3,
+        "coverage": 1,
+        "reasoning": "Same context as TF-IDF — mentions weights and biases but says nothing about arrows or any other visual representation of connections."
+      },
+      "Dense": {
+        "generated_answer": "In the network diagram, the connections between perceptrons are depicted as arrows. These arrows are called weights.",
+        "correctness": 5,
+        "faithfulness": 3,
+        "coverage": 3,
+        "reasoning": "The Dense context explicitly states that the connections between perceptrons are shown as arrows and that these arrows are called weights, directly matching the gold answer."
+      }
+    },
+    "contexts": {
+      "TF-IDF": "v1_neural_network__c189",
+      "BM25": "v1_neural_network__c189",
+      "Dense": "v3_deep_learning_hi__c133"
+    }
+  },
+  {
+    "id": "v3_deep_learning_hi__attention_mechanism__b2",
+    "question": "What two pieces of information are combined to determine which features are more or less important?",
+    "ideal_answer": "The value of w1 and the value of w are combined together to determine which features are more important and which are less important.",
+    "failure_mode": "multi_hop",
+    "concept": "attention_mechanism",
+    "video_key": "v3_deep_learning_hi",
+    "scores": {
+      "TF-IDF": {
+        "generated_answer": "According to the context, the value of w1 and the value of w are combined together to determine which features are more important and which are less important.",
+        "correctness": 5,
+        "faithfulness": 3,
+        "coverage": 3,
+        "reasoning": "The TF-IDF context directly contains the answer, explicitly mentioning w1 and w as the two pieces of information used to determine feature importance."
+      },
+      "BM25": {
+        "generated_answer": "The retrieved context does not contain enough information to answer this. The context only discusses how data flows through a transformer and how inputs are broken into tokens, with no mention of feature importance or the relevant weights.",
+        "correctness": 1,
+        "faithfulness": 3,
+        "coverage": 1,
+        "reasoning": "The BM25 context is entirely irrelevant to the question, discussing transformer architecture and tokenization rather than feature importance."
+      },
+      "Dense": {
+        "generated_answer": "The retrieved context does not contain enough information to answer this. While it discusses various features such as percentage in tenth, number of achievements, and quality of college, it does not mention the two specific pieces of information combined to determine feature importance.",
+        "correctness": 1,
+        "faithfulness": 3,
+        "coverage": 1,
+        "reasoning": "The Dense context relates to the same general domain (placement prediction features) but does not mention w1 or w, which are the key elements of the gold answer."
+      }
+    },
+    "contexts": {
+      "TF-IDF": "v3_deep_learning_hi__c658",
+      "BM25": "v2_transformers__c49",
+      "Dense": "v3_deep_learning_hi__c560"
+    }
+  },
+  {
+    "id": "v3_deep_learning_hi__feature_engineering__b2",
+    "question": "What distinguishes automatic feature extraction from manual feature engineering in terms of where the process occurs in a pipeline?",
+    "ideal_answer": "Automatic feature extraction takes place in the middle of the presentation (i.e., within the model pipeline itself), whereas manual feature engineering is done externally before the model processes the data. This internal automatic process removes the need for hand-crafted features when the data conditions are appropriate.",
+    "failure_mode": "contrast",
+    "concept": "feature_engineering",
+    "video_key": "v3_deep_learning_hi",
+    "scores": {
+      "TF-IDF": {
+        "generated_answer": "Automatic feature extraction takes place in the middle of the presentation, meaning it occurs within the pipeline itself via the deep learning algorithm. When the data conditions are appropriate, this eliminates the need for manual feature engineering (referred to as 'switching engineering' in the context).",
+        "correctness": 4,
+        "faithfulness": 3,
+        "coverage": 3,
+        "reasoning": "The context directly supports the 'middle of the presentation' location detail and the removal of manual feature engineering, matching the gold answer well despite garbled phrasing."
+      },
+      "BM25": {
+        "generated_answer": "Automatic feature extraction takes place in the middle of the presentation, meaning it happens internally within the pipeline as the deep learning algorithm processes the data. When the data conditions are suitable, this removes the need for manual feature engineering.",
+        "correctness": 4,
+        "faithfulness": 3,
+        "coverage": 3,
+        "reasoning": "Identical context to TF-IDF yields the same quality answer covering both the location aspect and the elimination of manual engineering."
+      },
+      "Dense": {
+        "generated_answer": "In machine learning, features must be manually created and supplied to the algorithm, whereas in deep learning the entire feature extraction process is automated. You simply provide the data in the correct format and the deep learning algorithm automatically extracts features, removing the need for manual feature creation.",
+        "correctness": 3,
+        "faithfulness": 3,
+        "coverage": 2,
+        "reasoning": "The context supports the manual vs. automatic distinction well but lacks the key detail about automatic extraction occurring 'in the middle of the presentation' (i.e., inside the pipeline), which is the core point of the gold answer."
+      }
+    },
+    "contexts": {
+      "TF-IDF": "v3_deep_learning_hi__c350",
+      "BM25": "v3_deep_learning_hi__c350",
+      "Dense": "v3_deep_learning_hi__c343"
+    }
+  },
+  {
+    "id": "v3_deep_learning_hi__ml_dl_taxonomy__b2",
+    "question": "How does deep learning relate to machine learning in terms of their classification?",
+    "ideal_answer": "Deep learning is a field that falls within machine learning, making it a subset of machine learning rather than a separate or equivalent discipline.",
+    "failure_mode": "taxonomy",
+    "concept": "ml_dl_taxonomy",
+    "video_key": "v3_deep_learning_hi",
+    "scores": {
+      "TF-IDF": {
+        "generated_answer": "According to the context, machine learning and deep learning perform similar work but in different ways. Deep learning follows a logical structure called a Neural Network, while machine learning in supervised learning uses certain certified techniques.",
+        "correctness": 2,
+        "faithfulness": 3,
+        "coverage": 1,
+        "reasoning": "The context touches on differences between deep learning and machine learning but never establishes the subset/classification relationship stated in the gold answer."
+      },
+      "BM25": {
+        "generated_answer": "The retrieved context does not contain enough information to answer this. The context focuses on the mechanics of neural network layers and linear algebra in machine learning, without addressing the classification relationship between deep learning and machine learning.",
+        "correctness": 1,
+        "faithfulness": 3,
+        "coverage": 1,
+        "reasoning": "The BM25 context is entirely about neural network matrix operations and offers no information about how deep learning is classified relative to machine learning."
+      },
+      "Dense": {
+        "generated_answer": "Deep learning is a field within Artificial Intelligence and Machine Learning, as stated in the retrieved context. This positions deep learning as part of the broader machine learning domain rather than a separate discipline.",
+        "correctness": 4,
+        "faithfulness": 3,
+        "coverage": 3,
+        "reasoning": "The Dense context explicitly frames deep learning as a field of Machine Learning, closely matching the gold answer's key point that deep learning is a subset of machine learning."
+      }
+    },
+    "contexts": {
+      "TF-IDF": "v3_deep_learning_hi__c182",
+      "BM25": "v1_neural_network__c217",
+      "Dense": "v3_deep_learning_hi__c49"
+    }
+  },
+  {
+    "id": "v3_deep_learning_hi__layers_and_architecture__b2",
+    "question": "What is the structural path that data follows between the input layer and the output in this architecture?",
+    "ideal_answer": "Data enters through the input layer and then passes through the hidden layers before reaching the output. This sequential flow through the hidden layers is the core processing pathway of the architecture.",
+    "failure_mode": "semantic_precision",
+    "concept": "layers_and_architecture",
+    "video_key": "v3_deep_learning_hi",
+    "scores": {
+      "TF-IDF": {
+        "generated_answer": "Data enters through the input layer by activating 784 neurons according to pixel brightness, which causes a specific pattern in the next layer, which in turn causes a pattern in the layer after it, and so on until a final pattern is produced in the output layer. The brightest neuron in the output layer represents the network's chosen answer.",
+        "correctness": 5,
+        "faithfulness": 3,
+        "coverage": 3,
+        "reasoning": "The context explicitly traces the sequential data path from input layer through intermediate layers to the output layer, fully matching the gold answer."
+      },
+      "BM25": {
+        "generated_answer": "The retrieved context does not contain enough information to answer this. It mentions that deep learning uses a logical structure called a Neural Network and deals with finding relationships between input and output, but does not describe the structural path data follows between layers.",
+        "correctness": 1,
+        "faithfulness": 3,
+        "coverage": 1,
+        "reasoning": "The BM25 context only vaguely references input/output and neural networks without describing any sequential layer-by-layer data flow path."
+      },
+      "Dense": {
+        "generated_answer": "The context mentions that the output layer produces the network's final choice (the brightest neuron), and references a layered structure with middle layers between input and output. However, the explicit step-by-step data path from input through hidden layers to output is only implied rather than directly described.",
+        "correctness": 3,
+        "faithfulness": 3,
+        "coverage": 2,
+        "reasoning": "The context references the layered structure and output layer but focuses on what middle layers do rather than explicitly tracing the input→hidden layers→output data path from the gold answer."
+      }
+    },
+    "contexts": {
+      "TF-IDF": "v1_neural_network__c77",
+      "BM25": "v3_deep_learning_hi__c182",
+      "Dense": "v1_neural_network__c84"
+    }
+  },
+  {
+    "id": "v4_ml_dl_hi__backprop_gradient__b2",
+    "question": "Does backpropagation work by pushing data forward through the network to minimize the loss?",
+    "ideal_answer": "No. Backpropagation is a backward propagation method, distinct from the forward feeding of data. In training, data is fed forward through the network, but the error minimization relies on backward propagation to update the network.",
+    "failure_mode": "negation_misconception",
+    "concept": "backprop_gradient",
+    "video_key": "v4_ml_dl_hi",
+    "scores": {
+      "TF-IDF": {
+        "generated_answer": "No. The context distinguishes between feed forward neural networks and methods of backward propagation as separate concepts. Training involves feeding data forward and minimizing error, while backward propagation is a distinct method used in that process.",
+        "correctness": 3,
+        "faithfulness": 3,
+        "coverage": 2,
+        "reasoning": "The context implies the distinction between forward feeding and backward propagation but does not explicitly state that backpropagation does not minimize loss by pushing data forward, so coverage of the gold answer's key clarification is partial."
+      },
+      "BM25": {
+        "generated_answer": "No. The context distinguishes between feed forward neural networks and methods of backward propagation as separate concepts. Training involves feeding data forward and minimizing error, while backward propagation is a distinct method used in that process.",
+        "correctness": 3,
+        "faithfulness": 3,
+        "coverage": 2,
+        "reasoning": "Identical context to TF-IDF yields the same partial answer — the separation of forward feeding and backward propagation is implied but the explicit correction that backpropagation is not a forward process is not stated."
+      },
+      "Dense": {
+        "generated_answer": "No. The context distinguishes between feed forward neural networks and methods of backward propagation as separate concepts. Training involves feeding data forward and minimizing error, while backward propagation is a distinct method used in that process.",
+        "correctness": 3,
+        "faithfulness": 3,
+        "coverage": 2,
+        "reasoning": "Same context again leads to the same partial answer, capturing the forward/backward distinction implicitly but lacking the explicit correction that backpropagation is not responsible for pushing data forward."
+      }
+    },
+    "contexts": {
+      "TF-IDF": "v4_ml_dl_hi__c308",
+      "BM25": "v4_ml_dl_hi__c308",
+      "Dense": "v4_ml_dl_hi__c308"
+    }
+  },
+  {
+    "id": "v4_ml_dl_hi__attention_mechanism__b2",
+    "question": "If a person's health parameters are provided alongside precipitation, humidity, and temperature values, what do these two scenarios have in common in terms of how a prediction is made?",
+    "ideal_answer": "In both scenarios, a set of input values (weather parameters like precipitation, humidity, and temperature, or health parameters for a person) is used to make a prediction based on existing data. The underlying process is the same: given known parameter values, the system determines an outcome by learning from a large dataset of similar examples.",
+    "failure_mode": "multi_hop",
+    "concept": "attention_mechanism",
+    "video_key": "v4_ml_dl_hi",
+    "scores": {
+      "TF-IDF": {
+        "generated_answer": "Both scenarios involve having a set of input parameter values — precipitation, humidity, and temperature for weather, or blood pressure, blood glucose, and HbA1c for health — and using a large dataset of such examples to make a prediction. The context implies that given new values of these parameters, the system can determine an outcome (rain or no rain; a health outcome) based on patterns learned from that data.",
+        "correctness": 4,
+        "faithfulness": 3,
+        "coverage": 2,
+        "reasoning": "The context establishes both scenarios and hints at the data-driven prediction mechanism, but it cuts off before explicitly completing the explanation of how learning from data unifies them."
+      },
+      "BM25": {
+        "generated_answer": "The retrieved context does not contain enough information to answer this. It only describes the weather prediction scenario, where a machine learning algorithm is trained on old data (precipitation, humidity, temperature) to predict rain, but makes no mention of health parameters or the second scenario.",
+        "correctness": 2,
+        "faithfulness": 3,
+        "coverage": 1,
+        "reasoning": "The BM25 context is limited to the weather use case and completely omits the health parameters scenario, making it impossible to address what the two scenarios have in common."
+      },
+      "Dense": {
+        "generated_answer": "Both scenarios involve having a set of input parameter values — precipitation, humidity, and temperature for weather, or blood pressure, blood glucose, and HbA1c for health — and using a large dataset of such examples to make a prediction. The context implies that given new values of these parameters, the system can determine an outcome (rain or no rain; a health outcome) based on patterns learned from that data.",
+        "correctness": 4,
+        "faithfulness": 3,
+        "coverage": 2,
+        "reasoning": "Dense retrieved the same chunk as TF-IDF, capturing both scenarios and the data-driven approach, but the context is truncated and does not fully articulate the shared learning-from-data mechanism stated in the gold answer."
+      }
+    },
+    "contexts": {
+      "TF-IDF": "v4_ml_dl_hi__c154",
+      "BM25": "v4_ml_dl_hi__c42",
+      "Dense": "v4_ml_dl_hi__c154"
+    }
+  }
+]
