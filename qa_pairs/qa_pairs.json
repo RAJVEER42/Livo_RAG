@@ -1,0 +1,510 @@
+[
+  {
+    "id": "v1_neural_network__neuron_mechanics",
+    "video_key": "v1_neural_network",
+    "video_title": "3B1B — But what is a Neural Network?",
+    "concept_label": "neuron_mechanics",
+    "failure_mode": "semantic_precision",
+    "timestamp_start": "17:03",
+    "timestamp_end": "18:25",
+    "source_text": "To close things off here I have with me Lisha Li who did her PhD work on the theoretical side of deep learning and who currently works at a venture capital firm called Amplify Partners who kindly provided some of the funding for this video. So Lisha one thing I think we should quickly bring up is this sigmoid function. As I understand it early networks use this to squish the relevant weighted sum into that interval between zero and one, you know kind of motivated by this biological analogy of neurons either being inactive or active. Exactly.\nBut relatively few modern networks actually use sigmoid anymore. Yeah.\nIt's kind of old school right? Yeah or rather ReLU seems to be much easier to train. And ReLU, ReLU stands for rectified linear unit? Yes it's this kind of function where you're just taking a max of zero and a where a is given by what you were explaining in the video and what this was sort of motivated from I think was a partially by a biological analogy with how neurons would either be activated or not. And so if it passes a certain threshold it would be the identity function but if it did not then it would just not be activated so it'd be zero so it's kind of a simplification. Using sigmoids didn't help training or it was very difficult to train at some point and people just tried ReLU and it happened to work very well for these incredibly deep neural networks. All right thank you Lisha.",
+    "matched_keywords": [
+      "weighted sum",
+      "weight",
+      "bias",
+      "sigmoid",
+      "relu",
+      "squish"
+    ],
+    "question": "What is the key practical reason modern deep networks prefer ReLU over sigmoid activation functions?",
+    "ideal_answer": "ReLU is much easier to train compared to sigmoid. Sigmoid functions made training difficult, and when researchers tried ReLU instead, it worked very well for incredibly deep neural networks.",
+    "reasoning": "This question targets semantic_precision by requiring the respondent to distinguish between the biological motivation (which applies to both sigmoid and ReLU) and the actual practical/training-based reason for ReLU's dominance. A system that only shallowly retrieves 'ReLU replaced sigmoid' without capturing the specific training difficulty rationale would give an incomplete or imprecise answer."
+  },
+  {
+    "id": "v1_neural_network__attention_mechanism",
+    "video_key": "v1_neural_network",
+    "video_title": "3B1B — But what is a Neural Network?",
+    "concept_label": "attention_mechanism",
+    "failure_mode": "multi_hop",
+    "timestamp_start": "9:27",
+    "timestamp_end": "10:32",
+    "source_text": "I find it helpful to think of these weights as being organized into a little grid of their own, and I'm going to use green pixels to indicate positive weights, and red pixels to indicate negative weights, where the brightness of that pixel is some loose depiction of the weight's value. Now if we made the weights associated with almost all of the pixels zero except for some positive weights in this region that we care about, then taking the weighted sum of all the pixel values really just amounts to adding up the values of the pixel just in the region that we care about. And if you really wanted to pick up on whether there's an edge here, what you might do is have some negative weights associated with the surrounding pixels. Then the sum is largest when those middle pixels are bright but the surrounding pixels are darker. When you compute a weighted sum like this, you might come out with any number, but for this network what we want is for activations to be some value between 0 and 1. So a common thing to do is to pump this weighted sum into some function that squishes the real number line into the range between 0 and 1. And a common function that does this is called the sigmoid function,",
+    "matched_keywords": [
+      "value"
+    ],
+    "question": "What condition in the pixel values causes the weighted sum to be at its largest when trying to detect an edge, and what does that tell us about the role of the negative weights?",
+    "ideal_answer": "The weighted sum is largest when the middle pixels are bright but the surrounding pixels are darker. The negative weights are assigned to the surrounding pixels precisely to create this contrast — so the sum peaks when there is a meaningful brightness difference between the center region and its surroundings, which is the signature of an edge.",
+    "reasoning": "This question requires connecting two separate facts from the segment: that negative weights are placed on surrounding pixels, and that the sum is maximized under a specific brightness contrast condition, forcing the reader to infer how the two facts jointly implement edge detection."
+  },
+  {
+    "id": "v1_neural_network__layers_and_architecture",
+    "video_key": "v1_neural_network",
+    "video_title": "3B1B — But what is a Neural Network?",
+    "concept_label": "layers_and_architecture",
+    "failure_mode": "semantic_precision",
+    "timestamp_start": "2:58",
+    "timestamp_end": "4:24",
+    "source_text": "specifically a number between 0 and 1. It's really not more than that. For example the network starts with a bunch of neurons corresponding to each of the 28x28 pixels of the input image, which is 784 neurons in total. Each one of these holds a number that represents the grayscale value of the corresponding pixel, ranging from 0 for black pixels up to 1 for white pixels. This number inside the neuron is called its activation, and the image you might have in mind here is that each neuron is lit up when its activation is a high number. So all of these 784 neurons make up the first layer of our network. Now jumping over to the last layer, this has 10 neurons, each representing one of the digits. The activation in these neurons, again some number that's between 0 and 1, represents how much the system thinks that a given image corresponds with a given digit. There's also a couple layers in between called the hidden layers, which for the time being should just be a giant question mark for how on earth this process of recognizing digits is going to be handled. In this network I chose two hidden layers, each one with 16 neurons, and admittedly that's kind of an arbitrary choice. To be honest I chose two layers based on how I want to motivate the structure in just a moment, and 16, well that was just a nice number to fit on the screen.",
+    "matched_keywords": [
+      "hidden layer",
+      "input layer",
+      "output layer",
+      "784",
+      "16 neuron"
+    ],
+    "question": "What does the activation of a neuron specifically represent in this network?",
+    "ideal_answer": "The activation is the number held inside a neuron, representing a value between 0 and 1. In the input layer, it specifically represents the grayscale value of the corresponding pixel, ranging from 0 for black to 1 for white.",
+    "reasoning": "This tests semantic precision because a RAG system might conflate 'activation' with the neuron itself, the pixel, or the output classification, rather than identifying it precisely as the scalar number stored inside the neuron that encodes information at that layer."
+  },
+  {
+    "id": "v2_transformers__neuron_mechanics",
+    "video_key": "v2_transformers",
+    "video_title": "3B1B — Transformers, the tech behind LLMs",
+    "concept_label": "neuron_mechanics",
+    "failure_mode": "semantic_precision",
+    "timestamp_start": "10:04",
+    "timestamp_end": "11:17",
+    "source_text": "array of real numbers, until you get to a final layer which you consider the output. For example, the final layer in our text processing model is a list of numbers representing the probability distribution for all possible next tokens. In deep learning, these model parameters are almost always referred to as weights, and this is because a key feature of these models is that the only way these parameters interact with the data being processed is through weighted sums. You also sprinkle some non-linear functions throughout, but they won't depend on parameters. Typically, though, instead of seeing the weighted sums all naked and written out explicitly like this, you'll instead find them packaged together as various components in a matrix vector product. It amounts to saying the same thing, if you think back to how matrix vector multiplication works, each component in the output looks like a weighted sum. It's just often conceptually cleaner for you and me to think about matrices that are filled with tunable parameters that transform vectors that are drawn from the data being processed. For example, those 175 billion weights in GPT-3 are organized into just under 28,000 distinct matrices. Those matrices in turn fall into eight different categories, and what you and I are going to do is step through each one of those categories to",
+    "matched_keywords": [
+      "weighted sum",
+      "weight",
+      "dot product"
+    ],
+    "question": "Why are the learnable parameters in deep learning models specifically called 'weights'?",
+    "ideal_answer": "They are called weights because the only way these parameters interact with the data being processed is through weighted sums. Non-linear functions are also present in the model, but those do not depend on parameters.",
+    "reasoning": "This tests semantic precision by requiring the user to distinguish the exact functional reason parameters are named 'weights' (their exclusive role in weighted sums) rather than accepting a vague answer like 'because they scale inputs' or confusing the role of non-linear functions."
+  },
+  {
+    "id": "v2_transformers__backprop_gradient",
+    "video_key": "v2_transformers",
+    "video_title": "3B1B — Transformers, the tech behind LLMs",
+    "concept_label": "backprop_gradient",
+    "failure_mode": "negation_misconception",
+    "timestamp_start": "24:33",
+    "timestamp_end": "24:58",
+    "source_text": "For example, I'll have GPT-3 generate a story with the seed text, \"once upon a time there was A\", but I'll use different temperatures in each case. Temperature zero means that it always goes with the most predictable word, and what you get ends up being a trite derivative of Goldilocks. A higher temperature gives it a chance to choose less likely words, but it comes with a risk. In this case, the story starts out more originally,",
+    "matched_keywords": [
+      "backprop",
+      "derivative"
+    ],
+    "question": "Does using temperature zero in GPT-3 generation produce output based on backpropagated derivatives of the training gradient?",
+    "ideal_answer": "No. In this context, 'derivative' refers to the story being an unoriginal, clichéd imitation — specifically described as 'a trite derivative of Goldilocks.' Temperature zero simply means the model always selects the most statistically predictable next word, with no reference to backpropagation or gradients.",
+    "reasoning": "This question bakes in the misconception that 'derivative' in the segment is a technical term related to backprop/gradients, when it is actually used in its literary sense to mean unoriginal, testing whether the RAG system can make that precise semantic distinction."
+  },
+  {
+    "id": "v2_transformers__attention_mechanism",
+    "video_key": "v2_transformers",
+    "video_title": "3B1B — Transformers, the tech behind LLMs",
+    "concept_label": "attention_mechanism",
+    "failure_mode": "multi_hop",
+    "timestamp_start": "22:26",
+    "timestamp_end": "23:55",
+    "source_text": "since it makes another appearance for us once we dive into the attention blocks. The idea is that if you want a sequence of numbers to act as a probability distribution, say a distribution over all possible next words, then each value has to be between 0 and 1, and you also need all of them to add up to 1. However, if you're playing the deep learning game where everything you do looks like matrix-vector multiplication, the outputs you get by default don't abide by this at all. The values are often negative, or much bigger than 1, and they almost certainly don't add up to 1. Softmax is the standard way to turn an arbitrary list of numbers into a valid distribution in such a way that the largest values end up closest to 1, and the smaller values end up very close to 0. That's all you really need to know. But if you're curious, the way it works is to first raise e to the power of each of the numbers, which means you now have a list of positive values, and then you can take the sum of all those positive values and divide each term by that sum, which normalizes it into a list that adds up to 1. You'll notice that if one of the numbers in the input is meaningfully bigger than the rest, then in the output the corresponding term dominates the distribution, so if you were sampling from it you'd almost certainly just be picking the maximizing input. But it's softer than just picking the max in the sense that when other values are similarly large, they also get meaningful weight in the distribution, and everything changes continuously as you continuously vary the inputs. In some situations, like when ChatGPT is using this distribution to create a next word,",
+    "matched_keywords": [
+      "key",
+      "value"
+    ],
+    "question": "How does the softmax function specifically handle the problem that deep learning outputs are often negative?",
+    "ideal_answer": "Softmax first raises e to the power of each input value, which guarantees a list of entirely positive numbers regardless of whether the originals were negative. It then divides each of those positive values by their total sum, normalizing the result into a valid probability distribution that adds up to 1.",
+    "reasoning": "Answering correctly requires connecting two separate pieces of information: (1) that deep learning outputs violate probability distribution rules partly because they can be negative, and (2) that the specific exponentiation step in softmax is what eliminates negativity before normalization can proceed."
+  },
+  {
+    "id": "v2_transformers__ml_dl_taxonomy",
+    "video_key": "v2_transformers",
+    "video_title": "3B1B — Transformers, the tech behind LLMs",
+    "concept_label": "ml_dl_taxonomy",
+    "failure_mode": "taxonomy",
+    "timestamp_start": "7:44",
+    "timestamp_end": "8:30",
+    "source_text": "or our example of predicting the next word given a passage of text, or any other task that seems to require some element of intuition and pattern recognition. We almost take this for granted these days, but the idea with machine learning is that rather than trying to explicitly define a procedure for how to do that task in code, which is what people would have done in the earliest days of AI, instead you set up a very flexible structure with tunable parameters, like a bunch of knobs and dials, and then, somehow, you use many examples of what the output should look like for a given input to tweak and tune the values of those parameters to mimic this behavior. For example, maybe the simplest form of machine learning is linear regression, where your inputs and outputs are each single numbers, something like the square footage of a house and its price, and what you want is to find a line of best fit through this data, you know,",
+    "matched_keywords": [
+      "machine learning is"
+    ],
+    "question": "Is linear regression considered a form of machine learning?",
+    "ideal_answer": "Yes, linear regression is described as perhaps the simplest form of machine learning, where single-number inputs and outputs (like a house's square footage and its price) are used to find a line of best fit through data.",
+    "reasoning": "This tests the taxonomy failure mode by probing whether the model correctly categorizes linear regression as belonging within machine learning, which many users might misconceive as a purely statistical method distinct from ML."
+  },
+  {
+    "id": "v2_transformers__positional_encoding",
+    "video_key": "v2_transformers",
+    "video_title": "3B1B — Transformers, the tech behind LLMs",
+    "concept_label": "positional_encoding",
+    "failure_mode": "multi_hop",
+    "timestamp_start": "18:20",
+    "timestamp_end": "18:43",
+    "source_text": "remembering that by the end we should count up to 175 billion. In the case of transformers, you really want to think of the vectors in this embedding space as not merely representing individual words. For one thing, they also encode information about the position of that word, which we'll talk about later, but more importantly, you should think of them as having the capacity to soak in context. A vector that started its life as the embedding of the word king, for example,",
+    "matched_keywords": [
+      "position of"
+    ],
+    "question": "What two things does a word embedding vector in a transformer encode beyond just the identity of the word itself?",
+    "ideal_answer": "In a transformer, a word embedding vector encodes both the position of that word in the sequence and contextual information from surrounding words — meaning the vector has the capacity to 'soak in context' as it passes through the model.",
+    "reasoning": "This question requires the reader to connect two separately stated properties of transformer embedding vectors — positional encoding and context absorption — neither of which alone constitutes the full answer, forcing a multi-hop link across the segment."
+  },
+  {
+    "id": "v3_deep_learning_hi__neuron_mechanics",
+    "video_key": "v3_deep_learning_hi",
+    "video_title": "CampusX — What is Deep Learning? (Hindi, translated)",
+    "concept_label": "neuron_mechanics",
+    "failure_mode": "semantic_precision",
+    "timestamp_start": "59:30",
+    "timestamp_end": "59:53",
+    "source_text": "is all the notes from all the circles, this is basically is a fundamental unit of your N and is the second, this is which these are called weights. these weights tell which notes are connected to notes. Okay, now that these two can be created in different ways. means a different neural कि इन दोनों को अलग-अलग तरीके से आप",
+    "matched_keywords": [
+      "weight"
+    ],
+    "question": "What specific role do weights play in a neural network according to this explanation?",
+    "ideal_answer": "Weights indicate which nodes are connected to which other nodes in a neural network. They are the fundamental connective elements that define the relationships between nodes.",
+    "reasoning": "This tests semantic precision by requiring the learner to distinguish the exact function of weights (defining node-to-node connectivity) rather than conflating them with other neural network parameters like biases or activation values."
+  },
+  {
+    "id": "v3_deep_learning_hi__attention_mechanism",
+    "video_key": "v3_deep_learning_hi",
+    "video_title": "CampusX — What is Deep Learning? (Hindi, translated)",
+    "concept_label": "attention_mechanism",
+    "failure_mode": "multi_hop",
+    "timestamp_start": "15:06",
+    "timestamp_end": "15:25",
+    "source_text": "representations made after deduction and classification from Noida this replacement alsiser engineering channel vastu sammat into brothels inside free key and used to perform a specific pass torsion you easy year explain So, if you have done even a little work on setting up a machine, then you would know that there is a thing called",
+    "matched_keywords": [
+      "key",
+      "value"
+    ],
+    "question": "What are keys derived from, and what specific operation are they used to perform in this context?",
+    "ideal_answer": "Keys are derived from representations made after deduction and classification. These keys are then used to perform a specific attention pass (torsion/transformation) in the mechanism described.",
+    "reasoning": "This question requires a multi-hop connection between two distinct facts in the segment: (1) the origin of keys as post-deduction/classification representations, and (2) their functional role in performing a specific pass/operation — neither fact alone answers the question."
+  },
+  {
+    "id": "v3_deep_learning_hi__feature_engineering",
+    "video_key": "v3_deep_learning_hi",
+    "video_title": "CampusX — What is Deep Learning? (Hindi, translated)",
+    "concept_label": "feature_engineering",
+    "failure_mode": "contrast",
+    "timestamp_start": "14:19",
+    "timestamp_end": "15:06",
+    "source_text": "comes under Machine Learning and Artificial Neural Networks are sent over but here there is a center and an award written and is written, today representation learning is fine so according to this definition deep learning does do representation learning or does depend on it 9th question this Kiwi What is presentation learning? Okay, suit Rashmi, if you want to enter the degree in , then you should understand representation learning to . I will show you in fact . 200 This is the Wikipedia page of representation learning. Okay, so here it is written for you in machine learning feature learning and Representation learning both are same thing setup it technique date alarms and system to automatically discover representations made after deduction and",
+    "matched_keywords": [
+      "feature extract",
+      "manual feature",
+      "representation learning"
+    ],
+    "question": "What is the difference between traditional feature engineering and representation learning in machine learning?",
+    "ideal_answer": "In machine learning, feature learning and representation learning are the same thing. Unlike traditional manual feature engineering, representation learning refers to techniques that allow a system to automatically discover the representations needed for classification or detection, rather than having them hand-crafted by humans.",
+    "reasoning": "This question forces a contrast between manual feature engineering and automatic representation learning, testing whether the RAG system can surface the key distinction stated in the segment — that representation learning automates what was previously done manually."
+  },
+  {
+    "id": "v3_deep_learning_hi__ml_dl_taxonomy",
+    "video_key": "v3_deep_learning_hi",
+    "video_title": "CampusX — What is Deep Learning? (Hindi, translated)",
+    "concept_label": "ml_dl_taxonomy",
+    "failure_mode": "taxonomy",
+    "timestamp_start": "43:29",
+    "timestamp_end": "44:04",
+    "source_text": "and after coming from this data, what happened is that research on has become very easy, , because it was not within the power of everyone to make it from the data, then if you ask him that in today's rate, deep learning is so powerful . Why is it the biggest reason? Biggest Contributor from Data to Bigg Boss Without Data Ruby Doesn't Know Deep Learning बड़ा कॉन्ट्रीब्यूटर डाटा से Bigg Boss विदाउट डाटा दे रूबी डोंट नो डीप लर्निंग So according to me, the biggest second chapter in to push deep learning is Hardware Hardware means computing stack Okay, so to explain this entire region , first of all I will explain it to you",
+    "matched_keywords": [
+      "artificial intelligence",
+      "machine learning is",
+      "deep learning is",
+      "umbrella"
+    ],
+    "question": "What are the two biggest contributors to deep learning's rise in power, and which one ranks higher?",
+    "ideal_answer": "According to the speaker, Data is the single biggest contributor to deep learning's rise, and Hardware (the computing stack) is the second biggest contributor. Without data, deep learning simply does not work.",
+    "reasoning": "This tests the taxonomy failure mode by requiring the model to correctly classify and rank two distinct contributor categories (Data vs. Hardware) in their hierarchical order of importance as stated in the segment."
+  },
+  {
+    "id": "v3_deep_learning_hi__layers_and_architecture",
+    "video_key": "v3_deep_learning_hi",
+    "video_title": "CampusX — What is Deep Learning? (Hindi, translated)",
+    "concept_label": "layers_and_architecture",
+    "failure_mode": "semantic_precision",
+    "timestamp_start": "6:38",
+    "timestamp_end": "6:56",
+    "source_text": ", I have given the description in front of you like a child, now in the layer , the place from where you get support, you call input layer and the place from where you get freedom, you call it output layer, now you can add any number in between. There are two here but you can add any number यहां पर दो है बट आप कितने भी ऐड कर सकते Yes, these are called freedom layers, okay",
+    "matched_keywords": [
+      "input layer",
+      "output layer"
+    ],
+    "question": "What is the precise conceptual distinction used to define the input layer versus the output layer?",
+    "ideal_answer": "The input layer is defined as the place from where you get 'support', while the output layer is defined as the place from where you get 'freedom'. Any number of additional layers can be added in between these two.",
+    "reasoning": "This tests semantic precision by requiring the model to retrieve the exact metaphorical terms ('support' vs. 'freedom') used to distinguish the two layers, rather than defaulting to generic definitions like 'receives data' and 'produces predictions'."
+  },
+  {
+    "id": "v4_ml_dl_hi__backprop_gradient",
+    "video_key": "v4_ml_dl_hi",
+    "video_title": "CodeWithHarry — All About ML & Deep Learning (Hindi, translated)",
+    "concept_label": "backprop_gradient",
+    "failure_mode": "negation_misconception",
+    "timestamp_start": "12:15",
+    "timestamp_end": "12:30",
+    "source_text": "आर एन एन रिकरेंट न्यूरल नेटवर्क उसी के सा सा एलएसटीएम होते हैं लॉन्ग शॉर्ट टर्म मेमोरी वाले न्यूरल नेटवर्क्स इनको लंगर Sequences and vanishing gradient has been created to solve the problem. I had made a video long ago in which I had talked about the vanishing gradient problem. What is ? So you guys can watch it. Long ago, I had posted those videos on machine learning on . So if you guys are interested, then you can watch them again and watch them again. I have made a lot of videos on",
+    "matched_keywords": [
+      "gradient",
+      "loss function",
+      "minimize"
+    ],
+    "question": "Wasn't LSTM designed to handle exploding gradients rather than vanishing gradients?",
+    "ideal_answer": "No, LSTM (Long Short-Term Memory) networks were specifically created to solve the vanishing gradient problem, not the exploding gradient problem. They were designed to handle long sequences where vanishing gradients make training standard RNNs difficult.",
+    "reasoning": "This question embeds the common misconception that LSTM targets exploding gradients, directly testing whether the RAG system can retrieve and assert the correct distinction that LSTM addresses the vanishing gradient problem."
+  },
+  {
+    "id": "v4_ml_dl_hi__attention_mechanism",
+    "video_key": "v4_ml_dl_hi",
+    "video_title": "CodeWithHarry — All About ML & Deep Learning (Hindi, translated)",
+    "concept_label": "attention_mechanism",
+    "failure_mode": "multi_hop",
+    "timestamp_start": "1:46",
+    "timestamp_end": "2:08",
+    "source_text": "I will say, brother, when the precipitation was this much, , humidity, this much, temperature, then it rained, was precipitation, humidity, temperature, this much, , it did not rain, then when I will give the new value , brother, today's precipitation is . If this is the humidity and temperature then on the basis of its it will tell me that according to this value, it is not going to rain today, is it going to rain today, will be true or not, will it be a prediction, then does the machine learning and AI.",
+    "matched_keywords": [
+      "value"
+    ],
+    "question": "If today's precipitation, humidity, and temperature values are fed into the system, what does the system produce as an output and what underlying process makes that possible?",
+    "ideal_answer": "The system produces a prediction about whether it will rain today (a true/false outcome). This is made possible by machine learning and AI, which learn from historical labeled examples of precipitation, humidity, and temperature paired with whether it rained or not.",
+    "reasoning": "This question forces a two-step connection: first retrieving the specific input features (precipitation, humidity, temperature) that drive the new prediction, then linking them to the stated output type and the broader mechanism (machine learning and AI) that enables it."
+  },
+  {
+    "id": "v4_ml_dl_hi__ml_dl_taxonomy",
+    "video_key": "v4_ml_dl_hi",
+    "video_title": "CodeWithHarry — All About ML & Deep Learning (Hindi, translated)",
+    "concept_label": "ml_dl_taxonomy",
+    "failure_mode": "taxonomy",
+    "timestamp_start": "1:02",
+    "timestamp_end": "1:16",
+    "source_text": "You want and this thing may seem a little bad but I would say save your career want to save your career What is machine learning Machine learning is the process of to train an algorithm on data What does this mean You have a lot of data Let us say 3 billion data points You have and now you",
+    "matched_keywords": [
+      "machine learning is"
+    ],
+    "question": "What category of process does machine learning fall under, based on its core definition?",
+    "ideal_answer": "Machine learning is defined as the process of training an algorithm on data. It is fundamentally a data-driven training process, not a rule-based or manually programmed one.",
+    "reasoning": "This tests taxonomy by requiring the respondent to correctly classify machine learning within its definitional category (a training process) rather than conflating it with broader or adjacent categories like statistics or explicit programming."
+  },
+  {
+    "id": "v1_neural_network__neuron_mechanics__b2",
+    "video_key": "v1_neural_network",
+    "video_title": "3B1B — But what is a Neural Network?",
+    "concept_label": "neuron_mechanics",
+    "failure_mode": "semantic_precision",
+    "timestamp_start": "8:55",
+    "timestamp_end": "15:10",
+    "source_text": "What dials and knobs should you be able to tweak so that it's expressive enough to potentially capture this pattern, or any other pixel pattern, or the pattern that several edges can make a loop, and other such things? Well, what we'll do is assign a weight to each one of the connections between our neuron and the neurons from the first layer. These weights are just numbers. Then take all of those activations from the first layer and compute their weighted sum according to these weights. I find it helpful to think of these weights as being organized into a little grid of their own, and I'm going to use green pixels to indicate positive weights, and red pixels to indicate negative weights, where the brightness of that pixel is some loose depiction of the weight's value. Now if we made the weights associated with almost all of the pixels zero except for some positive weights in this region that we care about, then taking the weighted sum of all the pixel values really just amounts to adding up the values of the pixel just in the region that we care about. And if you really wanted to pick up on whether there's an edge here, what you might do is have some negative weights associated with the surrounding pixels. Then the sum is largest when those middle pixels are bright but the surrounding pixels are darker. When you compute a weighted sum like this, you might come out with any number, but for this network what we want is for activations to be some value between 0 and 1. So a common thing to do is to pump this weighted sum into some function that squishes the real number line into the range between 0 and 1. And a common function that does this is called the sigmoid function, also known as a logistic curve. Basically very negative inputs end up close to 0, positive inputs end up close to 1, and it just steadily increases around the input 0. So the activation of the neuron here is basically a measure of how positive the relevant weighted sum is. But maybe it's not that you want the neuron to light up when the weighted sum is bigger than 0. Maybe you only want it to be active when the sum is bigger than say 10. That is, you want some bias for it to be inactive. What we'll do then is just add in some other number like negative 10 to this weighted sum before plugging it through the sigmoid squishification function. That additional number is called the bias. So the weights tell you what pixel pattern this neuron in the second layer is picking up on, and the bias tells you how high the weighted sum needs to be before the neuron starts getting meaningfully active. And that is just one neuron. Every other neuron in this layer is going to be connected to all 784 pixel neurons from the first layer, and each one of those 784 connections has its own weight associated with it. Also, each one has some bias, some other number that you add on to the weighted sum before squishing it with the sigmoid. And that's a lot to think about! With this hidden layer of 16 neurons, that's a total of 784 times 16 weights, along with 16 biases. And all of that is just the connections from the first layer to the second. The connections between the other layers also have a bunch of weights and biases associated with them. All said and done, this network has almost exactly 13,000 total weights and biases. 13,000 knobs and dials that can be tweaked and turned to make this network behave in different ways. So when we talk about learning, what that's referring to is getting the computer to find a valid setting for all of these many many numbers so that it'll actually solve the problem at hand. One thought experiment that is at once fun and kind of horrifying is to imagine sitting down and setting all of these weights and biases by hand, purposefully tweaking the numbers so that the second layer picks up on edges, the third layer picks up on patterns, etc. I personally find this satisfying rather than just treating the network as a total black box, because when the network doesn't perform the way you anticipate, if you've built up a little bit of a relationship with what those weights and biases actually mean, you have a starting place for experimenting with how to change the structure to improve. Or when the network does work but not for the reasons you might expect, digging into what the weights and biases are doing is a good way to challenge your assumptions and really expose the full space of possible solutions. By the way, the actual function here is a little cumbersome to write down, don't you think? So let me show you a more notationally compact way that these connections are represented. This is how you'd see it if you choose to read up more about neural networks. Organize all of the activations from one layer into a column as a vector. Then organize all of the weights as a matrix, where each row of that matrix corresponds to the connections between one layer and a particular neuron in the next layer. What that means is that taking the weighted sum of the activations in the first layer according to these weights corresponds to one of the terms in the matrix vector product of everything we have on the left here. By the way, so much of machine learning just comes down to having a good grasp of linear algebra, so for any of you who want a nice visual understanding for matrices and what matrix vector multiplication means, take a look at the series I did on linear algebra, especially chapter 3. Back to our expression, instead of talking about adding the bias to each one of these values independently, we represent it by organizing all those biases into a vector, and adding the entire vector to the previous matrix vector product. Then as a final step, I'll wrap a sigmoid around the outside here, and what that's supposed to represent is that you're going to apply the sigmoid function to each specific component of the resulting vector inside. So once you write down this weight matrix and these vectors as their own symbols, you can communicate the full transition of activations from one layer to the next in an extremely tight and neat little expression, and this makes the relevant code both a lot simpler and a lot faster, since many libraries optimize the heck out of matrix",
+    "matched_keywords": [
+      "weighted sum",
+      "weight",
+      "bias",
+      "sigmoid",
+      "relu",
+      "squish"
+    ],
+    "question": "What is the functional difference between a weight and a bias in determining a neuron's activation?",
+    "ideal_answer": "Weights are assigned to each connection and determine what pixel pattern the neuron is picking up on — they define how much each input contributes to the weighted sum. The bias is a separate number added to that weighted sum before it is passed through the sigmoid function, and it controls how high the weighted sum needs to be before the neuron starts getting meaningfully active.",
+    "reasoning": "This targets semantic_precision by probing whether a RAG system can distinguish the distinct roles of weights versus biases, two terms that are easily conflated as generic 'parameters'. The segment explicitly states both roles: weights encode the pattern (what input structure the neuron responds to) while bias sets the activation threshold (how strongly the pattern must be present). A system relying on vague retrieval might merge them as interchangeable tunable numbers, missing the precise functional distinction the segment draws."
+  },
+  {
+    "id": "v1_neural_network__attention_mechanism__b2",
+    "video_key": "v1_neural_network",
+    "video_title": "3B1B — But what is a Neural Network?",
+    "concept_label": "attention_mechanism",
+    "failure_mode": "multi_hop",
+    "timestamp_start": "3:00",
+    "timestamp_end": "3:28",
+    "source_text": "It's really not more than that. For example the network starts with a bunch of neurons corresponding to each of the 28x28 pixels of the input image, which is 784 neurons in total. Each one of these holds a number that represents the grayscale value of the corresponding pixel, ranging from 0 for black pixels up to 1 for white pixels. This number inside the neuron is called its activation, and the image you might have in mind here is that each neuron is lit up when its",
+    "matched_keywords": [
+      "value"
+    ],
+    "question": "If every pixel in an input image were completely black, what activation value would each neuron in the first layer hold, and how many neurons would that affect in total?",
+    "ideal_answer": "Each neuron would hold an activation value of 0, since black pixels map to 0 on the grayscale scale. This would affect all 784 neurons in the first layer, which corresponds to the 28×28 pixels of the input image.",
+    "reasoning": "This is a multi_hop question because answering it requires connecting two distinct facts from the segment: (1) that black pixels have a grayscale value of 0, which is what a neuron's activation represents, and (2) that the total number of neurons equals 784, derived from the 28×28 pixel grid. Neither fact alone answers the question — both must be retrieved and combined."
+  },
+  {
+    "id": "v1_neural_network__layers_and_architecture__b2",
+    "video_key": "v1_neural_network",
+    "video_title": "3B1B — But what is a Neural Network?",
+    "concept_label": "layers_and_architecture",
+    "failure_mode": "semantic_precision",
+    "timestamp_start": "11:31",
+    "timestamp_end": "12:12",
+    "source_text": "sum needs to be before the neuron starts getting meaningfully active. And that is just one neuron. Every other neuron in this layer is going to be connected to all 784 pixel neurons from the first layer, and each one of those 784 connections has its own weight associated with it. Also, each one has some bias, some other number that you add on to the weighted sum before squishing it with the sigmoid. And that's a lot to think about! With this hidden layer of 16 neurons, that's a total of 784 times 16 weights, along with 16 biases. And all of that is just the connections from the first layer to the second. The connections between the other layers also have",
+    "matched_keywords": [
+      "hidden layer",
+      "input layer",
+      "output layer",
+      "784",
+      "16 neuron"
+    ],
+    "question": "What is the precise total number of weights needed just for the connections between the first and second layer of this network?",
+    "ideal_answer": "The connections from the first layer to the second layer require exactly 784 times 16 weights, which is 12,544 weights in total, plus an additional 16 biases for the hidden layer neurons.",
+    "reasoning": "This tests semantic precision by requiring the user to distinguish between weights and biases as separate parameter types, and to correctly scope the count to only the first-to-second layer connections — not the entire network — as the segment explicitly states 'that's just the connections from the first layer to the second.'"
+  },
+  {
+    "id": "v2_transformers__neuron_mechanics__b2",
+    "video_key": "v2_transformers",
+    "video_title": "3B1B — Transformers, the tech behind LLMs",
+    "concept_label": "neuron_mechanics",
+    "failure_mode": "semantic_precision",
+    "timestamp_start": "11:53",
+    "timestamp_end": "12:22",
+    "source_text": "almost all of the actual computation looks like matrix vector multiplication. There's a little bit of a risk getting lost in the sea of billions of numbers, but you should draw a very sharp distinction in your mind between the weights of the model, which I'll always color in blue or red, and the data being processed, which I'll always color in gray. The weights are the actual brains, they are the things learned during training, and they determine how it behaves. The data being processed simply encodes whatever specific input is fed into the model for a given run, like an example snippet of text.",
+    "matched_keywords": [
+      "weighted sum",
+      "weight",
+      "dot product"
+    ],
+    "question": "What is the precise computational operation that dominates the processing in deep learning models?",
+    "ideal_answer": "Almost all of the actual computation in deep learning models takes the form of matrix vector multiplication. This operation is how weights interact with the data being processed throughout the model.",
+    "reasoning": "Tests semantic precision by distinguishing the specific mathematical operation (matrix vector multiplication) from the more general concept of weighted sums or dot products — a common conflation. The segment explicitly names matrix vector multiplication as the dominant operation, and a RAG system must retrieve this precise term rather than substituting a related but less specific alternative."
+  },
+  {
+    "id": "v2_transformers__backprop_gradient__b2",
+    "video_key": "v2_transformers",
+    "video_title": "3B1B — Transformers, the tech behind LLMs",
+    "concept_label": "backprop_gradient",
+    "failure_mode": "negation_misconception",
+    "timestamp_start": "9:10",
+    "timestamp_end": "9:30",
+    "source_text": "Deep learning describes a class of models that in the last couple decades have proven to scale remarkably well. What unifies them is that they all use the same training algorithm, it's called backpropagation, we talked about it in previous chapters, and the context that I want you to have as we go in is that in order for this training algorithm to work well at scale, these models have to follow a certain specific format.",
+    "matched_keywords": [
+      "backprop",
+      "derivative"
+    ],
+    "question": "Is backpropagation a training algorithm unique to only some deep learning models, or do all deep learning models rely on it?",
+    "ideal_answer": "All deep learning models use the same training algorithm, backpropagation. It is not unique to a subset of models — what unifies the entire class of deep learning models is their shared use of backpropagation.",
+    "reasoning": "The negation_misconception here targets the false belief that backpropagation is specific to certain deep learning architectures. The segment explicitly states 'they all use the same training algorithm, it's called backpropagation,' directly refuting any misconception that it's selectively applied. The question is phrased to surface and correct that misconception."
+  },
+  {
+    "id": "v2_transformers__attention_mechanism__b2",
+    "video_key": "v2_transformers",
+    "video_title": "3B1B — Transformers, the tech behind LLMs",
+    "concept_label": "attention_mechanism",
+    "failure_mode": "multi_hop",
+    "timestamp_start": "20:51",
+    "timestamp_end": "21:15",
+    "source_text": "of Harry Potter would presumably assign a high number to the word Snape. This involves two different steps. The first one is to use another matrix that maps the very last vector in that context to a list of 50,000 values, one for each token in the vocabulary. Then there's a function that normalizes this into a probability distribution, it's called softmax and we'll talk more about it in just a second, but before that it might seem a little bit weird to only use this last embedding",
+    "matched_keywords": [
+      "key",
+      "value"
+    ],
+    "question": "What is the size of the list produced by the matrix transformation of the last context vector, and what happens to that list before a token like 'Snape' can be selected as the next word?",
+    "ideal_answer": "The matrix maps the last context vector to a list of 50,000 values, one for each token in the vocabulary. That list is then passed through a softmax function, which normalizes it into a probability distribution so a next token can be selected.",
+    "reasoning": "This is a multi_hop question because answering it correctly requires chaining two distinct facts from the segment: (1) the matrix produces exactly 50,000 values corresponding to vocabulary tokens, and (2) those values must subsequently be normalized by softmax into a probability distribution — neither fact alone constitutes a complete answer."
+  },
+  {
+    "id": "v3_deep_learning_hi__neuron_mechanics__b2",
+    "video_key": "v3_deep_learning_hi",
+    "video_title": "CampusX — What is Deep Learning? (Hindi, translated)",
+    "concept_label": "neuron_mechanics",
+    "failure_mode": "semantic_precision",
+    "timestamp_start": "6:04",
+    "timestamp_end": "6:24",
+    "source_text": "perceptron , all the circles you can see are perceptrons and these are connected to each other, are foreign tours and these are arrows, these are called weight , they are called weights , okay, and I call them layers, these are all the layers , which in one line will save them from all the problems,",
+    "matched_keywords": [
+      "weight"
+    ],
+    "question": "What is the visual representation used to depict the connections between perceptrons in this network diagram?",
+    "ideal_answer": "The connections between perceptrons are represented as arrows, and these arrows are called weights.",
+    "reasoning": "Tests semantic precision by requiring the user to distinguish between the visual element (arrows) and the technical term assigned to them (weights), which are two distinct but linked concepts mentioned in the segment."
+  },
+  {
+    "id": "v3_deep_learning_hi__attention_mechanism__b2",
+    "video_key": "v3_deep_learning_hi",
+    "video_title": "CampusX — What is Deep Learning? (Hindi, translated)",
+    "concept_label": "attention_mechanism",
+    "failure_mode": "multi_hop",
+    "timestamp_start": "31:43",
+    "timestamp_end": "31:59",
+    "source_text": "If the train is stopped then there are two basins' w and Bablu w and details are being told about this feature of and its w. Now on the basis of this w1 and value of w, I can tell which feature is more important and which feature is less important. Okay, so if tomorrow some child asks , tell me. Why",
+    "matched_keywords": [
+      "key",
+      "value"
+    ],
+    "question": "What two pieces of information are combined to determine which features are more or less important?",
+    "ideal_answer": "The value of w1 and the value of w are combined together to determine which features are more important and which are less important.",
+    "reasoning": "This is a multi_hop question because it requires the reader to first identify the two distinct values (w1 and value of w) mentioned in the segment, and then connect them to their joint purpose — ranking feature importance — rather than treating either value in isolation."
+  },
+  {
+    "id": "v3_deep_learning_hi__feature_engineering__b2",
+    "video_key": "v3_deep_learning_hi",
+    "video_title": "CampusX — What is Deep Learning? (Hindi, translated)",
+    "concept_label": "feature_engineering",
+    "failure_mode": "contrast",
+    "timestamp_start": "16:48",
+    "timestamp_end": "17:04",
+    "source_text": "features, right on your intelligence, so this is called goes to the middle of the presentation where automatic feature extraction takes place in your . If the problem is fine with your data then this is one more thing to understand and further we will discuss on that there is no need of",
+    "matched_keywords": [
+      "feature extract",
+      "manual feature",
+      "representation learning"
+    ],
+    "question": "What distinguishes automatic feature extraction from manual feature engineering in terms of where the process occurs in a pipeline?",
+    "ideal_answer": "Automatic feature extraction takes place in the middle of the presentation (i.e., within the model pipeline itself), whereas manual feature engineering is done externally before the model processes the data. This internal automatic process removes the need for hand-crafted features when the data conditions are appropriate.",
+    "reasoning": "The segment explicitly mentions that automatic feature extraction 'goes to the middle of the presentation' where it takes place, contrasting it implicitly with manual approaches that require upfront human effort. This contrast question probes whether a RAG system can pinpoint the architectural/pipeline distinction rather than just the conceptual one already covered by the existing question."
+  },
+  {
+    "id": "v3_deep_learning_hi__ml_dl_taxonomy__b2",
+    "video_key": "v3_deep_learning_hi",
+    "video_title": "CampusX — What is Deep Learning? (Hindi, translated)",
+    "concept_label": "ml_dl_taxonomy",
+    "failure_mode": "taxonomy",
+    "timestamp_start": "20:03",
+    "timestamp_end": "20:19",
+    "source_text": "next discuss what is the point between deep learning and machine learning, so now is the difference, at this point we only know that is that deep learning is all about the field of machine writing. For machine learning algorithms, there is . Even the sages do their work in by using tactical techniques. The",
+    "matched_keywords": [
+      "artificial intelligence",
+      "machine learning is",
+      "deep learning is",
+      "umbrella"
+    ],
+    "question": "How does deep learning relate to machine learning in terms of their classification?",
+    "ideal_answer": "Deep learning is a field that falls within machine learning, making it a subset of machine learning rather than a separate or equivalent discipline.",
+    "reasoning": "The segment explicitly states 'deep learning is all about the field of machine learning,' indicating a taxonomic parent-child relationship where deep learning sits inside the broader category of machine learning. This tests whether a RAG system can extract the hierarchical classification between the two terms from this specific segment."
+  },
+  {
+    "id": "v3_deep_learning_hi__layers_and_architecture__b2",
+    "video_key": "v3_deep_learning_hi",
+    "video_title": "CampusX — What is Deep Learning? (Hindi, translated)",
+    "concept_label": "layers_and_architecture",
+    "failure_mode": "semantic_precision",
+    "timestamp_start": "19:20",
+    "timestamp_end": "19:35",
+    "source_text": "topper definition, you learned how works. The way works is that you tell in the input layer and then come through the Hayden lace. When you start editing , then put at the beginning, select this trend and . The latter is the difference that extracts the root of your",
+    "matched_keywords": [
+      "input layer",
+      "output layer"
+    ],
+    "question": "What is the structural path that data follows between the input layer and the output in this architecture?",
+    "ideal_answer": "Data enters through the input layer and then passes through the hidden layers before reaching the output. This sequential flow through the hidden layers is the core processing pathway of the architecture.",
+    "reasoning": "Tests semantic_precision by asking about the exact structural/sequential relationship between named architectural components (input layer → hidden layers → output), requiring precise understanding of the data flow path rather than just the definition of any single layer."
+  },
+  {
+    "id": "v4_ml_dl_hi__backprop_gradient__b2",
+    "video_key": "v4_ml_dl_hi",
+    "video_title": "CodeWithHarry — All About ML & Deep Learning (Hindi, translated)",
+    "concept_label": "backprop_gradient",
+    "failure_mode": "negation_misconception",
+    "timestamp_start": "11:39",
+    "timestamp_end": "11:53",
+    "source_text": "is being done so the function is very simple Let's do artificial new networks. Basically approximates a function. Repeatedly we feed the data with it and minimize the error. We call this process training . Now we have feed forward neural networks. We have methods of backward propagation. Then there are also different types of neural",
+    "matched_keywords": [
+      "gradient",
+      "loss function",
+      "minimize"
+    ],
+    "question": "Does backpropagation work by pushing data forward through the network to minimize the loss?",
+    "ideal_answer": "No. Backpropagation is a backward propagation method, distinct from the forward feeding of data. In training, data is fed forward through the network, but the error minimization relies on backward propagation to update the network.",
+    "reasoning": "This targets a common misconception that backpropagation operates in the same forward direction as data feeding. The segment explicitly distinguishes 'feed forward neural networks' from 'methods of backward propagation', making this a negation_misconception question answerable only from the segment."
+  },
+  {
+    "id": "v4_ml_dl_hi__attention_mechanism__b2",
+    "video_key": "v4_ml_dl_hi",
+    "video_title": "CodeWithHarry — All About ML & Deep Learning (Hindi, translated)",
+    "concept_label": "attention_mechanism",
+    "failure_mode": "multi_hop",
+    "timestamp_start": "6:34",
+    "timestamp_end": "6:44",
+    "source_text": "like I told you guys based on precipitation humidity and temperature we were predicting rain yes and no if I have a lot of data like this then new I have the values of precipitation, humidity and temperature , so on the basis of that, I can find out whether there will be rain or not, or if a person has some parameters, I have health parameters,",
+    "matched_keywords": [
+      "value"
+    ],
+    "question": "If a person's health parameters are provided alongside precipitation, humidity, and temperature values, what do these two scenarios have in common in terms of how a prediction is made?",
+    "ideal_answer": "In both scenarios, a set of input values (weather parameters like precipitation, humidity, and temperature, or health parameters for a person) is used to make a prediction based on existing data. The underlying process is the same: given known parameter values, the system determines an outcome by learning from a large dataset of similar examples.",
+    "reasoning": "This multi_hop question requires the reader to connect two separate examples mentioned in the segment — the weather prediction scenario and the health parameters scenario — and synthesize what they share mechanistically. It forces retrieval of both pieces of information and their relationship, rather than a single isolated fact."
+  }
+]

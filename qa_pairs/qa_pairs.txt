@@ -1,0 +1,230 @@
+RAG EVALUATION QA PAIRS
+Total pairs: 16
+======================================================================
+
+
+[01]  id=v1_neural_network__neuron_mechanics
+  Video      : 3B1B — But what is a Neural Network?
+  Timestamp  : 8:55 → 15:10
+  Concept    : neuron_mechanics
+  Failure    : semantic_precision
+  Keywords   : weighted sum, weight, bias, sigmoid, relu, squish
+
+  QUESTION   : What exactly does the bias term do in a neuron's computation, and at what point in the process is it applied?
+  ANSWER     : The bias is a number added to the weighted sum before it is passed through the sigmoid function. It controls how high the weighted sum needs to be before the neuron starts getting meaningfully active — for example, a bias of negative 10 means the weighted sum must exceed 10 before the neuron activates significantly.
+  REASONING  : This question targets semantic precision by requiring the user to distinguish the bias's specific mechanical role (shifting the threshold of activation by being added pre-sigmoid) from a vague or conflated understanding that it simply 'adjusts' the neuron alongside the weights.
+
+  SOURCE     : What dials and knobs should you be able to tweak so that it's expressive enough to potentially capture this pattern, or any other pixel pattern, or the pattern that several edges can make a loop, and ...
+
+
+[02]  id=v1_neural_network__attention_mechanism
+  Video      : 3B1B — But what is a Neural Network?
+  Timestamp  : 9:27 → 10:32
+  Concept    : attention_mechanism
+  Failure    : multi_hop
+  Keywords   : value
+
+  QUESTION   : What condition in the pixel values causes the weighted sum to be at its largest when trying to detect an edge, and what does that tell us about the role of the negative weights?
+  ANSWER     : The weighted sum is largest when the middle pixels are bright but the surrounding pixels are darker. The negative weights are assigned to the surrounding pixels precisely to create this contrast — so the sum peaks when there is a meaningful brightness difference between the center region and its surroundings, which is the signature of an edge.
+  REASONING  : This question requires connecting two separate facts from the segment: that negative weights are placed on surrounding pixels, and that the sum is maximized under a specific brightness contrast condition, forcing the reader to infer how the two facts jointly implement edge detection.
+
+  SOURCE     : I find it helpful to think of these weights as being organized into a little grid of their own, and I'm going to use green pixels to indicate positive weights, and red pixels to indicate negative weig...
+
+
+[03]  id=v1_neural_network__layers_and_architecture
+  Video      : 3B1B — But what is a Neural Network?
+  Timestamp  : 2:58 → 4:24
+  Concept    : layers_and_architecture
+  Failure    : semantic_precision
+  Keywords   : hidden layer, input layer, output layer, 784, 16 neuron
+
+  QUESTION   : What does the activation of a neuron specifically represent in this network?
+  ANSWER     : The activation is the number held inside a neuron, representing a value between 0 and 1. In the input layer, it specifically represents the grayscale value of the corresponding pixel, ranging from 0 for black to 1 for white.
+  REASONING  : This tests semantic precision because a RAG system might conflate 'activation' with the neuron itself, the pixel, or the output classification, rather than identifying it precisely as the scalar number stored inside the neuron that encodes information at that layer.
+
+  SOURCE     : specifically a number between 0 and 1. It's really not more than that. For example the network starts with a bunch of neurons corresponding to each of the 28x28 pixels of the input image, which is 784...
+
+
+[04]  id=v2_transformers__neuron_mechanics
+  Video      : 3B1B — Transformers, the tech behind LLMs
+  Timestamp  : 10:04 → 11:17
+  Concept    : neuron_mechanics
+  Failure    : semantic_precision
+  Keywords   : weighted sum, weight, dot product
+
+  QUESTION   : Why are the learnable parameters in deep learning models specifically called 'weights'?
+  ANSWER     : They are called weights because the only way these parameters interact with the data being processed is through weighted sums. Non-linear functions are also present in the model, but those do not depend on parameters.
+  REASONING  : This tests semantic precision by requiring the user to distinguish the exact functional reason parameters are named 'weights' (their exclusive role in weighted sums) rather than accepting a vague answer like 'because they scale inputs' or confusing the role of non-linear functions.
+
+  SOURCE     : array of real numbers, until you get to a final layer which you consider the output. For example, the final layer in our text processing model is a list of numbers representing the probability distrib...
+
+
+[05]  id=v2_transformers__backprop_gradient
+  Video      : 3B1B — Transformers, the tech behind LLMs
+  Timestamp  : 24:33 → 24:58
+  Concept    : backprop_gradient
+  Failure    : negation_misconception
+  Keywords   : backprop, derivative
+
+  QUESTION   : Does using temperature zero in GPT-3 generation produce output based on backpropagated derivatives of the training gradient?
+  ANSWER     : No. In this context, 'derivative' refers to the story being an unoriginal, clichéd imitation — specifically described as 'a trite derivative of Goldilocks.' Temperature zero simply means the model always selects the most statistically predictable next word, with no reference to backpropagation or gradients.
+  REASONING  : This question bakes in the misconception that 'derivative' in the segment is a technical term related to backprop/gradients, when it is actually used in its literary sense to mean unoriginal, testing whether the RAG system can make that precise semantic distinction.
+
+  SOURCE     : For example, I'll have GPT-3 generate a story with the seed text, "once upon a time there was A", but I'll use different temperatures in each case. Temperature zero means that it always goes with the ...
+
+
+[06]  id=v2_transformers__attention_mechanism
+  Video      : 3B1B — Transformers, the tech behind LLMs
+  Timestamp  : 22:26 → 23:55
+  Concept    : attention_mechanism
+  Failure    : multi_hop
+  Keywords   : key, value
+
+  QUESTION   : How does the softmax function specifically handle the problem that deep learning outputs are often negative?
+  ANSWER     : Softmax first raises e to the power of each input value, which guarantees a list of entirely positive numbers regardless of whether the originals were negative. It then divides each of those positive values by their total sum, normalizing the result into a valid probability distribution that adds up to 1.
+  REASONING  : Answering correctly requires connecting two separate pieces of information: (1) that deep learning outputs violate probability distribution rules partly because they can be negative, and (2) that the specific exponentiation step in softmax is what eliminates negativity before normalization can proceed.
+
+  SOURCE     : since it makes another appearance for us once we dive into the attention blocks. The idea is that if you want a sequence of numbers to act as a probability distribution, say a distribution over all po...
+
+
+[07]  id=v2_transformers__ml_dl_taxonomy
+  Video      : 3B1B — Transformers, the tech behind LLMs
+  Timestamp  : 7:44 → 8:30
+  Concept    : ml_dl_taxonomy
+  Failure    : taxonomy
+  Keywords   : machine learning is
+
+  QUESTION   : Is linear regression considered a form of machine learning?
+  ANSWER     : Yes, linear regression is described as perhaps the simplest form of machine learning, where single-number inputs and outputs (like a house's square footage and its price) are used to find a line of best fit through data.
+  REASONING  : This tests the taxonomy failure mode by probing whether the model correctly categorizes linear regression as belonging within machine learning, which many users might misconceive as a purely statistical method distinct from ML.
+
+  SOURCE     : or our example of predicting the next word given a passage of text, or any other task that seems to require some element of intuition and pattern recognition. We almost take this for granted these day...
+
+
+[08]  id=v2_transformers__positional_encoding
+  Video      : 3B1B — Transformers, the tech behind LLMs
+  Timestamp  : 18:20 → 18:43
+  Concept    : positional_encoding
+  Failure    : multi_hop
+  Keywords   : position of
+
+  QUESTION   : What two things does a word embedding vector in a transformer encode beyond just the identity of the word itself?
+  ANSWER     : In a transformer, a word embedding vector encodes both the position of that word in the sequence and contextual information from surrounding words — meaning the vector has the capacity to 'soak in context' as it passes through the model.
+  REASONING  : This question requires the reader to connect two separately stated properties of transformer embedding vectors — positional encoding and context absorption — neither of which alone constitutes the full answer, forcing a multi-hop link across the segment.
+
+  SOURCE     : remembering that by the end we should count up to 175 billion. In the case of transformers, you really want to think of the vectors in this embedding space as not merely representing individual words....
+
+
+[09]  id=v3_deep_learning_hi__neuron_mechanics
+  Video      : CampusX — What is Deep Learning? (Hindi, translated)
+  Timestamp  : 59:30 → 59:53
+  Concept    : neuron_mechanics
+  Failure    : semantic_precision
+  Keywords   : weight
+
+  QUESTION   : What specific role do weights play in a neural network according to this explanation?
+  ANSWER     : Weights indicate which nodes are connected to which other nodes in a neural network. They are the fundamental connective elements that define the relationships between nodes.
+  REASONING  : This tests semantic precision by requiring the learner to distinguish the exact function of weights (defining node-to-node connectivity) rather than conflating them with other neural network parameters like biases or activation values.
+
+  SOURCE     : is all the notes from all the circles, this is basically is a fundamental unit of your N and is the second, this is which these are called weights. these weights tell which notes are connected to note...
+
+
+[10]  id=v3_deep_learning_hi__attention_mechanism
+  Video      : CampusX — What is Deep Learning? (Hindi, translated)
+  Timestamp  : 15:06 → 15:25
+  Concept    : attention_mechanism
+  Failure    : multi_hop
+  Keywords   : key, value
+
+  QUESTION   : What are keys derived from, and what specific operation are they used to perform in this context?
+  ANSWER     : Keys are derived from representations made after deduction and classification. These keys are then used to perform a specific attention pass (torsion/transformation) in the mechanism described.
+  REASONING  : This question requires a multi-hop connection between two distinct facts in the segment: (1) the origin of keys as post-deduction/classification representations, and (2) their functional role in performing a specific pass/operation — neither fact alone answers the question.
+
+  SOURCE     : representations made after deduction and classification from Noida this replacement alsiser engineering channel vastu sammat into brothels inside free key and used to perform a specific pass torsion y...
+
+
+[11]  id=v3_deep_learning_hi__feature_engineering
+  Video      : CampusX — What is Deep Learning? (Hindi, translated)
+  Timestamp  : 14:19 → 15:06
+  Concept    : feature_engineering
+  Failure    : contrast
+  Keywords   : feature extract, manual feature, representation learning
+
+  QUESTION   : What is the difference between traditional feature engineering and representation learning in machine learning?
+  ANSWER     : In machine learning, feature learning and representation learning are the same thing. Unlike traditional manual feature engineering, representation learning refers to techniques that allow a system to automatically discover the representations needed for classification or detection, rather than having them hand-crafted by humans.
+  REASONING  : This question forces a contrast between manual feature engineering and automatic representation learning, testing whether the RAG system can surface the key distinction stated in the segment — that representation learning automates what was previously done manually.
+
+  SOURCE     : comes under Machine Learning and Artificial Neural Networks are sent over but here there is a center and an award written and is written, today representation learning is fine so according to this def...
+
+
+[12]  id=v3_deep_learning_hi__ml_dl_taxonomy
+  Video      : CampusX — What is Deep Learning? (Hindi, translated)
+  Timestamp  : 43:29 → 44:04
+  Concept    : ml_dl_taxonomy
+  Failure    : taxonomy
+  Keywords   : artificial intelligence, machine learning is, deep learning is, umbrella
+
+  QUESTION   : What are the two biggest contributors to deep learning's rise in power, and which one ranks higher?
+  ANSWER     : According to the speaker, Data is the single biggest contributor to deep learning's rise, and Hardware (the computing stack) is the second biggest contributor. Without data, deep learning simply does not work.
+  REASONING  : This tests the taxonomy failure mode by requiring the model to correctly classify and rank two distinct contributor categories (Data vs. Hardware) in their hierarchical order of importance as stated in the segment.
+
+  SOURCE     : and after coming from this data, what happened is that research on has become very easy, , because it was not within the power of everyone to make it from the data, then if you ask him that in today's...
+
+
+[13]  id=v3_deep_learning_hi__layers_and_architecture
+  Video      : CampusX — What is Deep Learning? (Hindi, translated)
+  Timestamp  : 6:38 → 6:56
+  Concept    : layers_and_architecture
+  Failure    : semantic_precision
+  Keywords   : input layer, output layer
+
+  QUESTION   : What is the precise conceptual distinction used to define the input layer versus the output layer?
+  ANSWER     : The input layer is defined as the place from where you get 'support', while the output layer is defined as the place from where you get 'freedom'. Any number of additional layers can be added in between these two.
+  REASONING  : This tests semantic precision by requiring the model to retrieve the exact metaphorical terms ('support' vs. 'freedom') used to distinguish the two layers, rather than defaulting to generic definitions like 'receives data' and 'produces predictions'.
+
+  SOURCE     : , I have given the description in front of you like a child, now in the layer , the place from where you get support, you call input layer and the place from where you get freedom, you call it output ...
+
+
+[14]  id=v4_ml_dl_hi__backprop_gradient
+  Video      : CodeWithHarry — All About ML & Deep Learning (Hindi, translated)
+  Timestamp  : 12:15 → 12:30
+  Concept    : backprop_gradient
+  Failure    : negation_misconception
+  Keywords   : gradient, loss function, minimize
+
+  QUESTION   : Wasn't LSTM designed to handle exploding gradients rather than vanishing gradients?
+  ANSWER     : No, LSTM (Long Short-Term Memory) networks were specifically created to solve the vanishing gradient problem, not the exploding gradient problem. They were designed to handle long sequences where vanishing gradients make training standard RNNs difficult.
+  REASONING  : This question embeds the common misconception that LSTM targets exploding gradients, directly testing whether the RAG system can retrieve and assert the correct distinction that LSTM addresses the vanishing gradient problem.
+
+  SOURCE     : आर एन एन रिकरेंट न्यूरल नेटवर्क उसी के सा सा एलएसटीएम होते हैं लॉन्ग शॉर्ट टर्म मेमोरी वाले न्यूरल नेटवर्क्स इनको लंगर Sequences and vanishing gradient has been created to solve the problem. I had mad...
+
+
+[15]  id=v4_ml_dl_hi__attention_mechanism
+  Video      : CodeWithHarry — All About ML & Deep Learning (Hindi, translated)
+  Timestamp  : 1:46 → 2:08
+  Concept    : attention_mechanism
+  Failure    : multi_hop
+  Keywords   : value
+
+  QUESTION   : If today's precipitation, humidity, and temperature values are fed into the system, what does the system produce as an output and what underlying process makes that possible?
+  ANSWER     : The system produces a prediction about whether it will rain today (a true/false outcome). This is made possible by machine learning and AI, which learn from historical labeled examples of precipitation, humidity, and temperature paired with whether it rained or not.
+  REASONING  : This question forces a two-step connection: first retrieving the specific input features (precipitation, humidity, temperature) that drive the new prediction, then linking them to the stated output type and the broader mechanism (machine learning and AI) that enables it.
+
+  SOURCE     : I will say, brother, when the precipitation was this much, , humidity, this much, temperature, then it rained, was precipitation, humidity, temperature, this much, , it did not rain, then when I will ...
+
+
+[16]  id=v4_ml_dl_hi__ml_dl_taxonomy
+  Video      : CodeWithHarry — All About ML & Deep Learning (Hindi, translated)
+  Timestamp  : 1:02 → 1:16
+  Concept    : ml_dl_taxonomy
+  Failure    : taxonomy
+  Keywords   : machine learning is
+
+  QUESTION   : What category of process does machine learning fall under, based on its core definition?
+  ANSWER     : Machine learning is defined as the process of training an algorithm on data. It is fundamentally a data-driven training process, not a rule-based or manually programmed one.
+  REASONING  : This tests taxonomy by requiring the respondent to correctly classify machine learning within its definitional category (a training process) rather than conflating it with broader or adjacent categories like statistics or explicit programming.
+
+  SOURCE     : You want and this thing may seem a little bad but I would say save your career want to save your career What is machine learning Machine learning is the process of to train an algorithm on data What d...
+
+======================================================================
+END
